@@ -1,0 +1,89 @@
+
+                    @* Carlos - Tentando estilizar fto de perfil *@
+
+
+                    <div class="user-info clearfix">
+                            <a href="/Manage/Index">
+
+                                @{
+                                    var imgUrl = Url.Content("~/Content/images/profile/" + User.Identity.Name + ".png") + "?time=" + DateTime.Now.ToString();
+                                    if (User.Identity.Name != null)
+                                    {
+                                        @*<img src="~/tpl/img/avatars/foto-padrao.jpg" />*@
+                                        <img src="@imgUrl" height="128" width="128" />
+                                    }
+                                }
+                            </a>
+                        @{
+                            var usuario = User.Identity.Name;
+                            <span class="name">@usuario</span>
+                        }
+                        <div class="btn-group">
+                            <a href="/Manage/Index" class="btn btn-default btn-md" data-togge="tooltip" data-placement="bottom" data-original-title="Acessar o seu perfil" title="Acessar o seu perfil"><i class="l-basic-gear"></i>  Perfil</a>
+                        </div>
+                    </div>
+                    <div class="sidebar-panel">
+                        <h5 class="sidebar-panel-title">Navegação</h5>
+                    </div>
+
+                    @* Carlos - Tentando estilizar fto de perfil *@
+					
+					
+					
+					@* ------------------------------------*@
+					
+					
+
+        #region Upload Photo
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="file"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public async Task<ActionResult> UploadPhoto(HttpPostedFileBase file)
+        {
+            if (file != null && file.ContentLength > 0)
+            {
+                var user = await GetCurrentUserAsync();
+                var username = user.UserName;
+                var fileExt = Path.GetExtension(file.FileName);
+                //var fnm = username + ".png";
+                var fnm = username;
+                if (fileExt.ToLower().EndsWith(".png") 
+                    || fileExt.ToLower().EndsWith(".jpg") 
+                    || fileExt.ToLower().EndsWith(".gif")) // Important for security if saving in webroot
+                {
+                    var filePath = HostingEnvironment.MapPath("~/Content/images/profile/") + fnm;
+                    var directory = new DirectoryInfo(HostingEnvironment.MapPath("~/Content/images/profile/"));
+                    if (directory.Exists == false)
+                    {
+                        directory.Create();
+                    }
+                    ViewBag.FilePath = filePath.ToString();
+
+                    /* Carlos Adaptei para Redimensionar */
+                    WebImage photo = WebImage.GetImageFromRequest();
+                    var imageThumbPath = filePath;
+                    photo.Resize(
+                        width: 128, 
+                        height: 128, 
+                        preserveAspectRatio: false, 
+                        preventEnlarge: true);
+                    photo.Save(imageThumbPath, "png" , true);
+                    /* Carlos Adaptei para Redimensionar */
+                    //file.SaveAs(filePath); RETIREI E SALVEI COM O BLOCO ACIMA COM WEBIMAGE
+                    return RedirectToAction("Index", new { Message = ManageMessageId.PhotoUploadSuccess });
+                }
+                else
+                {
+                    return RedirectToAction("Index", new { Message = ManageMessageId.FileExtensionError });
+                }
+            }
+            return RedirectToAction("Index", new { Message = ManageMessageId.Error });// PRG
+        }
+
+
+
+        #endregion Upload Photo					
