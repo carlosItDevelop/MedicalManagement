@@ -7,13 +7,13 @@ namespace Cooperchip.MedicalManagement.Infra.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class TestandoMudancasDeNamespace : IMigrationMetadata
+    public sealed partial class VefificandoFK : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(TestandoMudancasDeNamespace));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(VefificandoFK));
         
         string IMigrationMetadata.Id
         {
-            get { return "201804120406390_TestandoMudancasDeNamespace"; }
+            get { return "201805080453420_VefificandoFK"; }
         }
         
         string IMigrationMetadata.Source

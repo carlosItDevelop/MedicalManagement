@@ -2,37 +2,18 @@
 // ---/ Alergia ----
 
 
-app.controller("AlergiaCtrl", function ($scope, $http, promessasService) {
+app.controller("AlergiaCtrl", function ($scope, $http, alergiaService) {
     $scope.titulo = "Listagem de Alergia";
 
     $scope.alergias = [];
 
     var carregaAlergias = function () {
-        promessasService.success(function (data) {
+        alergiaService.success(function (data) {
             $scope.alergias = data;
         }).error(function (data, status) {
             toastr["error"]("Erro ao carregar alergia!", "MedicalManagement-Sys");
         });
     };
-
-
-    //$scope.adicionarAlergia = function (alergia) {
-    //    $http.post("/Alergia/AddAlergia", alergia).success(function (data) {
-    //        delete $scope.alergia;
-    //        $scope.alergiaForm.$setPristine();
-    //        carregaAlergias();
-    //        toastr["success"]("Alergia Adicionado com sucesso!", "MedicalManagement-Sys");
-    //    }).error(function (data, status) {
-    //        toastr["error"]("Erro ao adicionar alergia!", "MedicalManagement-Sys");
-    //    });
-    //};
-
-
-
-
-
-
-
 
 
 

@@ -50,6 +50,9 @@
       <HintPath>..\..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="BeginCollectionItem">
       <HintPath>..\packages\BeginCollectionItem.1.2.1.0\lib\net35\BeginCollectionItem.dll</HintPath>
     </Reference>
@@ -152,6 +155,7 @@
       <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -284,8 +288,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Mappers\AutoMapperConfig.cs" />
+    <Compile Include="Mappers\DomainToViewModelMappingProfile.cs" />
+    <Compile Include="Mappers\ViewModelToDomainMappingProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\MedicoViewModel.cs" />
+    <Compile Include="ViewModel\MuralViewModel.cs" />
+    <Compile Include="ViewModel\PacienteChamadaViewModel.cs" />
+    <Compile Include="ViewModel\PacienteViewModel.cs" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -1077,10 +1088,8 @@
     <Content Include="Scripts\app\Ctrl\dirPagination\dirPagination.js" />
     <Content Include="Scripts\app\Ctrl\ExameDeImagem\exameDeImagemCtrl.js" />
     <Content Include="Scripts\app\ngModule.js" />
-    <Content Include="Scripts\app\Service\promessasService.js" />
+    <Content Include="Scripts\app\Service\Alergia\alergiaService.js" />
     <Content Include="Scripts\app\Ctrl\SinaisVitais\SinaisVitaisCtrl.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\cooperchip\buscas.js" />
     <Content Include="Content\cooperchip\funkyradio.css" />
     <Content Include="Scripts\cooperchip\graficosCooperchip.js" />
@@ -1275,7 +1284,6 @@
     <Content Include="tpl\img\weather\rain.png" />
     <Content Include="tpl\img\weather\snow.png" />
     <Content Include="tpl\img\weather\sunny.png" />
-    <Content Include="tpl\js\bootstrap\bootstrap.js" />
     <Content Include="tpl\js\bootstrap\bootstrap.min.js" />
     <Content Include="tpl\js\jquery.dynamic.js" />
     <Content Include="tpl\js\jRespond.min.js" />
@@ -1623,7 +1631,9 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />

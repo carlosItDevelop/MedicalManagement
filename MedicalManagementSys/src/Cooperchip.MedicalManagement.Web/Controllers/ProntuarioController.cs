@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using AutoMapper;
 using Cooperchip.MedicalManagement.Domain.Entidade;
 using Cooperchip.MedicalManagement.Infra.Data.ORM.EF.Contexto;
+using Cooperchip.MedicalManagement.Web.ViewModel;
 
 namespace Cooperchip.MedicalManagement.Web.Controllers
 {
@@ -49,6 +51,10 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
         /// <returns></returns>
         public JsonResult getPaciente(string q, int? page)
         {
+            // Criei, mas ainda não estou usando... ???
+            //var paciente = new Paciente();
+            //var pacienteView = Mapper.Map<Paciente, PacienteViewModel>(paciente);
+
             ICollection<Paciente> pac = null;
             if (!string.IsNullOrEmpty(q))
             {

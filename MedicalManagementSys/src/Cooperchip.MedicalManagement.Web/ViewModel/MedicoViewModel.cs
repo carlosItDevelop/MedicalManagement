@@ -3,8 +3,11 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Cooperchip.MedicalManagement.Application.ViewModel
+namespace Cooperchip.MedicalManagement.Web.ViewModel
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class MedicoViewModel
     {
         [Key]

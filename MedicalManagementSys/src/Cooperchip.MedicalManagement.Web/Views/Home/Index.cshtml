@@ -71,21 +71,21 @@
                                                     <div class="card-img-overlay">
 
                                                         @if (HttpContext.Current.User.IsInRole("Admin"))
-                                                        {
-                                                        <div style="text-align: center">
-                                                            <a href="/Home/Dashboard" style="text-decoration: none; color: #ed5353; font-size: 16px;">
-                                                                <h4 class="card-title">.:: Entrar ::.</h4>
-                                                            </a>
-                                                        </div>
-                                                        }
-                                                        else
-                                                        {
-                                                        <div style="text-align: center">
-                                                            <a href="/Home/BoxInit" style="text-decoration: none; color: #ed5353; font-size: 16px;">
-                                                                <h4 class="card-title">.:: Entrar ::.</h4>
-                                                            </a>
-                                                        </div>
-                                                        }
+                                                {
+                                                    <div style="text-align: center">
+                                                        <a href="/Home/Dashboard" style="text-decoration: none; color: #ed5353; font-size: 16px;">
+                                                            <h4 class="card-title">.:: Entrar ::.</h4>
+                                                        </a>
+                                                    </div>
+                                        }
+                                        else
+                                        {
+                                            <div style="text-align: center">
+                                                <a href="/Home/BoxInit" style="text-decoration: none; color: #ed5353; font-size: 16px;">
+                                                    <h4 class="card-title">.:: Entrar ::.</h4>
+                                                </a>
+                                            </div>
+                                }
 
                                                     </div>
                                                 </div>
@@ -145,7 +145,7 @@
                                                     <div class="card-img-overlay">
                                                         <div style="text-align: center">
 
-                                                            <a href="/Prontuario/ListaProntuario" 
+                                                            <a href="/Prontuario/ListaProntuario"
                                                                style="text-decoration: none; color: #ed5353; font-size: 16px;">
                                                                 <h4 class="card-title">Prontuários</h4>
                                                             </a>
@@ -213,7 +213,7 @@
                                                     <div class="card-img-overlay">
                                                         <div style="text-align: center">
 
-                                                            <a href="/Home/InteracaoMedicamentosa" 
+                                                            <a href="/Home/InteracaoMedicamentosa"
                                                                style="text-decoration: none; color: #ed5353; font-size: 16px;">
                                                                 <h4 class="card-title">Int. Medicamentosas</h4>
                                                             </a>
@@ -310,7 +310,7 @@
       <script type="text/javascript" src="~/tpl/js/libs/respond.min.js"></script>
     <![endif]-->
 
-    <script src="~/tpl/js/bootstrap/bootstrap.js"></script>
+    <script src="~/tpl/js/bootstrap/bootstrap.min.js"></script>
     <script src="~/tpl/plugins/forms/validation/jquery.validate.js"></script>
     <script src="~/tpl/plugins/forms/validation/additional-methods.min.js"></script>
     <script src="~/tpl/js/pages/login.js"></script>

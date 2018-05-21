@@ -3,8 +3,8 @@
 
 
 @{
-    var svcChamadaMedico = new ChamadaMedicoService();
-    PagedList.IPagedList<Cooperchip.MedicalManagement.Domain.Entidade.ChamadaMedico> Model = svcChamadaMedico.GetChamadaMedico(1);
+    var serviceChamadaMedico = new ChamadaMedicoService();
+    PagedList.IPagedList<Cooperchip.MedicalManagement.Domain.Entidade.ChamadaMedico> Model = serviceChamadaMedico.GetChamadaMedico(1);
 }
 
 <li class="dropdown">
@@ -51,7 +51,6 @@
 
                             <button data-id="@item.ChamadaMedicoId" data-toggle="tooltip" data-placement="bottom" title="Atender Chamada Médica" data-original-title="Atender Chamada Médica" class="atenderChamadaMedico see-more small pull-right btn-link">Atender/Excluir</button>
 
-                            @*<a href="/ChamadaMedico/Edit?id=@item.ChamadaMedicoId" data-id="" class="edit see-more small pull-right">Ver Quadro/Atender</a>*@
                         </li>
                     }
                 }

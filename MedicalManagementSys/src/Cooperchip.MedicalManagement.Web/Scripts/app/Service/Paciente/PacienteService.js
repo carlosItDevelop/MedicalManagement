@@ -17,6 +17,15 @@
             return $http.get("/api/v1/evm/ApiObeterTodosOsPacientes");
         };
 
+
+
+        //Obter regitros para a RightSidebar
+        this.srvcObterPacientesRightSidebar = function () {
+            return $http.get("/api/v1/evm/ApiObeterPacientesRightSidebar");
+        };
+
+
+
         //Obter os registros por id
         this.srvcGetPacientePorId = function (id) {
             return $http.get("/api/v1/evm/ApiObterPacientePorId?id=" + id);

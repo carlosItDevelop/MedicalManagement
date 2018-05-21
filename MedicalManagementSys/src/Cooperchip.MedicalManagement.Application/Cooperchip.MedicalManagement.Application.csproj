@@ -44,11 +44,8 @@
     <Compile Include="Notifications\ObserverNovoAgendamento.cs" />
     <Compile Include="Notifications\ObserverNovoPaciente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModel\MedicoViewModel.cs" />
-    <Compile Include="ViewModel\MuralViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AutoMapper\" />
     <Folder Include="Validations\" />
   </ItemGroup>
   <ItemGroup>

@@ -28,7 +28,6 @@ namespace Cooperchip.MedicalManagement.Web
             ConfigureAuth(app);
         }
 
-
     }
 }
 

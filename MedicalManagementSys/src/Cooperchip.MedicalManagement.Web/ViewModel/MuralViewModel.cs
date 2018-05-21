@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Cooperchip.MedicalManagement.Domain.Entidade;
 
-namespace Cooperchip.MedicalManagement.Application.ViewModel
+namespace Cooperchip.MedicalManagement.Web.ViewModel
 {
     /// <summary>
     /// 

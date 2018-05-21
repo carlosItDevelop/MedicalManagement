@@ -15,8 +15,6 @@ namespace Cooperchip.MedicalManagement.Web
         /// <param name="bundles"></param>
         public static void RegisterBundles(BundleCollection bundles)
         {
-            //   < !--Important javascript libs(put in all pages) -->
-
 
             bundles.Add(new ScriptBundle("~/bundles/core").Include(
                     "~/tpl/plugins/core/pace/pace.min.js",
@@ -132,9 +130,9 @@ namespace Cooperchip.MedicalManagement.Web
                ));
 
             bundles.Add(new ScriptBundle("~/bundles/angularservices").Include(
-               "~/Scripts/App/Service/promessasService.js",
-               "~/Scripts/App/Service/getDiscriptionsService.js",
-               "~/Scripts/App/Service/medicamentoService.js",
+               "~/Scripts/App/Service/Alergia/alergiaService.js",
+               //"~/Scripts/App/Service/getDiscriptionsService.js",
+               "~/Scripts/App/Service/Medicamento/medicamentoService.js",
                "~/Scripts/App/Service/Medico/MedicoService.js",
                "~/Scripts/App/Service/Dreno/drenoService.js",
                "~/Scripts/App/Service/AtbEmUso/atbemusoService.js",

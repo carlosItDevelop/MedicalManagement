@@ -49,13 +49,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201804120406390_TestandoMudancasDeNamespace.cs" />
-    <Compile Include="Migrations\201804120406390_TestandoMudancasDeNamespace.Designer.cs">
-      <DependentUpon>201804120406390_TestandoMudancasDeNamespace.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804130815403_ConferenciaTestesEspecialidade.cs" />
-    <Compile Include="Migrations\201804130815403_ConferenciaTestesEspecialidade.Designer.cs">
-      <DependentUpon>201804130815403_ConferenciaTestesEspecialidade.cs</DependentUpon>
+    <Compile Include="Migrations\201805080453420_VefificandoFK.cs" />
+    <Compile Include="Migrations\201805080453420_VefificandoFK.Designer.cs">
+      <DependentUpon>201805080453420_VefificandoFK.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ORM\EF\Contexto\EvoluMedSysModelContext.cs" />
@@ -76,11 +72,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201804120406390_TestandoMudancasDeNamespace.resx">
-      <DependentUpon>201804120406390_TestandoMudancasDeNamespace.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804130815403_ConferenciaTestesEspecialidade.resx">
-      <DependentUpon>201804130815403_ConferenciaTestesEspecialidade.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201805080453420_VefificandoFK.resx">
+      <DependentUpon>201805080453420_VefificandoFK.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

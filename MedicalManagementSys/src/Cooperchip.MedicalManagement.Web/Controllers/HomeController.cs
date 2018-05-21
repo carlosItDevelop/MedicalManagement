@@ -164,14 +164,15 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
         /// <returns></returns>
         public JsonResult BuscaPacienteMenuRigth(Guid id)
         {
-            //List<Paciente> pac = (from p in db.Paciente
-            //                             .Include("Setor")
-            //                             .Include("Leito")
-            //                             .Include("Sexo")
-            //                             .Include("EstadoDoPaciente")
-            //                             .Include("Convenio")
-            //                      select p).Where(x => x.PacienteGuid == id).ToList();
-            List<Paciente> pac = (from p in db.Paciente select p).Where(x => x.PacienteGuid == id).ToList();
+            List<Paciente> pac = (from p in db.Paciente
+                                         .Include("Setor")
+                                         .Include("Leito")
+                                         .Include("Sexo")
+                                         .Include("EstadoDoPaciente")
+                                         .Include("Convenio")
+                                  select p).Where(x => x.PacienteGuid == id).ToList();
+
+            //List<Paciente> pac = (from p in db.Paciente select p).Where(x => x.PacienteGuid == id).ToList();
             return Json(pac, JsonRequestBehavior.AllowGet);
         }
 

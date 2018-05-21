@@ -10,6 +10,7 @@ namespace Cooperchip.Common.Entity.Config.ModelTypeConfiguration
         {
             ToTable("Especialidade");
 
+
             HasKey(e => e.EspecialidadeId);
             Property(e => e.Descricao)
                 .IsRequired()

@@ -6,11 +6,8 @@ using System.Net;
 using System.Web.Mvc;
 using Cooperchip.MedicalManagement.Domain.Entidade;
 using Cooperchip.MedicalManagement.Infra.Data.ORM.EF.Contexto;
-using Cooperchip.MedicalManagement.Application.ViewModel;
-using System.Net.Mail;
-using System.Configuration;
 using Cooperchip.MedicalManagement.Services;
-
+using Cooperchip.MedicalManagement.Web.ViewModel;
 
 namespace Cooperchip.MedicalManagement.Web.Controllers
 {

@@ -195,7 +195,7 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
             };
             return Request.CreateResponse(HttpStatusCode.OK, prontuario);
         }
-        
+
 
 
         /// <summary>
@@ -210,7 +210,7 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
             if (id == null)
                 return Request.CreateResponse(HttpStatusCode.BadRequest);
             Prontuario prontuario = (from p in _db.Prontuario
-                                   select p).Where(x => x.ProntuarioId == id).FirstOrDefault();
+                                     select p).Where(x => x.ProntuarioId == id).FirstOrDefault();
             return Request.CreateResponse(HttpStatusCode.OK, prontuario, "application/json");
         }
 
@@ -717,6 +717,28 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, paciente);
         }
 
+        // ApiObeterPacientesRightSidebar  // Pesquisar mais LazyLoading;
+        /// <summary>
+        /// Obter apenas alguns dados dos pacientes para a RightSidebar
+        /// </summary>
+        /// <returns></returns>
+        /// <remarks>Obter apenas alguns dados dos pacientes para a RightSidebar</remarks>
+        [Route("ApiObeterPacientesRightSidebar")]
+        public HttpResponseMessage GetAllPacienteRightSidebar()
+        {
+            var paciente = (from p in _db.Paciente
+                            .Include("Leito")
+                            .Include("EstadoDoPaciente")
+                            select new
+                            {
+                                p.PacienteGuid,
+                                p.Nome,
+                                p.Leito,
+                                p.EstadoDoPaciente
+                            }).ToList();
+            return Request.CreateResponse(HttpStatusCode.OK, paciente);
+        }
+
 
         /// <summary>
         /// 
@@ -752,7 +774,7 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
             {
                 Ativo = true // já tinha setado no construtor, deixei apenas como exemplo de boa prática;
             };
-            
+
             return Request.CreateResponse(HttpStatusCode.OK, paciente);
         }
 
@@ -822,7 +844,7 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
             Paciente paciente = _db.Paciente.Find(id);
 
             var temprontuario = (from prt in _db.Prontuario select prt).Where(x => x.PacienteGuid == id).Count();
-            if(temprontuario > 0)
+            if (temprontuario > 0)
             {
                 return Request.CreateResponse<string>(HttpStatusCode.BadRequest, "Paciente com Prontuário. Não deve ser excluído!", "application/json");
             }
@@ -1611,7 +1633,7 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
                          .Include("Paciente")
                          .Include("Prontuario")
                          .Include("TipoDreno")
-                         select dn).Where(x => x.PacienteGuid == idpc && x.ProntuarioGuid == idpt).ToList();
+                                 select dn).Where(x => x.PacienteGuid == idpc && x.ProntuarioGuid == idpt).ToList();
             return Request.CreateResponse(HttpStatusCode.OK, dreno);
         }
 
@@ -1844,7 +1866,7 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
             return _db.Dreno.Count(e => e.DrenoId == id) > 0;
         }
 
-        
+
         /// <summary>
         ///
         /// </summary>
@@ -1855,7 +1877,7 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
             return _db.Complicacao.Count(e => e.ComplicacaoId == id) > 0;
         }
 
-         /// <summary>
+        /// <summary>
         ///
         /// </summary>
         /// <param name="id"></param>
@@ -1865,7 +1887,7 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
             return _db.Medico.Count(e => e.MedicoId == id) > 0;
         }
 
-         /// <summary>
+        /// <summary>
         ///
         /// </summary>
         /// <param name="id"></param>

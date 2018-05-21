@@ -13,7 +13,7 @@ app.controller("LeitosPacientePainelCtrl", function ($scope, $http, pacienteServ
 
 
     function ctrlGetPaciente() {
-        var pacientesData = pacienteService.srvcObterPacientes();
+        var pacientesData = pacienteService.srvcObterPacientesRightSidebar();
         pacientesData.then(function (paciente) {
             $scope.pacientes = paciente.data;
             $scope.totalReg = paciente.data.length;

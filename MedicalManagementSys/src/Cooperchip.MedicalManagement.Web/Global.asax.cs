@@ -1,4 +1,5 @@
-﻿using FluentValidation.Mvc;
+﻿using Cooperchip.MedicalManagement.Web.Mappers;
+using FluentValidation.Mvc;
 using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
@@ -22,8 +23,9 @@ namespace Cooperchip.MedicalManagement.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             GlobalConfiguration.Configure(WebApiConfig.Register);
-
             FluentValidationModelValidatorProvider.Configure();
+            AutoMapperConfig.RegisterMappings();
+
         }
     }
 
@@ -43,6 +45,7 @@ namespace Cooperchip.MedicalManagement.Web
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FluentValidationModelValidatorProvider.Configure();
+            AutoMapperConfig.RegisterMappings();
         }
     }
 

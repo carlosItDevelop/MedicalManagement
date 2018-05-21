@@ -67,9 +67,6 @@
                                            </i>&nbsp;&nbsp; Gerar Atendimento</a>
                                 </td>
 
-                                @*<td>
-                                    <a href="/Prontuario/ListaProntuario/{{paciente.PacienteGuid}}" class="btn btn-primary btn-transparent" data-id="prontuario" data-toggle="tooltip" data-placement="bottom" title="Prescrever / Evoluir" data-original-title="Prescrever / Evoluir"><i class="glyphicon glyphicon-log-in"></i>&nbsp;&nbsp; Prescrever / Evoluir</a>
-                                </td>*@
 
                                 <td>
                                     <a href="/Prontuario/ListaProntuarioBase/{{paciente.PacienteGuid}}" ng-click="PrescreverEvoluir(paciente)" class="btn btn-primary btn-transparent" data-id="prontuario" data-toggle="tooltip" data-placement="bottom" title="Prescrever / Evoluir" data-original-title="Prescrever / Evoluir"><i class="glyphicon glyphicon-log-in"></i>&nbsp;&nbsp; Prescrever / Evoluir</a>
@@ -351,7 +348,7 @@
                     <li><strong>Id Paciente</strong>&nbsp; <span ng-bind="oProntuario.Paciente.PacienteGuid"></span></li>
                     <li><strong>Paciente</strong>&nbsp; <span ng-bind="oProntuario.Paciente.Nome"></span></li>
                     <li><strong>Nº de Atendimento</strong>&nbsp; <span ng-bind="oProntuario.NumAtendimento"></span></li>
-                    <li><strong>Data do Prontuário</strong>&nbsp; <span ng-bind="oProntuario.DataProntuario | date:'dd/MM/yyyy'" "></span></li>
+                    <li><strong>Data do Prontuário</strong>&nbsp; <span ng-bind="oProntuario.DataProntuario | date:'dd/MM/yyyy'"></span></li>
                 </ul>
             </div>
             <div class="panel panel-body col-lg-5 col-md-5 col-sm-12 col-xs-12">

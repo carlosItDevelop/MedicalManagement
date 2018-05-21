@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -29,7 +30,6 @@ namespace Cooperchip.MedicalManagement.Domain.Entidade
         [Display(Name = "Especialidade")]
         [Required(ErrorMessage = "Campo obrigatório.")]
         public int IdEspecialidade { get; set; }
-
 
         public virtual Especialidade Especialidade { get; set; }
 
