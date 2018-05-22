@@ -4,7 +4,7 @@
 
 
     // Service Paciente
-    app.service("pacienteService", function ($http) {
+    app.service("pacienteService", ['$http', function ($http) {
 
 
         // Criar um novo Paciente;
@@ -63,6 +63,6 @@
             return response;
         };
 
-    });
+    }]);
 
 })();

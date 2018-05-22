@@ -1,7 +1,10 @@
 ﻿// ---/  Estatística da Dashboard --
 
+(function () {
 
-app.controller("dashboardCtrl", function ($scope, $filter, $http) {
+    'use strict'
+
+app.controller("dashboardCtrl", ['$scope', '$filter','$http', function ($scope, $filter, $http) {
 
     $scope.estadopacientes = [];
 
@@ -59,4 +62,6 @@ app.controller("dashboardCtrl", function ($scope, $filter, $http) {
 
     carregaEstadopaciente();
 
-});
+}]);
+
+})();

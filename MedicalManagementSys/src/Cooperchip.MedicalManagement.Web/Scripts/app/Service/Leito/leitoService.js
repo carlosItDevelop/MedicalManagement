@@ -5,7 +5,7 @@
 (function () {
 
 
-    app.service("leitoService", function ($http) {
+    app.service("leitoService", ['$http', function ($http) {
 
         //Obter todos os regitros
         this.ObterLeitos = function () {
@@ -50,6 +50,6 @@
             return response;
         };
 
-    });
+    }]);
 
 })();

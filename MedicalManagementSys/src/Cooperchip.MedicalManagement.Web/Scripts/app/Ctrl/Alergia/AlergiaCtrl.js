@@ -1,8 +1,11 @@
 ﻿
+(function () {
+    'use strict'
+
 // ---/ Alergia ----
 
 
-app.controller("AlergiaCtrl", function ($scope, $http, alergiaService) {
+app.controller("AlergiaCtrl", ['$scope', '$http', 'alergiaService', function ($scope, $http, alergiaService) {
     $scope.titulo = "Listagem de Alergia";
 
     $scope.alergias = [];
@@ -58,4 +61,6 @@ app.controller("AlergiaCtrl", function ($scope, $http, alergiaService) {
 
     carregaAlergias();
 
-});
+}]);
+
+})();

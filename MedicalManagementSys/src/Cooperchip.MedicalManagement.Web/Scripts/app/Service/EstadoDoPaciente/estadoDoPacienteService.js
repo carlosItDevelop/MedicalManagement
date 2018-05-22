@@ -6,7 +6,7 @@
 (function () {
     'use strict';
 
-    app.service("estadoDoPacienteService", function ($http) {
+    app.service("estadoDoPacienteService", ['$http', function ($http) {
 
         //Obter todos os regitros
         this.ObterTodas = function () {
@@ -51,6 +51,6 @@
             return response;
         };
 
-    });
+    }]);
 
 })();

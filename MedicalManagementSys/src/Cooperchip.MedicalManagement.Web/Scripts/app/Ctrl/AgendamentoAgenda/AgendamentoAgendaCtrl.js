@@ -1,8 +1,10 @@
 ﻿
+(function () {
+    'use strict'
 
 // ---/ AgendamentoAgenda ---
 
-app.controller("agendamentoCtrl", function ($scope, agendamentoService, medicoService, pacienteService, $filter, $scope) {
+app.controller("agendamentoCtrl", ['$scope', 'agendamentoService', 'medicoService', 'pacienteService', '$filter', '$scope', function ($scope, agendamentoService, medicoService, pacienteService, $filter, $scope) {
 
     $scope.divagendamento = false;
     $scope.titulo = "Lista de Agendamentos";
@@ -34,7 +36,7 @@ app.controller("agendamentoCtrl", function ($scope, agendamentoService, medicoSe
         }
         );
     };
-    obterTodosOsMedicos();
+    obterTodosOsMedicos(); // OBTER APENAS ID E NOME
 
 
 
@@ -49,7 +51,7 @@ app.controller("agendamentoCtrl", function ($scope, agendamentoService, medicoSe
         }
         );
     };
-    obterTodosOsPacientes();
+    obterTodosOsPacientes(); // OBTER APENAS ID E NOME
 
     //function reformatDate(dateStr) {
     //    dArr = dateStr.split("-");  // ex input "2010-01-18"
@@ -179,4 +181,6 @@ app.controller("agendamentoCtrl", function ($scope, agendamentoService, medicoSe
     };
 
 
-});
+}]);
+
+}());

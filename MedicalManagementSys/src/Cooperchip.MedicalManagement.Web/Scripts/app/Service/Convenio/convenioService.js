@@ -6,7 +6,7 @@
 
     'use strict';
 
-    app.service("convenioService", function ($http) {
+    app.service("convenioService", ['$http', function ($http) {
 
         //Obter todos os regitros
         this.ObterTodas = function () {
@@ -51,6 +51,6 @@
             return response;
         };
 
-    });
+    }]);
 
 })();

@@ -1,7 +1,21 @@
 ﻿(function () {
 
+    'use strict'
+
     // $routeParams Usar quando apropriado;
-    app.controller("pacienteCtrl", function ($rootScope, $uibModal, $scope, $http, $filter, pacienteService, $location, convenioService, leitoService, estadoDoPacienteService, setorService) {
+    app.controller("pacienteCtrl",
+        ['$rootScope',
+        '$uibModal',
+        '$scope',
+        '$http',
+        '$filter',
+        'pacienteService',
+        '$location',
+        'convenioService',
+        'leitoService',
+        'estadoDoPacienteService',
+        'setorService',
+        function ($rootScope, $uibModal, $scope, $http, $filter, pacienteService, $location, convenioService, leitoService, estadoDoPacienteService, setorService) {
 
 
 
@@ -470,6 +484,6 @@
         };
 
 
-    });
+    }]);
 
 })();

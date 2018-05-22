@@ -152,8 +152,6 @@ namespace Cooperchip.MedicalManagement.Web
                "~/Scripts/App/Service/CausaPrecaucao/causaprecaucaoService.js",
                "~/Scripts/App/Service/CidAdaptada/cidAdaptadaService.js",
                "~/Scripts/App/Service/Dieta/dietaService.js",
-               "~/Scripts/App/Service/Sexo/sexoService.js",
-               "~/Scripts/App/Service/Convenio/convenioService.js",
                "~/Scripts/App/Service/Complicacao/complicacaoService.js",
                "~/Scripts/App/Service/Endereco/enderecoService.js",
                "~/Scripts/App/Service/Cidade/cidadeService.js",
@@ -165,18 +163,21 @@ namespace Cooperchip.MedicalManagement.Web
                "~/Scripts/App/Service/PrecaucaoGoticula/precaucaoGoticulaService.js",
                "~/Scripts/App/Service/PrecaucaoPadrao/precaucaoPadraoService.js",
                "~/Scripts/App/Service/BaseDeConhecimento/baseDeConhecimentoService.js",
-               "~/Scripts/App/Service/EstadoDoPaciente/estadoDoPacienteService.js",
 
                "~/Scripts/App/Service/Notificacoes/notificacoesService.js",
 
-
+               "~/Scripts/App/Service/Convenio/convenioService.js",
+               "~/Scripts/App/Service/Sexo/sexoService.js",
                "~/Scripts/App/Service/Setor/setorService.js",
-
                "~/Scripts/App/Service/Leito/leitoService.js",
+               "~/Scripts/App/Service/EstadoDoPaciente/estadoDoPacienteService.js",
+
+               "~/Scripts/App/Service/Paciente/PacienteService.js",
+
+
                "~/Scripts/App/Service/ExameDescricao/exameDescricaoService.js",
                "~/Scripts/App/Service/Anticoagulacao/anticoagulacaoService.js",
                "~/Scripts/App/Service/Fisioterapia/fisioterapiaService.js",
-               "~/Scripts/App/Service/Paciente/PacienteService.js",
                "~/Scripts/App/Service/SimplePaginationService.js"
 
            ));
@@ -194,7 +195,6 @@ namespace Cooperchip.MedicalManagement.Web
                 "~/Scripts/App/Ctrl/Dashboard/DashboardCtrl.js",
                 "~/Scripts/app/Ctrl/FullCalendar/FullCalendarCtrl.js",
                 "~/Scripts/app/Ctrl/Alergia/AlergiaCtrl.js",
-                "~/Scripts/app/Ctrl/Paciente/PacienteCtrl.js",
                 "~/Scripts/app/Ctrl/AgendamentoAgenda/AgendamentoAgendaCtrl.js",
                 "~/Scripts/app/Ctrl/InteracaoMedicamentosa/InteracaoMedicamentosaCtrl.js",
                 "~/Scripts/app/Ctrl/Anticoagulacao/anticoagulacaoCtrj.js",
@@ -210,9 +210,17 @@ namespace Cooperchip.MedicalManagement.Web
                 "~/Scripts/App/Ctrl/Bairro/bairroCtrl.js",
                 "~/Scripts/App/Ctrl/Fisioterapia/fisioterapiaCtrl.js",
                 "~/Scripts/App/Ctrl/Complicacao/complicacaoCtrl.js",
-                "~/Scripts/App/Ctrl/Convenio/convenioCtrl.js",
-                "~/Scripts/App/Ctrl/Leito/leitoCtrl.js",
+                /* ----------------------------------------------- */
+                "~/Scripts/App/Ctrl/Convenio/convenioCtrl.js",                
+                "~/Scripts/App/Ctrl/Leito/leitoCtrl.js",                
                 "~/Scripts/App/Ctrl/Setor/setorCtrl.js",
+                "~/Scripts/App/Ctrl/EstadoDoPaciente/estadoDoPacienteCtrl.js",
+                "~/Scripts/App/Ctrl/ChamadaMedico/chamadaMedicoCtrl.js",
+                /* ----------------------------------------------- */
+                // Chamando depois do bloco acima
+                "~/Scripts/app/Ctrl/Paciente/PacienteCtrl.js",
+
+
                 "~/Scripts/App/Ctrl/AtbJaUtilizado/atbjautilizadoCtrl.js",
                 "~/Scripts/App/Ctrl/ApresentacaoAjusteInteracao/apresentacaoajusteinteracaoCtrl.js",
                 "~/Scripts/App/Ctrl/TelefonePaciente/telefonePacienteCtrl.js",
@@ -222,11 +230,9 @@ namespace Cooperchip.MedicalManagement.Web
                 "~/Scripts/App/Ctrl/PrecaucaoContato/precaucaoContatoCtrl.js",
                 "~/Scripts/App/Ctrl/PrecaucaoGoticula/precaucaoGoticulaCtrl.js",
                 "~/Scripts/App/Ctrl/PrecaucaoPadrao/precaucaoPadraoCtrl.js",
-                "~/Scripts/App/Ctrl/ChamadaMedico/chamadaMedicoCtrl.js",
                 "~/Scripts/App/Ctrl/ClassesMedicamentos/classesMedicamentosCtrl.js",
                 "~/Scripts/App/Ctrl/ExameDescricao/exameDescricaoCtrl.js",
                 "~/Scripts/App/Ctrl/BaseDeConhecimento/baseDeConhecimentoCtrl.js",
-                "~/Scripts/App/Ctrl/EstadoDoPaciente/estadoDoPacienteCtrl.js",
                 "~/Scripts/App/Ctrl/MedicamentosEAfins/medicamentoPosologiaCtrl.js",
                 "~/Scripts/App/Ctrl/MedicamentosEAfins/medicamentoApresentacaoCtrl.js",
                 "~/Scripts/App/Ctrl/MedicamentosEAfins/MedicamentoAjusteCtrl.js",
@@ -264,6 +270,10 @@ namespace Cooperchip.MedicalManagement.Web
                 "~/Scripts/cooperchip/tabs/scripts/tabs-addon.js"
                 ));
             /* Carlos Inclusão de Tabs */
+
+
+            BundleTable.EnableOptimizations = true;
+
 
         }
     }
