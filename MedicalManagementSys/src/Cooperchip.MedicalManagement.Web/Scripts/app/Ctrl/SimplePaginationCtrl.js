@@ -2,7 +2,8 @@
 
 (function () {
     'use strict';
-    app.controller('SimplePaginationCtrl', function ($scope, $http, SimplePaginate) {
+
+    app.controller('SimplePaginationCtrl', ['$scope', '$http', 'SimplePaginate', function ($scope, $http, SimplePaginate) {
         var success = function (response) {
             SimplePaginate.configure(
                 {
@@ -23,5 +24,5 @@
         
         $http.get("/resources/data.json").then(success);
         
-    });
+    }]);
 })()

@@ -1,52 +1,48 @@
-﻿
+﻿(function () {
+    'use strict';
+    app.service("precaucaoContatoService", ['$http', function ($http) {
 
-// ---/  Precaucao Contato Service
+        //Obter todos os regitros
+        this.ObterPrecaucaoContatos = function () {
+            return $http.get("/api/v1/evm/GetPrecaucaoContatos");
+        };
 
-app.service("precaucaoContatoService", function ($http) {
+        //Obter os registros por id
+        this.ObterPrecaucaoContatoPorId = function (id) {
+            return $http.get("/api/v1/evm/GetPrecaucaoContatoPorId/" + id);
+        };
 
-    //Obter todos os regitros
-    this.ObterPrecaucaoContatos = function () {
-        return $http.get("/api/v1/evm/GetPrecaucaoContatos");
-    };
+        // Atualizar os registros
+        this.AtualizarPrecaucaoContato = function (precaucaocontato) {
+            var response = $http({
+                method: "put",
+                url: "/api/v1/evm/PutPrecaucaoContato",
+                data: JSON.stringify(precaucaocontato),
+                dataType: "json"
+            });
+            return response;
+        };
 
-    //Obter os registros por id
-    this.ObterPrecaucaoContatoPorId = function (id) {
-        return $http.get("/api/v1/evm/GetPrecaucaoContatoPorId/" + id);
-    };
+        // Adicionar registros
+        this.AdicionarPrecaucaoContato = function (precaucaocontato) {
+            var response = $http({
+                method: "post",
+                url: "/api/v1/evm/PostPrecaucaoContato",
+                data: JSON.stringify(precaucaocontato),
+                dataType: "json"
+            });
+            return response;
+        };
 
-    // Atualizar os registros
-    this.AtualizarPrecaucaoContato = function (precaucaocontato) {
-        var response = $http({
-            method: "put",
-            url: "/api/v1/evm/PutPrecaucaoContato",
-            data: JSON.stringify(precaucaocontato),
-            dataType: "json"
-        });
-        return response;
-    };
+        // Excluir Registro
+        this.ExcluirPrecaucaoContato = function (id) {
+            var response = $http({
+                method: "delete",
+                url: "/api/v1/evm/DelPrecaucaoContato/" + JSON.stringify(id)
+            });
+            return response;
+        };
 
+    }]);
 
-    // Adicionar registros
-    this.AdicionarPrecaucaoContato = function (precaucaocontato) {
-        var response = $http({
-            method: "post",
-            url: "/api/v1/evm/PostPrecaucaoContato",
-            data: JSON.stringify(precaucaocontato),
-            dataType: "json"
-        });
-        return response;
-    };
-
-
-    // Excluir Registro
-    this.ExcluirPrecaucaoContato = function (id) {
-        var response = $http({
-            method: "delete",
-            url: "/api/v1/evm/DelPrecaucaoContato/" + JSON.stringify(id)
-        });
-        return response;
-    };
-
-
-
-});
+})();

@@ -1,9 +1,4 @@
-﻿
-
-
-// ----/  EstadoDoPaciente Service ---
-
-(function () {
+﻿(function () {
     'use strict';
 
     app.service("estadoDoPacienteService", ['$http', function ($http) {

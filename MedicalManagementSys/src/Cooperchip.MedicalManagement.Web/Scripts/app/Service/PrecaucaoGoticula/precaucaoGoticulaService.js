@@ -1,10 +1,7 @@
 ﻿
-// --/ PrecaucaoGoticula Service
-
 (function () {
-
-
-    app.service("precaucaoGoticulaService", function ($http) {
+    'use strict';
+    app.service("precaucaoGoticulaService", ['$http', function ($http) {
 
         //Obter todos os regitros
         this.ObterPrecaucaoGoticulas = function () {
@@ -47,6 +44,6 @@
             return response;
         };
 
-    });
+    }]);
 
 })();

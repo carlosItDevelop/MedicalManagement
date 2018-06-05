@@ -1,7 +1,4 @@
 ﻿
-
-// ---/ Leito Services
-
 (function () {
 
 

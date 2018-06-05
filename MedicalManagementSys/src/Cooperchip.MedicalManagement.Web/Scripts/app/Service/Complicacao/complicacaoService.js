@@ -1,13 +1,6 @@
-﻿
-
-(function () {
-
+﻿(function () {
     'use strict';
-
-    // ----/  Complicacao ---
-
-
-    app.service("complicacaoService", function ($http) {
+    app.service("complicacaoService", ['$http', function ($http) {
 
         //Obter todos os regitros
         this.ObterTodas = function () {
@@ -52,8 +45,6 @@
             return response;
         };
 
-    });
-
-
+    }]);
 
 })();

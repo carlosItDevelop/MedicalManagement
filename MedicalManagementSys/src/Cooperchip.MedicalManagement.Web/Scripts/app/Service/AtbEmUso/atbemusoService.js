@@ -5,7 +5,7 @@
     'use strict';
 
     // Service AtbEmUso
-    app.service("atbemusoService", function ($http) {
+    app.service("atbemusoService", ['$http', function ($http) {
 
         //GetAtbEmUsoPorPacienteEProntuario
         this.GetAtbEmUsoPorPacienteEProntuario = function (pc, pt) {
@@ -61,7 +61,7 @@
             return response;
         };
 
-        
-    });
+
+    }]);
 
 })();

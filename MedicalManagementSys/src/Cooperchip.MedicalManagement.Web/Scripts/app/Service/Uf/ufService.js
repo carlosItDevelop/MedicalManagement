@@ -1,13 +1,6 @@
-﻿
-
-(function () {
+﻿(function () {
     'use strict';
-
-
-    // ----/  Uf ---
-
-
-    app.service("ufService", function ($http) {
+    app.service("ufService", ['$http', function ($http) {
 
         //Obter todos os regitros
         this.GetUf = function () {
@@ -30,7 +23,6 @@
             return response;
         };
 
-
         // Adicionar registros
         this.AdicionarUf = function (uf) {
             var response = $http({
@@ -42,7 +34,6 @@
             return response;
         };
 
-
         // Excluir Registro
         this.Excluir = function (id) {
             var response = $http({
@@ -52,9 +43,6 @@
             return response;
         };
 
-
-
-    });
-
+    }]);
 
 })();

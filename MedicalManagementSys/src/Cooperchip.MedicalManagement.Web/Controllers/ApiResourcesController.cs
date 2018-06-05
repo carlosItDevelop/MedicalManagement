@@ -880,15 +880,12 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
         ///
         /// </summary>
         /// <returns></returns>
-        [System.Web.Http.HttpGet]
-        [System.Web.Http.Route("ObterNomePacientes")]
-        public List<Endereco> GetNomePacienteParaEndereco()
+        [HttpGet]
+        [Route("ObterNomePacientes")]
+        public HttpResponseMessage GetNomePacienteParaEndereco()
         {
-            var endereco = (from e in _db.Endereco
-                            .Include("Paciente")
-                            select e).ToList();
-
-            return endereco;
+            var nomePaciente = (from p in _db.Paciente select new { p.PacienteGuid, p.Nome }).ToList();
+            return Request.CreateResponse(HttpStatusCode.OK, nomePaciente);
         }
 
 

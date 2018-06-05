@@ -1,11 +1,9 @@
 ﻿
-// ----/  BaseDeConhecimento Service ---
-
 (function () {
 
     'use strict';
-    
-    app.service("baseDeConhecimentoService", function ($http) {
+
+    app.service("baseDeConhecimentoService", ['$http', function ($http) {
 
         //Obter todos os regitros
         this.ObterTodas = function () {
@@ -50,6 +48,6 @@
             return response;
         };
 
-    });
+    }]);
 
 })();

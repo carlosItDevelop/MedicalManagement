@@ -1,7 +1,4 @@
 ﻿
-
-// ----/  Convenio ---
-
 (function () {
 
     'use strict';

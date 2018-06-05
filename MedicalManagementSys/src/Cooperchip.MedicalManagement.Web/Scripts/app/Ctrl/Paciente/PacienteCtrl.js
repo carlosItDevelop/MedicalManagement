@@ -1,6 +1,6 @@
 ﻿(function () {
 
-    'use strict'
+    'use strict';
 
     // $routeParams Usar quando apropriado;
     app.controller("pacienteCtrl",

@@ -1,12 +1,6 @@
-﻿
-
-
-(function () {
-
+﻿(function () {
     'use strict';
-
-    // Service Prescricao
-    app.service("prescricaoService", function ($http) {
+    app.service("prescricaoService", ['$http', function ($http) {
 
 
         this.GetPrescricaoPorId = function (idprescricao) {
@@ -59,6 +53,6 @@
         };
 
 
-    });
+    }]);
 
 })();

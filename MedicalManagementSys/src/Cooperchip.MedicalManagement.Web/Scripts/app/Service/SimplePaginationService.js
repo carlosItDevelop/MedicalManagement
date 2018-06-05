@@ -1,7 +1,4 @@
-﻿
-
-
-(function () {
+﻿(function () {
     'use strict';
     app.service('SimplePaginate', function () {
         //variáveis de configuração 

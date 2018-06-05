@@ -1,7 +1,7 @@
 ﻿
 (function () {
 
-    'use strict'
+    'use strict';
 
     app.controller("LeitosPacientePainelCtrl",
         ['$scope',
@@ -47,7 +47,7 @@
 
                 $scope.openPacienteLeito = function (size, id) {
 
-                    $http.get("/Home/BuscaPacienteMenuRigth/" + id).success(function (data) {
+                    $http.get("/Home/BuscaPacienteMenuRigthModal/" + id).success(function (data) {
                         //debugger;
                         $scope.pacienteselecinado = data;
                         //$scope.pacienteselecinado.DataNascimento = new Date($filter('jsonToDate')(data.DataNascimento)); 

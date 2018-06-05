@@ -1,7 +1,8 @@
-﻿
+﻿(function () {
+    'use strict';
+    app.service('medicamentoService', function () {
 
-app.service('medicamentoService', function () {
-
-});
+    });
+})();
 
 

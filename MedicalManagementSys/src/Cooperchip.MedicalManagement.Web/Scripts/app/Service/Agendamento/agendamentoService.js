@@ -1,8 +1,11 @@
 ﻿
+(function () {
+    'use strict';
+
 // ----/  Agendamento ---
 
 
-app.service("agendamentoService", function ($http) {
+app.service("agendamentoService", ['$http', function ($http) {
 
     //Obter todos os regitros
     this.ObterAgendamentos = function () {
@@ -49,5 +52,7 @@ app.service("agendamentoService", function ($http) {
 
 
 
-});
+}
+]);
+}());
 

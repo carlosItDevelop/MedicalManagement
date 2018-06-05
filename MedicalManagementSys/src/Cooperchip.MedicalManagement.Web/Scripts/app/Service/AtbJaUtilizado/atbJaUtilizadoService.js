@@ -7,7 +7,7 @@
     'use strict';
 
     // Service AtbJaUtilizado
-    app.service("atbJaUtilizadoService", function ($http) {
+    app.service("atbJaUtilizadoService", ['$http', function ($http) {
 
 
         //GetAtbJaUtilizadoPorPacienteEProntuario
@@ -64,6 +64,6 @@
             return response;
         };
 
-    });
+    }]);
 
 })();

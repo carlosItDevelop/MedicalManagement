@@ -1,10 +1,10 @@
 ﻿
 (function () {
-    'use strict'
+    'use strict';
 
 // ---/ AgendamentoAgenda ---
 
-app.controller("agendamentoCtrl", ['$scope', 'agendamentoService', 'medicoService', 'pacienteService', '$filter', '$scope', function ($scope, agendamentoService, medicoService, pacienteService, $filter, $scope) {
+app.controller("agendamentoCtrl", ['$scope', 'agendamentoService', 'medicoService', 'pacienteService', '$filter', function ($scope, agendamentoService, medicoService, pacienteService, $filter) {
 
     $scope.divagendamento = false;
     $scope.titulo = "Lista de Agendamentos";

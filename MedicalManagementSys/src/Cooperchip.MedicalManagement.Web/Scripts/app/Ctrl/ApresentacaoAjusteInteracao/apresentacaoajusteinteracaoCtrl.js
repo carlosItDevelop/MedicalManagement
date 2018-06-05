@@ -1,6 +1,6 @@
 ﻿
 (function () {
-    'use strict'
+    'use strict';
 
     app.controller("apresentacaoajusteinteracaoCtrl", ['$scope', '$filter', '$http', '$uibModal', 'pacienteService', 'genericoService', function ($scope, $filter, $http, $uibModal, pacienteService, genericoService) {
 

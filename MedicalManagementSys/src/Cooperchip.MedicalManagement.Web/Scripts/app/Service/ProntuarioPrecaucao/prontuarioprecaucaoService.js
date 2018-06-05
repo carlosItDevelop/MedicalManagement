@@ -1,10 +1,7 @@
 ﻿
-    // ----/  Prontuario Precaucao Service ---
-
 (function () {
-
-    app.service("prontuarioprecaucaoService", function ($http) {
-
+    'use strict';
+    app.service("prontuarioprecaucaoService", ['$http', function ($http) {
 
         //Obter os registros por id
         this.ObterPrecaucaoPorId = function (id) {
@@ -31,7 +28,6 @@
             return response;
         };
 
-
         // Atualizar os registros
         this.AtualizarProntuarioPrecaucao = function (prontuarioprecaucao) {
             var response = $http({
@@ -42,7 +38,6 @@
             });
             return response;
         };
-
 
         // Adicionar registros
         this.PostProntuarioPrecaucao = function (prontuarioprecaucao) {
@@ -55,7 +50,6 @@
             return response;
         };
 
-
         // Excluir Registro
         this.Excluir = function (id) {
             var response = $http({
@@ -65,6 +59,6 @@
             return response;
         };
 
-    });
+    }]);
 
 })();
