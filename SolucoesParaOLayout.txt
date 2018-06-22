@@ -1,8 +1,0 @@
-
-Soluções para melhorar a template:
-
-1. Ver se posso alterar o conteúdo dos accordions;
-	1.a. Copiar e fazer mudanças;
-	1.b. Comparar com a do bootstrap;
-	
-2. Pegar o código da página em branco da template e ver quanto eu posso tirar dela e trabalhar mais com o bootstrap;
