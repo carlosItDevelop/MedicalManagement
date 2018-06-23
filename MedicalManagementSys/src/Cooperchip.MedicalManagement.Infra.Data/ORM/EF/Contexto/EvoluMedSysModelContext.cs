@@ -1,7 +1,7 @@
 using Cooperchip.MedicalManagement.Domain.Entidade;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using Cooperchip.Common.Entity.Config.ModelTypeConfiguration;
+using Cooperchip.MedicalManagement.Infra.Data.TypeConfiguration;
 
 namespace Cooperchip.MedicalManagement.Infra.Data.ORM.EF.Contexto
 {
@@ -15,6 +15,8 @@ namespace Cooperchip.MedicalManagement.Infra.Data.ORM.EF.Contexto
             //Configuration.LazyLoadingEnabled = false;
             //Configuration.ProxyCreationEnabled = false;
         }
+
+        #region: DbSets
 
         // Provisório para migrar dados do Excel
         public DbSet<ApresentacaoAux> ApresentacaoAux { get; set; }
@@ -123,8 +125,9 @@ namespace Cooperchip.MedicalManagement.Infra.Data.ORM.EF.Contexto
 
         // --------------------------------------------------------------- //
 
-        
+        #endregion: DbSet
 
+        #region: OnModelCreating
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder) 
         {
@@ -133,7 +136,7 @@ namespace Cooperchip.MedicalManagement.Infra.Data.ORM.EF.Contexto
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
 
-            modelBuilder.Configurations.Add(new EspecialidadeMap());
+            modelBuilder.Configurations.Add(new EspecialidadeTypeConfiguration());
 
             modelBuilder.Properties()
                 .Where(p => p.Name == p.ReflectedType.Name + "Id")
@@ -146,6 +149,8 @@ namespace Cooperchip.MedicalManagement.Infra.Data.ORM.EF.Contexto
             // Configurações de Medico
 
         }
+
+        #endregion
 
     }
 }

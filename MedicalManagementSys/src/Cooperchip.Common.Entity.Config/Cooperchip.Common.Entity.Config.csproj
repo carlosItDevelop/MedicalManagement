@@ -44,10 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ModelTypeConfiguration\EspecialidadeMap.cs" />
-    <Compile Include="ModelTypeConfiguration\MedicoMapping.cs" />
-    <Compile Include="ModelTypeConfiguration\PacienteMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TemplateMethod\CooperchipEntityAbstractConfig.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
