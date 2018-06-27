@@ -11,6 +11,14 @@ namespace Cooperchip.MedicalManagement.Infra.Data.TypeConfiguration
                     .IsRequired()
                     .HasMaxLength(80)
                     .HasColumnName("Nome");
+
+            Property(c => c.Crm)
+                .HasColumnName("Crm")
+                .HasMaxLength(10);
+
+            Property(dt => dt.DataNascimento)
+                .HasColumnName("DataNascimento");
+                //.HasColumnType("datetime2");
         }
 
         protected override void ForeignKeyFluentConfig()
@@ -29,3 +37,21 @@ namespace Cooperchip.MedicalManagement.Infra.Data.TypeConfiguration
         }
     }
 }
+
+
+/*
+ 
+
+        [Display(Name = "Data de Nascimento")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
+        public DateTime DataNascimento { get; set; }
+
+        [ForeignKey("Especialidade")]
+        [Display(Name = "Especialidade")]
+        [Required(ErrorMessage = "Campo obrigatório.")]
+        public int IdEspecialidade { get; set; }
+
+        public virtual Especialidade Especialidade { get; set; }
+     
+ */
