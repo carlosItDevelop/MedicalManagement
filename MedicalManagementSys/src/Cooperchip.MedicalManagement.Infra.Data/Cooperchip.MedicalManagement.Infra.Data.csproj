@@ -50,12 +50,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\RepositoryConcrete\ConvenioRepository.cs" />
+    <Compile Include="Interfaces\Repository\IRepository.cs" />
+    <Compile Include="Interfaces\Repository\Repository.cs" />
     <Compile Include="Migrations\201805080453420_VefificandoFK.cs" />
     <Compile Include="Migrations\201805080453420_VefificandoFK.Designer.cs">
       <DependentUpon>201805080453420_VefificandoFK.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="ORM\EF\Contexto\EvoluMedSysModelContext.cs" />
+    <Compile Include="ORM\EF\Contexto\MedicalManagementDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TypeConfiguration\EspecialidadeTypeConfiguration.cs" />
     <Compile Include="TypeConfiguration\MedicoTypeConfiguration.cs" />
@@ -79,6 +82,9 @@
     <EmbeddedResource Include="Migrations\201805080453420_VefificandoFK.resx">
       <DependentUpon>201805080453420_VefificandoFK.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
