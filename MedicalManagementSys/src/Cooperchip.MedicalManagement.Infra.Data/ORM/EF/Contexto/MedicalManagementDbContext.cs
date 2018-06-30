@@ -124,6 +124,8 @@ namespace Cooperchip.MedicalManagement.Infra.Data.ORM.EF.Contexto
         public DbSet<Parametro> Parametro { get; set; }
 
         // --------------------------------------------------------------- //
+        public DbSet<MensagensClearance> MensagensClearance { get; set; }
+        // --------------------------------------------------------------- //
 
         #endregion: DbSet
 

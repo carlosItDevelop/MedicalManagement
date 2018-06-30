@@ -11,5 +11,8 @@ namespace Cooperchip.MedicalManagement.Domain.Entidade
         [MaxLength(50)]
         [Display(Name = "Descricao")]
         public string Descricao { get; set; }
+
+        //public virtual MensagensClearance MensagensClearance { get; set; }
+
     }
 }

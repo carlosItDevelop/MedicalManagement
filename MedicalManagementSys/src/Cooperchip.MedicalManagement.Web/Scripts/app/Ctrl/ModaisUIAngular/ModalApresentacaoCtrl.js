@@ -3,14 +3,16 @@
 
 (function () {
 
-    app.controller('modalApresentacaoCtrl', function ($scope, $uibModalInstance, vMdct) {
+    app.controller('modalApresentacaoCtrl',
+        ['$scope', '$uibModalInstance', 'vMdct',
+            function ($scope, $uibModalInstance, vMdct) {
 
-        $scope.vMdct = vMdct;
-        $scope.ok = function () {
-            $uibModalInstance.close();
-        };
+            $scope.vMdct = vMdct;
+            $scope.ok = function () {
+                $uibModalInstance.close();
+            };
 
-    });
+        }]);
 
 })();
 

@@ -77,6 +77,7 @@
             });
         };
 
+        // ------------------------------------------------------------------------------------- //
 
         $scope.generico = {};
 
@@ -84,12 +85,23 @@
             var genericoData = genericoService.GetGenericoForMedicamentos(idmdct);
             genericoData.then(function (resultado) {
                 $scope.genericos = resultado.data;
-                //$scope.Acao = "";
-                //$scope.divatbemuso = false;
+                //console.log(resultado.data); 
             }, function () {
                 toastr["error"]("Erro ao obter Genéricos por Medicamento!", "MedicalManagement-Sys");
             });
         };
+
+        // ------------------------------------------------------------------------------------- //
+        $("#medicamentoajusteapresentacaoparaposologia").on('click', function () {
+            $scope.medicamentosposologias = [];
+            var idmdct = $scope.apresentacaoajusteinteracao.IdMedicamento;
+            if (idmdct) {
+                carregaPosologia(idmdct);
+                carregaGenericoPorMedicamento(idmdct);
+            }
+        });
+
+        // ------------------------------------------------------------------------------------- //
 
 
         var obterAtbEmUsoPorPacienteEProntuario = function () {
@@ -104,19 +116,6 @@
         };
 
 
-
-
-        // ------------------------------------------------------------------------------------- //
-        $("#medicamentoajusteapresentacaoparaposologia").on('click', function () {
-            $scope.medicamentosposologias = [];
-            var idmdct = $scope.apresentacaoajusteinteracao.IdMedicamento;
-            if (idmdct) {
-                carregaPosologia(idmdct);
-                carregaGenericoPorMedicamento(idmdct);
-            }
-        });
-
-        // ------------------------------------------------------------------------------------- //
         // ------------------------------------------------------------------------------------- //
 
 

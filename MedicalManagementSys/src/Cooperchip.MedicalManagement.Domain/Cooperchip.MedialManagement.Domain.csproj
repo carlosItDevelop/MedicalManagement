@@ -83,6 +83,7 @@
     <Compile Include="Entidade\Dieta.cs" />
     <Compile Include="Entidade\ExameParametros.cs" />
     <Compile Include="Entidade\Invasoes.cs" />
+    <Compile Include="Entidade\MensagensClearance.cs" />
     <Compile Include="Entidade\NotificacoesProntuario.cs" />
     <Compile Include="Entidade\Pessoa.cs" />
     <Compile Include="Entidade\Precaucao.cs" />
@@ -128,6 +129,7 @@
     <Compile Include="Enum\AcessoTipo.cs" />
     <Compile Include="Enum\EstadoCivil.cs" />
     <Compile Include="Enum\Sexo.cs" />
+    <Compile Include="Enum\Substancia.cs" />
     <Compile Include="Enum\TipoPessoa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validations\PacienteValidator.cs" />

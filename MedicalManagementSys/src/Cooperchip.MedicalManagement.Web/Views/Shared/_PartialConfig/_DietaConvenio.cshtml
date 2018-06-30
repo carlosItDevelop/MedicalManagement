@@ -12,7 +12,7 @@
 
                     <div class="divList">
                         <input type="text" class="form-control" name="busca" ng-model="criterioDeBusca" value="" placeholder="O que você está buscando..." />
-                        <table ng-show="dietas.length > 0" class="table table-hover">
+                        <table ng-if="dietas.length > 0" class="table table-hover">
                             <thead>
                                 <tr>
                                     <th><b><a href="#" ng-click="ordenarPor('DietaId')">ID</a></b></th>
