@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Cooperchip.MedicalManagement.Domain.Entidade.MensagensClearance>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Generico.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Substancia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ParametroInicial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ParametroFinal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mensagem)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Generico.Descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Substancia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ParametroInicial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ParametroFinal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mensagem)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MensagensClearanceId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MensagensClearanceId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MensagensClearanceId })
+        </td>
+    </tr>
+}
+
+</table>

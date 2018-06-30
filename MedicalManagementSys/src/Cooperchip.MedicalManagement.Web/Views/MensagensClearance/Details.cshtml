@@ -1,0 +1,58 @@
+﻿@model Cooperchip.MedicalManagement.Domain.Entidade.MensagensClearance
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MensagensClearance</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Generico.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Generico.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Substancia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Substancia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ParametroInicial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ParametroInicial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ParametroFinal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ParametroFinal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mensagem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mensagem)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MensagensClearanceId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
