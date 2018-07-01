@@ -7,13 +7,13 @@ namespace Cooperchip.MedicalManagement.Infra.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddMensagensClearance : IMigrationMetadata
+    public sealed partial class RefactoryMensagensClearanceToMensagemToClearanceNew : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddMensagensClearance));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(RefactoryMensagensClearanceToMensagemToClearanceNew));
         
         string IMigrationMetadata.Id
         {
-            get { return "201806300558275_AddMensagensClearance"; }
+            get { return "201806301643145_RefactoryMensagensClearanceToMensagemToClearanceNew"; }
         }
         
         string IMigrationMetadata.Source

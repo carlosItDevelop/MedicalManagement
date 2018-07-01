@@ -1,0 +1,63 @@
+﻿@model Cooperchip.MedicalManagement.Domain.Entidade.MensagemClearance
+
+@* ------------------------------------------- *@
+
+
+@{
+    ViewBag.Title = "Edição de Taxas de Clearance";
+}
+
+
+@{ Layout = null;}
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title">MedicalManagement-Sys - Detalhes de Taxas de Clearance</h4>
+        </div>
+        <div class="modal-body">
+            <div class="form-horizontal">
+
+
+
+
+
+                <dl class="dl-horizontal">
+
+                    <dt>Gegérico: </dt>
+
+                    <dd>@Html.DisplayFor(model => model.Generico.Descricao)</dd>
+
+                    <dt>@Html.DisplayNameFor(model => model.Substancia): </dt>
+
+                    <dd>@Html.DisplayFor(model => model.Substancia)</dd>
+
+                    <dt>@Html.DisplayNameFor(model => model.ParametroInicial): </dt>
+
+                    <dd>@Html.DisplayFor(model => model.ParametroInicial)</dd>
+
+                    <dt>@Html.DisplayNameFor(model => model.ParametroFinal): </dt>
+
+                    <dd>@Html.DisplayFor(model => model.ParametroFinal)</dd>
+
+                    <dt>@Html.DisplayNameFor(model => model.Mensagem): </dt>
+
+                    <dd>@Html.DisplayFor(model => model.Mensagem)</dd>
+
+                </dl>
+
+
+
+
+            </div>
+        </div>
+        <div class="modal-footer">
+            <input type="button" value="Fechar" class="btn btn-default" data-dismiss="modal" />
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

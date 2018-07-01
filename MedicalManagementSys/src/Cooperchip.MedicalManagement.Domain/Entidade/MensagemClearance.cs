@@ -1,27 +1,28 @@
 ﻿using Cooperchip.MedicalManagement.Domain.Enum;
-using System;
-using System.Collections.Generic;
+using Cooperchip.MedicalManagement.Domain.Validations;
+using FluentValidation.Attributes;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Cooperchip.MedicalManagement.Domain.Entidade
 {
-    public class MensagensClearance
+    //[Validator(typeof(MensagemClearanceValidator))]
+    public class MensagemClearance
     {
-        public MensagensClearance()
+        public MensagemClearance()
         {
         }
 
         [Key]
         [Display(Name ="Id")]
-        public int MensagensClearanceId { get; set; }
+        public int MensagemClearanceId { get; set; }
 
         [ForeignKey("Generico")]
         [Display(Name = "Genérico Id")]
         [Required(ErrorMessage = "Genérico Id é campo obrigatório!")]
         public int GenericoId { get; set; }
 
-        public Generico Generico { get; set; }
+        public virtual Generico Generico { get; set; }
 
         [Display(Name = "Substância")]
         [Required(ErrorMessage = "Substância é campo obrigatório!")]

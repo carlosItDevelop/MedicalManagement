@@ -12,7 +12,7 @@ namespace Cooperchip.MedicalManagement.Domain.Entidade
         [Display(Name = "Descricao")]
         public string Descricao { get; set; }
 
-        //public virtual MensagensClearance MensagensClearance { get; set; }
+        //public virtual MensagemClearance MensagemClearance { get; set; }
 
     }
 }

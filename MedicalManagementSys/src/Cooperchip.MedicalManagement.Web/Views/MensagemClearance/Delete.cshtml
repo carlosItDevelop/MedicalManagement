@@ -1,0 +1,57 @@
+﻿@model Cooperchip.MedicalManagement.Domain.Entidade.MensagemClearance
+
+
+@{ Layout = null;}
+
+<div class="modal-dialog">
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title">MedicalManagement-Sys - Excluir Parâmetro / Taxa de Clearance</h4>
+        </div>
+
+
+        <div class="modal-body">
+            <div class="alert alert-danger">
+
+                <h3>Confirma a exclusão do Registro? </h3>
+
+                <dl class="dl-horizontal">
+
+                    <dt>Genérico: </dt>
+                    <dd>@Html.DisplayFor(model => model.Generico.Descricao)</dd>
+
+                    <dt>@Html.DisplayNameFor(model => model.Substancia): </dt>
+                    <dd>@Html.DisplayFor(model => model.Substancia)</dd>
+
+                    <dt>@Html.DisplayNameFor(model => model.ParametroInicial): </dt>
+                    <dd>@Html.DisplayFor(model => model.ParametroInicial)</dd>
+
+                    <dt>@Html.DisplayNameFor(model => model.ParametroFinal): </dt>
+                    <dd>@Html.DisplayFor(model => model.ParametroFinal)</dd>
+
+                    <dt>@Html.DisplayNameFor(model => model.Mensagem): </dt>
+                    <dd>@Html.DisplayFor(model => model.Mensagem)</dd>
+
+                </dl>
+
+
+            </div>
+        </div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="modal-footer">
+                <input type="submit" value="Sim" class="btn btn-primary" />
+                <input type="button" value="Cancelar" class="btn btn-default" data-dismiss="modal" />
+            </div>
+
+        }
+
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

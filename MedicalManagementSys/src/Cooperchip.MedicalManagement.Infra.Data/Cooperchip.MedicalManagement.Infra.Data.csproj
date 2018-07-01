@@ -53,13 +53,13 @@
     <Compile Include="Interfaces\RepositoryConcrete\ConvenioRepository.cs" />
     <Compile Include="Interfaces\Repository\IRepository.cs" />
     <Compile Include="Interfaces\Repository\Repository.cs" />
-    <Compile Include="Migrations\201805080453420_VefificandoFK.cs" />
-    <Compile Include="Migrations\201805080453420_VefificandoFK.Designer.cs">
-      <DependentUpon>201805080453420_VefificandoFK.cs</DependentUpon>
+    <Compile Include="Migrations\201806301643145_RefactoryMensagensClearanceToMensagemToClearanceNew.cs" />
+    <Compile Include="Migrations\201806301643145_RefactoryMensagensClearanceToMensagemToClearanceNew.Designer.cs">
+      <DependentUpon>201806301643145_RefactoryMensagensClearanceToMensagemToClearanceNew.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806300558275_AddMensagensClearance.cs" />
-    <Compile Include="Migrations\201806300558275_AddMensagensClearance.Designer.cs">
-      <DependentUpon>201806300558275_AddMensagensClearance.cs</DependentUpon>
+    <Compile Include="Migrations\201806302250412_RefactoryMensagensClearanceToMensagemToClearanceWithVirtualGenerico.cs" />
+    <Compile Include="Migrations\201806302250412_RefactoryMensagensClearanceToMensagemToClearanceWithVirtualGenerico.Designer.cs">
+      <DependentUpon>201806302250412_RefactoryMensagensClearanceToMensagemToClearanceWithVirtualGenerico.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ORM\EF\Contexto\MedicalManagementDbContext.cs" />
@@ -83,15 +83,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201805080453420_VefificandoFK.resx">
-      <DependentUpon>201805080453420_VefificandoFK.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806300558275_AddMensagensClearance.resx">
-      <DependentUpon>201806300558275_AddMensagensClearance.cs</DependentUpon>
-    </EmbeddedResource>
+    <Folder Include="Interfaces\Services\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Interfaces\Services\" />
+    <EmbeddedResource Include="Migrations\201806301643145_RefactoryMensagensClearanceToMensagemToClearanceNew.resx">
+      <DependentUpon>201806301643145_RefactoryMensagensClearanceToMensagemToClearanceNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806302250412_RefactoryMensagensClearanceToMensagemToClearanceWithVirtualGenerico.resx">
+      <DependentUpon>201806302250412_RefactoryMensagensClearanceToMensagemToClearanceWithVirtualGenerico.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

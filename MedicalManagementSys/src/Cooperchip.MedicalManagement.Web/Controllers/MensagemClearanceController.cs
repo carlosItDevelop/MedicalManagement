@@ -12,49 +12,75 @@ using Cooperchip.MedicalManagement.Infra.Data.ORM.EF.Contexto;
 
 namespace Cooperchip.MedicalManagement.Web.Controllers
 {
-    public class MensagensClearanceController : Controller
+    /// <summary>
+    /// 
+    /// </summary>
+    public class MensagemClearanceController : Controller
     {
         private MedicalManagementDbContext db = new MedicalManagementDbContext();
 
-        // GET: MensagensClearance
+        // GET: MensagemClearance
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public async Task<ActionResult> Index()
         {
-            var mensagensClearance = db.MensagensClearance.Include(m => m.Generico);
+            var mensagensClearance = db.MensagemClearance.Include(m => m.Generico);
             return View(await mensagensClearance.ToListAsync());
         }
 
-        // GET: MensagensClearance/Details/5
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MensagensClearance mensagensClearance = await db.MensagensClearance.FindAsync(id);
-            if (mensagensClearance == null)
+
+            //MensagemClearance mensagensClearance = await db.MensagemClearance.FindAsync(id);
+
+            MensagemClearance msgClearance = await (from mc in db.MensagemClearance
+                                                    .Include(g => g.Generico) select mc)
+                                                    .Where(x => x.MensagemClearanceId == id)
+                                                    .FirstAsync();
+
+
+            if (msgClearance == null)
             {
                 return HttpNotFound();
             }
-            return View(mensagensClearance);
+            return View(msgClearance);
         }
 
-        // GET: MensagensClearance/Create
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Create()
         {
             ViewBag.GenericoId = new SelectList(db.Generico, "GenericoId", "Descricao");
             return View();
         }
 
-        // POST: MensagensClearance/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="mensagensClearance"></param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "MensagensClearanceId,GenericoId,Substancia,ParametroInicial,ParametroFinal,Mensagem")] MensagensClearance mensagensClearance)
+        public async Task<ActionResult> Create(MensagemClearance mensagensClearance)
         {
             if (ModelState.IsValid)
             {
-                db.MensagensClearance.Add(mensagensClearance);
+                db.MensagemClearance.Add(mensagensClearance);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
@@ -63,14 +89,18 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
             return View(mensagensClearance);
         }
 
-        // GET: MensagensClearance/Edit/5
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MensagensClearance mensagensClearance = await db.MensagensClearance.FindAsync(id);
+            MensagemClearance mensagensClearance = await db.MensagemClearance.FindAsync(id);
             if (mensagensClearance == null)
             {
                 return HttpNotFound();
@@ -79,12 +109,15 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
             return View(mensagensClearance);
         }
 
-        // POST: MensagensClearance/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="mensagensClearance"></param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "MensagensClearanceId,GenericoId,Substancia,ParametroInicial,ParametroFinal,Mensagem")] MensagensClearance mensagensClearance)
+        public async Task<ActionResult> Edit([Bind(Include = "MensagemClearanceId,GenericoId,Substancia,ParametroInicial,ParametroFinal,Mensagem")] MensagemClearance mensagensClearance)
         {
             if (ModelState.IsValid)
             {
@@ -96,28 +129,40 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
             return View(mensagensClearance);
         }
 
-        // GET: MensagensClearance/Delete/5
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MensagensClearance mensagensClearance = await db.MensagensClearance.FindAsync(id);
-            if (mensagensClearance == null)
+            MensagemClearance msgdel = await (from mc in db.MensagemClearance.Include(m => m.Generico) select mc)
+                .Where(i => i.MensagemClearanceId == id).FirstAsync();
+
+
+
+            if (msgdel == null)
             {
                 return HttpNotFound();
             }
-            return View(mensagensClearance);
+            return View(msgdel);
         }
 
-        // POST: MensagensClearance/Delete/5
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            MensagensClearance mensagensClearance = await db.MensagensClearance.FindAsync(id);
-            db.MensagensClearance.Remove(mensagensClearance);
+            MensagemClearance mensagensClearance = await db.MensagemClearance.FindAsync(id);
+            db.MensagemClearance.Remove(mensagensClearance);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }

@@ -19,6 +19,10 @@ namespace Cooperchip.MedicalManagement.Web
             bundles.Add(new ScriptBundle("~/bundles/core").Include(
                     "~/tpl/plugins/core/pace/pace.min.js",
                     "~/tpl/js/libs/jquery-2.1.1.min.js",
+
+                    //"~/Scripts/jquery-3.1.1.js",
+
+
                     // Make-Admin
                     "~/Scripts/make-admin/jquery-ui/jquery-ui-1.11.2.min.js",
 
@@ -86,7 +90,7 @@ namespace Cooperchip.MedicalManagement.Web
               ));
 
             //< !--/ Form validate-- >
-            bundles.Add(new ScriptBundle("~/bundles/formval").Include(
+            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                 "~/tpl/plugins/forms/validation/additional-methods.min.js",
                 "~/tpl/js/pages/forms-validation.js",
                 "~/tpl/plugins/forms/validation/jquery.validate.js"
@@ -272,7 +276,7 @@ namespace Cooperchip.MedicalManagement.Web
             /* Carlos Inclusão de Tabs */
 
 
-            BundleTable.EnableOptimizations = true;
+            BundleTable.EnableOptimizations = false;
 
 
         }

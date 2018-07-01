@@ -271,7 +271,8 @@
     <Compile Include="Controllers\MedicamentoApresentacaoController.cs" />
     <Compile Include="Controllers\MedicamentoController.cs" />
     <Compile Include="Controllers\MedicamentoPosologiaController.cs" />
-    <Compile Include="Controllers\MensagensClearanceController.cs" />
+    <Compile Include="Controllers\new_MensagemClearanceController.cs" />
+    <Compile Include="Controllers\MensagemClearanceController.cs" />
     <Compile Include="Controllers\MuralController.cs" />
     <Compile Include="Controllers\PessoaController.cs" />
     <Compile Include="Controllers\ProntuarioController.cs" />
@@ -1176,11 +1177,16 @@
     <Content Include="Views\Home\PaginationAngularJS.cshtml" />
     <Content Include="Views\Shared\PartialsLayout\_ConfigMenuFixed.cshtml" />
     <Content Include="Views\Shared\PartialsLayout\_MenuNotificacoes.cshtml" />
-    <Content Include="Views\MensagensClearance\Create.cshtml" />
-    <Content Include="Views\MensagensClearance\Delete.cshtml" />
-    <Content Include="Views\MensagensClearance\Details.cshtml" />
-    <Content Include="Views\MensagensClearance\Edit.cshtml" />
-    <Content Include="Views\MensagensClearance\Index.cshtml" />
+    <Content Include="Views\MensagemClearance\Create.cshtml" />
+    <Content Include="Views\MensagemClearance\Delete.cshtml" />
+    <Content Include="Views\MensagemClearance\Details.cshtml" />
+    <Content Include="Views\MensagemClearance\Edit.cshtml" />
+    <Content Include="Views\MensagemClearance\Index.cshtml" />
+    <Content Include="Views\new_MensagemClearance\Create.cshtml" />
+    <Content Include="Views\new_MensagemClearance\Delete.cshtml" />
+    <Content Include="Views\new_MensagemClearance\Details.cshtml" />
+    <Content Include="Views\new_MensagemClearance\Edit.cshtml" />
+    <Content Include="Views\new_MensagemClearance\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\dataTables.tableTools.css" />

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Cooperchip.MedicalManagement.Domain.Entidade.MensagensClearance>
+﻿@model IEnumerable<Cooperchip.MedicalManagement.Domain.Entidade.MensagemClearance>
 
 @{
     ViewBag.Title = "Index";
@@ -47,9 +47,9 @@
             @Html.DisplayFor(modelItem => item.Mensagem)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MensagensClearanceId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MensagensClearanceId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MensagensClearanceId })
+            @Html.ActionLink("Edit", "Edit", new { id=item.MensagemClearanceId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MensagemClearanceId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MensagemClearanceId })
         </td>
     </tr>
 }
