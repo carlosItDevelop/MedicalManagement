@@ -19,6 +19,55 @@
 
 
 
+        //Obter todos os novos prontuarios sem evolução/prescrição
+        this.getMakeNewProntuario = function () {
+            var response = $http({
+                method: "GET",
+                url: "/Prontuario/MakeNewProntuario/",
+                params: {},
+                dataType: "json"
+            });
+            return response;
+        }
+
+
+        //getHppregressa
+        this.getHppregressa = function () {
+            var response = $http({
+                method: "GET",
+                url: "/HistoriaPatologicaPregressa/getHPPregressa/",
+                params: {},
+                dataType: "json"
+            });
+            return response;
+        }
+
+
+        //getComplicacoes
+        this.getComplicacoes = function () {
+            var response = $http({
+                method: "GET",
+                url: "/Complicacao/getComplicacao/",
+                params: {},
+                dataType: "json"
+            });
+            return response;
+        }
+
+
+        ///Alergia/GetAlergia
+        this.getAlergias = function () {
+            var response = $http({
+                method: "GET",
+                url: "/Alergia/GetAlergia/",
+                params: {},
+                dataType: "json"
+            });
+            return response;
+        }
+
+
+
         //Obter regitros para a RightSidebar
         this.srvcObterPacientesRightSidebar = function () {
             return $http.get("/api/v1/evm/ApiObeterPacientesRightSidebar");

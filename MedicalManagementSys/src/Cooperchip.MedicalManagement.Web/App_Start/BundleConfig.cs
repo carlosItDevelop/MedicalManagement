@@ -113,17 +113,31 @@ namespace Cooperchip.MedicalManagement.Web
                     "~/Content/cooperchip/anticoagulacao.css"
                 ));
 
-            // Usando o Angular 1.5.7
+            
             bundles.Add(new ScriptBundle("~/bundles/angularjs").Include(
-               "~/Scripts/AngularJS/angular.min.js",
+               // Usando o Angular 1.5.7               
 
-               "~/Scripts/AngularJS/angular-sanitize.min.js",
-               "~/Scripts/AngularJS/angular-animate.min.js",
+               //"~/Scripts/AngularJS/angular.min.js",
+               //"~/Scripts/AngularJS/angular-sanitize.min.js",
+               //"~/Scripts/AngularJS/angular-animate.min.js",
+               //"~/Scripts/AngularJS/i18n/angular-locale_pt-br.js",
+               //"~/Scripts/AngularJS/angular-route.min.js",
+               //"~/Scripts/AngularJS/angular-messages.min.js",
+               //"~/Scripts/AngularJS/ui-bootstrap-tpls-2.0.1.js",
 
-               "~/Scripts/AngularJS/i18n/angular-locale_pt-br.js",
-               "~/Scripts/AngularJS/angular-route.min.js",
-               "~/Scripts/AngularJS/angular-messages.min.js",
-               "~/Scripts/AngularJS/ui-bootstrap-tpls-2.0.1.js",
+               // Usando o Angular 1.7.2               
+               "~/Scripts/angular-1.7.2/angular.min.js",
+               "~/Scripts/angular-1.7.2/angular-sanitize.min.js",
+               "~/Scripts/angular-1.7.2/angular-animate.min.js",
+               "~/Scripts/angular-1.7.2/i18n/angular-locale_pt-br.js",
+               "~/Scripts/angular-1.7.2/angular-route.min.js",
+               "~/Scripts/angular-1.7.2/angular-messages.min.js",
+               //"~/Scripts/angular-1.7.2/ui-bootstrap-tpls-2.0.1.js",
+
+               "~/Scripts/AngularJS/ui-bootstrap-tpls-2.0.1.js",  // v: 1.5.7
+
+
+
                "~/Scripts/Others/moment.min.js",
                "~/Scripts/Others/calendar.js",
                "~/Scripts/Others/fullcalendar.js",

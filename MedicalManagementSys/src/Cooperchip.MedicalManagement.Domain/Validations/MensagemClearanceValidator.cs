@@ -18,14 +18,16 @@ namespace Cooperchip.MedicalManagement.Domain.Validations
         private void MensagemValidator()
         {
             RuleFor(m => m.Mensagem)
-                .NotEmpty().NotNull()
-                    .WithMessage("Campo Mensagem não pode ser Null ou Vazio!");
+                .NotEmpty().WithMessage("Campo Mensagem não pode ser Vazio")
+                .NotNull().WithMessage("Campo Mensagem não pode ser Null");
         }
         private void ParametroFinalValidator()
         {
             RuleFor(p => p.ParametroFinal)
-                .GreaterThan(0).GreaterThan(pi => pi.ParametroInicial)
-                .WithMessage("Parâmetro Final tem de ser Maior que Zero e Maior que Parâmetro Inicial!");
+                .GreaterThan(0)
+                    .WithMessage("Parâmetro Final tem de ser Maior que Zero!")
+                .GreaterThan(pi => pi.ParametroInicial)
+                    .WithMessage("Parâmetro Final tem de ser Maior que Parâmetro Inicial!");
         }
         private void ParametroInicialValidator()
         {
@@ -35,8 +37,10 @@ namespace Cooperchip.MedicalManagement.Domain.Validations
         private void SubstanciaValidator()
         {
             RuleFor(s => s.Substancia)
-                .NotEmpty().NotNull()
-                    .WithMessage("Campo Substância não pode ser Null ou Vazio!");
+                .NotEmpty()
+                    .WithMessage("Campo Substância não pode ser Vazio!")
+                .NotNull()
+                    .WithMessage("Campo Substância não pode ser Null!");
         }
     }
 }
