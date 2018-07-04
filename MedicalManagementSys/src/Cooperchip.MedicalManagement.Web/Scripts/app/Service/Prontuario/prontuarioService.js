@@ -35,6 +35,18 @@
 
 
 
+        //Obter todos os novos prontuarios sem evolução/prescrição
+        this.getMakeNewProntuario = function () {
+            var response = $http({
+                method: "GET",
+                url: "/Prontuario/MakeNewProntuario/",
+                params: {},
+                dataType: "json"
+            });
+            return response;
+        }
+
+
 
         // Atualizar os registros
         this.AtualizarProntuario = function (prontuario) {

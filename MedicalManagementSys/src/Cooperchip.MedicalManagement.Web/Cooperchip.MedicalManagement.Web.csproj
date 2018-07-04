@@ -2325,6 +2325,7 @@
     <Content Include="Scripts\app\Service\ExameDescricao\exameDescricaoService.js" />
     <Content Include="Scripts\app\Service\Fisioterapia\fisioterapiaService.js" />
     <Content Include="Scripts\app\Service\Generico\GenericoService.js" />
+    <Content Include="Scripts\app\Service\HistoriaPatologicaPregressa\historiaPatologicaPregressaService.js" />
     <Content Include="Scripts\app\Service\InteracaoMedicamentosa\interacaoMedicamentosaService.js" />
     <Content Include="Scripts\app\Service\Leito\leitoService.js" />
     <Content Include="Scripts\app\Service\Medicamento\medicamentoService.js" />

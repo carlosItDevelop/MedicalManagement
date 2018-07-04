@@ -15,7 +15,11 @@
             'leitoService',
             'estadoDoPacienteService',
             'setorService',
-            function ($rootScope, $uibModal, $scope, $http, $filter, pacienteService, $location, convenioService, leitoService, estadoDoPacienteService, setorService) {
+            'complicacaoService',
+            'alergiaService',
+            'historiaPatologicaPregressaService',
+            'prontuarioService',
+            function ($rootScope, $uibModal, $scope, $http, $filter, pacienteService, $location, convenioService, leitoService, estadoDoPacienteService, setorService, complicacaoService, alergiaService, historiaPatologicaPregressaService, prontuarioService) {
 
 
 
@@ -28,7 +32,7 @@
                 var openNewprontuario = function (size, paciente) {
                     $scope.oProntuario = {};
 
-                    let newProntuarioData = pacienteService.getMakeNewProntuario();
+                    let newProntuarioData = prontuarioService.getMakeNewProntuario();
                     newProntuarioData.then(function (newProntuario) {
 
                         //console.log(newProntuario);
@@ -61,38 +65,6 @@
                         toastr["error"]("Erro ao carregar form para novo Prontuário!", "MedicalManagement-Sys");
                     }
                 }
-
-
-
-
-                //$http.get("/Prontuario/MakeNewProntuario/").success(function (data) {
-                //    $scope.oProntuario = data;
-                //    $scope.oProntuario.Paciente = paciente;
-                //    $scope.oProntuario.PacienteGuid = $scope.oProntuario.Paciente.PacienteGuid;
-                //    //$scope.oProntuario.DataProntuario = new Date($scope.oProntuario.DataProntuario);
-                //    var modalInstance = $uibModal.open({
-                //        animation: $scope.animationsEnabled,
-                //        templateUrl: 'novoprontuario.html',
-                //        controller: 'ModalNovoProntuarioCtrl',
-                //        size: size,
-                //        resolve: {
-                //            oProntuario: function () {
-                //                return $scope.oProntuario;
-                //            }
-                //        }
-                //    });
-                //    modalInstance.result.then(function (resultado) {
-                //        console.log("Retorno do Modal: " + resultado);
-
-                //        // Chamo o AddNotifyAtendimento
-
-
-                //    }, function (data) {
-                //        //console.log("Saída sem gravar. \nMensagem: " + data);
-                //    });
-                //}).error(function (data, status) {
-                //    toastr["error"]("Erro ao carregar form para novo Prontuário!", "MedicalManagement-Sys");
-                //});
 
                 // -----/ Modal Novo Prontuario -------------------- //
                 // -------------------------------------------------------  //
@@ -183,7 +155,7 @@
                 // Preenchi a DDList
                 $scope.hppregressas = [];
                 let funcHppregressa = function () {
-                    let hppData = pacienteService.getHppregressa();
+                    let hppData = historiaPatologicaPregressaService.getHppregressa();
                     hppData.then(function (hpp) {
                         $scope.hppregressas = hpp.data;
                     }, function () {
@@ -197,7 +169,7 @@
                 /* ------------------------------------------------------------ */
                 $scope.complicacoes = [];
                 let funcComplicacoes = function () {
-                    let cplData = pacienteService.getComplicacoes();
+                    let cplData = complicacaoService.getComplicacoes();
                     cplData.then(function (cpl) {
                         $scope.complicacoes = cpl.data;
                     }, function () {
@@ -210,7 +182,7 @@
 
                 $scope.alergias = [];
                 let funcAlergia = function () {
-                    let alergiaData = pacienteService.getAlergias();
+                    let alergiaData = alergiaService.getAlergias();
                     alergiaData.then(function (alg) {
                         $scope.alergias = alg.data;
                     }, function () {

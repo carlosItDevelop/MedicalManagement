@@ -191,6 +191,7 @@ namespace Cooperchip.MedicalManagement.Web
                "~/Scripts/App/Service/EstadoDoPaciente/estadoDoPacienteService.js",
 
                "~/Scripts/App/Service/Paciente/PacienteService.js",
+               "~/Scripts/App/Service/HistoriaPatologicaPregressa/historiaPatologicaPregressaService.js",
 
 
                "~/Scripts/App/Service/ExameDescricao/exameDescricaoService.js",

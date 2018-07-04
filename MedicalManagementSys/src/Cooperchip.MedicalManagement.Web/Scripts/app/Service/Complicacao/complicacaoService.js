@@ -12,6 +12,24 @@
             return $http.get("/api/v1/evm/ObterComplicacaoPorId?id=" + id);
         };
 
+
+
+
+        //getComplicacoes
+        this.getComplicacoes = function () {
+            var response = $http({
+                method: "GET",
+                url: "/Complicacao/getComplicacao/",
+                params: {},
+                dataType: "json"
+            });
+            return response;
+        }
+
+
+
+
+
         // Atualizar os registros
         this.AtualizarComplicacao = function (complicacao) {
             var response = $http({
