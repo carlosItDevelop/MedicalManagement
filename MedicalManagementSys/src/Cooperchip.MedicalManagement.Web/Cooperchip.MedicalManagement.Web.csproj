@@ -2260,7 +2260,6 @@
     <Content Include="Scripts\AngularJS\select2-UI-Angular\select.js" />
     <Content Include="Scripts\AngularJS\ui-bootstrap-tpls-2.0.1.js" />
     <Content Include="Scripts\app\Ctrl\AgendamentoAgenda\AgendamentoAgendaCtrl.js" />
-    <Content Include="Scripts\app\Ctrl\Alergia\AlergiaCtrl.js" />
     <Content Include="Scripts\app\Ctrl\Anticoagulacao\anticoagulacaoCtrj.js" />
     <Content Include="Scripts\app\Ctrl\ApresentacaoAjusteInteracao\apresentacaoajusteinteracaoCtrl.js" />
     <Content Include="Scripts\app\Ctrl\AtbEmUso\atbemusoCtrl.js" />

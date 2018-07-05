@@ -213,7 +213,6 @@ namespace Cooperchip.MedicalManagement.Web
                 "~/Scripts/App/Ctrl/BalancoHidrico/balancoHidricoCtrl.js",
                 "~/Scripts/App/Ctrl/Dashboard/DashboardCtrl.js",
                 "~/Scripts/app/Ctrl/FullCalendar/FullCalendarCtrl.js",
-                "~/Scripts/app/Ctrl/Alergia/AlergiaCtrl.js",
                 "~/Scripts/app/Ctrl/AgendamentoAgenda/AgendamentoAgendaCtrl.js",
                 "~/Scripts/app/Ctrl/InteracaoMedicamentosa/InteracaoMedicamentosaCtrl.js",
                 "~/Scripts/app/Ctrl/Anticoagulacao/anticoagulacaoCtrj.js",

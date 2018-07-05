@@ -141,7 +141,7 @@
 
                         @* Pesquisar como limitar o repeat em 6, ou 8, ou n <li>s *@
                         @* RESOLVIDO: Quando usar na base de dados trazer apenas top(n) em ordem de data; *@
-                        <li ng-repeat="atendimento in prontuarioPendentes">
+                        <li ng-repeat="atendimento in prontuarioPendentes track by $index">
                             <a href="#" ng-click="MostraPaciente(atendimento);"><i class="l-basic-todolist-pen"></i> {{atendimento.nomePaciente}} - {{atendimento.PacienteId}} - {{atendimento.NumAtd}}</a>
                         </li>
 
