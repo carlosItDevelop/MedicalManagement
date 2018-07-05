@@ -3,30 +3,30 @@
 <div class="row">
     <div class="col-6">
         @* Início do bloco Dieta *@
-        <div ng-controller="dietaCtrl as vm" class="container col-md-6 col-lg-6 col-sm-12 col-xl-12 panel-collapse panel-evolumed">
+        <div ng-controller="dietaCtrl as ctrl" class="container col-md-6 col-lg-6 col-sm-12 col-xl-12 panel-collapse panel-evolumed">
             <div class="panel-heading">
-                <h4><i class="fa fa-adn"></i>&nbsp;&nbsp;&nbsp;{{vm.titulo}}</h4>
+                <h4><i class="fa fa-adn"></i>&nbsp;&nbsp;&nbsp;{{ctrl.titulo}}</h4>
             </div>
-            <form class="panel-body" name="vm.dietaForm">
+            <form class="panel-body" name="ctrl.dietaForm">
                 <div class="row">
 
                     <div class="divList">
-                        <input type="text" class="form-control" name="busca" ng-model="vm.criterioDeBusca" value="" placeholder="O que você está buscando..." />
-                        <table ng-show="vm.dietas.length > 0" class="table table-hover">
+                        <input type="text" class="form-control" name="busca" ng-model="ctrl.criterioDeBusca" value="" placeholder="O que você está buscando..." />
+                        <table ng-show="ctrl.dietas.length > 0" class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th><b><a href="#" ng-click="vm.ordenarPor('DietaId')">ID</a></b></th>
-                                    <th><b><a href="#" ng-click="vm.ordenarPor('Descricao')">DESCRIÇÃO</a></b></th>
+                                    <th><b><a href="#" ng-click="ctrl.ordenarPor('DietaId')">ID</a></b></th>
+                                    <th><b><a href="#" ng-click="ctrl.ordenarPor('Descricao')">DESCRIÇÃO</a></b></th>
                                     <th><b>AÇÃO</b></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr dir-paginate="dt in vm.dietas | filter:vm.criterioDeBusca | orderBy:vm.criterioDeOrdenacao:vm.direcaoDaOrdenacao | itemsPerPage:4 track by dt.DietaId" pagination-id="configdieta">
+                                <tr dir-paginate="dt in ctrl.dietas | filter:ctrl.criterioDeBusca | orderBy:ctrl.criterioDeOrdenacao:ctrl.direcaoDaOrdenacao | itemsPerPage:4 track by dt.DietaId" pagination-id="configdieta">
                                     <td ng-bind="dt.DietaId"></td>
                                     <td ng-bind="dt.Descricao"></td>
                                     <td>
-                                        <button class="btn btn-primary" ng-disabled="vm.inibeBtnAtualizar()" ng-click="vm.obterPorId(dt)" data-id="edit" data-toggle="tooltip" data-placement="bottom" title="Editar Dieta" data-original-title="Editar Dieta"><i class="glyphicon glyphicon-edit"></i></button>
-                                        <button class="btn btn-danger" ng-disabled="vm.inibeBtnExcluir()" ng-click="vm.ExcluirDieta(dt)" data-id="delete" data-toggle="tooltip" data-placement="bottom" title="Excluir Dieta" data-original-title="Excluir Dieta"><i class="glyphicon glyphicon-trash"></i></button>
+                                        <button class="btn btn-primary" ng-disabled="ctrl.inibeBtnAtualizar()" ng-click="ctrl.obterPorId(dt)" data-id="edit" data-toggle="tooltip" data-placement="bottom" title="Editar Dieta" data-original-title="Editar Dieta"><i class="glyphicon glyphicon-edit"></i></button>
+                                        <button class="btn btn-danger" ng-disabled="ctrl.inibeBtnExcluir()" ng-click="ctrl.ExcluirDieta(dt)" data-id="delete" data-toggle="tooltip" data-placement="bottom" title="Excluir Dieta" data-original-title="Excluir Dieta"><i class="glyphicon glyphicon-trash"></i></button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -35,10 +35,10 @@
                     </div>
                 </div>
                 <div class="row">
-                    <span class="btn btn-success" ng-disabled="vm.inibeBtnAdicionar()" ng-click="vm.incluirDietaDiv()">Adicionar Dieta</span>
+                    <span class="btn btn-success" ng-disabled="ctrl.inibeBtnAdicionar()" ng-click="ctrl.incluirDietaDiv()">Adicionar Dieta</span>
                     <hr />
-                    <div ng-if="vm.divdieta" class="col-md-12 col-lg-12 col-sm-12">
-                        <h3>{{vm.Acao}} Dieta</h3>
+                    <div ng-if="ctrl.divdieta" class="col-md-12 col-lg-12 col-sm-12">
+                        <h3>{{ctrl.Acao}} Dieta</h3>
                         <div class="col-12">
                             <table class="table table-responsive table-bordered">
                                 <thead>
@@ -49,14 +49,14 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><input type="text" readonly="readonly" ng-model="vm.dieta.DietaId" class="form-control" /></td>
-                                        <td><input type="text" name="descricao" ng-model="vm.dieta.Descricao" class="form-control" placeholder="Descrição..." ng-required="true" ng-minlength="3" /></td>
+                                        <td><input type="text" readonly="readonly" ng-model="ctrl.dieta.DietaId" class="form-control" /></td>
+                                        <td><input type="text" name="descricao" ng-model="ctrl.dieta.Descricao" class="form-control" placeholder="Descrição..." ng-required="true" ng-minlength="3" /></td>
                                     </tr>
                                 </tbody>
                             </table>
                             <div>
-                                <span class="btn btn-primary" ng-disabled="vm.dietaForm.$invalid" ng-click="vm.AdicionarEditarDieta()">Salvar</span>
-                                <span class="btn btn-danger" ng-click="vm.cancelaEdicao()">Calcelar</span>
+                                <span class="btn btn-primary" ng-disabled="ctrl.dietaForm.$invalid" ng-click="ctrl.AdicionarEditarDieta()">Salvar</span>
+                                <span class="btn btn-danger" ng-click="ctrl.cancelaEdicao()">Calcelar</span>
                             </div>
                         </div>
 
@@ -64,7 +64,7 @@
                 </div>
                 <br />
                 <div class="row">
-                    <div ng-if="vm.dietaForm.descricao.$dirty" ng-messages="vm.dietaForm.descricao.$error">
+                    <div ng-if="ctrl.dietaForm.descricao.$dirty" ng-messages="ctrl.dietaForm.descricao.$error">
                         <div ng-message="required" class="alert alert-danger">
                             Por favor, preencha o campo Descrição!
                         </div>
