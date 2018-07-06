@@ -4,51 +4,55 @@
 
     // Convenios
 
-    app.controller("convenioCtrl", ['$scope', 'convenioService', function ($scope, convenioService) {
+    app.controller('convenioCtrl', convenioCtrl);
+    convenioCtrl.$inject = ['convenioService'];
 
-        $scope.divconvenio = false;
-        $scope.titulo = "Lista de Convênios";
+    function convenioCtrl(convenioService) {
+        var vm = this;
+
+        vm.divconvenio = false;
+        vm.titulo = "Lista de Convênios";
 
 
         function obterTodosOsConvenios() {
-            var conveniosData = convenioService.ObterTodas();
-            conveniosData.then(function (convenio) {
-                $scope.convenios = convenio.data;
-                $scope.Acao = "";
-            }, function () {
-                toastr["error"]("Erro ao obter convenios", "MedicalManagement-Sys");
-            }
-            );
+            let conveniosData = convenioService.ObterTodas()
+                .then(function (resultado) {
+                    vm.convenios = resultado.data;
+                    vm.Acao = "";
+                }, function () {
+                    toastr["error"]("Erro ao obter convenios", "MedicalManagement-Sys");
+                }
+                );
         };
 
 
         // obter por id
         // Habilita DIV para Edição de registros
-        $scope.obterPorId = function (convenio) {
-            var convenioData = convenioService.GetConvenioPorId(convenio.ConvenioId);
-            convenioData.then(function (convenio) {
-                $scope.convenio = convenio.data;
+        vm.obterPorId = function (convenio) {
+            let convenioData = convenioService.GetConvenioPorId(convenio.ConvenioId)
+                .then(function (resultado) {
+                    vm.convenio = resultado.data;
 
-                $scope.Acao = "Atualizar";
-                $scope.divconvenio = true;
-            }, function () {
-                toastr["error"]("Erro ao obter convenio por id!", "MedicalManagement-Sys");
-            });
+                    vm.Acao = "Atualizar";
+                    vm.divconvenio = true;
+                }, function () {
+                    toastr["error"]("Erro ao obter convenio por id!", "MedicalManagement-Sys");
+                });
         };
 
 
 
         // Habilita DIV para Adição de registros
-        $scope.incluirConvenioDiv = function () {
-            $scope.convenio = {};
-            $scope.convenioForm.$setPristine();
-            $scope.Acao = "Adicionar";
-            $scope.divconvenio = true;
+        vm.incluirConvenioDiv = function () {
+            vm.convenio = {};
+            vm.convenioForm.$setPristine();
+            vm.Acao = "Adicionar";
+            vm.divconvenio = true;
         };
 
 
 
-        $scope.ExcluirConvenio = function alert_it(convenio) {
+        vm.ExcluirConvenio = function alert_it(convenio) {
             swal({
                 title: "Tem certeza que deseja excluir este registro?",
                 text: "Após a exclusão não será possível recuperá-lo!",
@@ -66,85 +70,81 @@
 
 
         var apagarRegistro = function (convenio) {
-            var convenioData = convenioService.Excluir(convenio.ConvenioId);
-            convenioData.then(function (data) {
-                if (data.status === 200) {
-                    toastr["warning"]("Convenio excluído com sucesso!", "MedicalManagement-Sys");
-                    obterTodosOsConvenios();
-                }
-            }, function () {
-                toastr["error"]("Erro ao excluir convenio!", "MedicalManagement-Sys");
-            });
+            let convenioData = convenioService.Excluir(convenio.ConvenioId)
+                .then(function (data) {
+                    if (data.status === 200) {
+                        toastr["warning"]("Convenio excluído com sucesso!", "MedicalManagement-Sys");
+                        obterTodosOsConvenios();
+                    }
+                }, function () {
+                    toastr["error"]("Erro ao excluir convenio!", "MedicalManagement-Sys");
+                });
         };
 
 
 
 
 
-        $scope.AdicionarEditarConvenio = function () {
-            var convenioData = null;
+        vm.AdicionarEditarConvenio = function () {
             var _convenio = {
-                Descricao: $scope.convenio.Descricao
+                Descricao: vm.convenio.Descricao
             };
-            var valorAcao = $scope.Acao;
+            var valorAcao = vm.Acao;
             if (valorAcao === "Atualizar") {
-                _convenio.ConvenioId = $scope.convenio.ConvenioId;
-                convenioData = convenioService.AtualizarConvenio(_convenio);
-                convenioData.then(function (data) {
-                    if (data.status === 200) {
-                        toastr["success"]("Convenio alterado com sucesso!", "MedicalManagement-Sys");
-                        obterTodosOsConvenios();
-                        $scope.divconvenio = false;
-                    }
-                }, function (data) {
-                    console.log(data);
-                    toastr["error"](data.data, "MedicalManagement-Sys");
-                });
-            } else if (valorAcao === "Adicionar") {
-                convenioData = convenioService.AdicionarConvenio(_convenio);
-                //debugger;
-                convenioData.then(function (data) {
-                    if (data.status === 200) {
-                        //console.log(data);
-                        toastr["success"]("Convenio Adicionado com sucesso!", "MedicalManagement-Sys");
-                        obterTodosOsConvenios();
-                        $scope.divconvenio = false;
-                    }
-                }, function (data) {
-                    if (data.status === 401) {
-                        console.log(data);
+                _convenio.ConvenioId = vm.convenio.ConvenioId;
+                let convenioData = convenioService.AtualizarConvenio(_convenio)
+                    .then(function (data) {
+                        if (data.status === 200) {
+                            toastr["success"]("Convenio alterado com sucesso!", "MedicalManagement-Sys");
+                            obterTodosOsConvenios();
+                            vm.divconvenio = false;
+                        }
+                    }, function (data) {
                         toastr["error"](data.data, "MedicalManagement-Sys");
-                    }
-                    toastr["error"]("Erro ao Adicionar convenio!", "MedicalManagement-Sys");
-                });
+                    });
+            } else if (valorAcao === "Adicionar") {
+                let convenioData = convenioService.AddConvenio(_convenio)
+                    .then(function (resultado) {
+                        if (resultado.status === 200) {
+                            //console.log(data.status);  // 200
+                            toastr["success"]("Convenio Adicionado com sucesso!", "MedicalManagement-Sys");
+                            obterTodosOsConvenios();
+                            vm.divconvenio = false;
+                        }
+                    }, function (resultado) {
+                        if (resultado.status === 401) {
+                            toastr["error"](resultado.data, "MedicalManagement-Sys");
+                        }
+                        toastr["error"]("Erro ao Adicionar convenio!", "MedicalManagement-Sys");
+                    });
             }
         };
 
 
-        $scope.cancelaEdicao = function () {
-            $scope.Acao = "";
-            $scope.divconvenio = false;
-            $scope.convenioForm.$setPristine();
+        vm.cancelaEdicao = function () {
+            vm.Acao = "";
+            vm.divconvenio = false;
+            vm.convenioForm.$setPristine();
         };
 
         //  ----/ Otimizar, tornando o mais genérico possível e tentar numa única função --- //
-        $scope.inibeBtnAtualizar = function () {
-            if (($scope.Acao === "Atualizar") || ($scope.Acao === "Adicionar")) {
+        vm.inibeBtnAtualizar = function () {
+            if ((vm.Acao === "Atualizar") || (vm.Acao === "Adicionar")) {
                 return true;
             }
             return false;
         };
 
-        $scope.inibeBtnAdicionar = function () {
-            if (($scope.Acao === "Atualizar") || ($scope.Acao === "Adicionar")) {
+        vm.inibeBtnAdicionar = function () {
+            if ((vm.Acao === "Atualizar") || (vm.Acao === "Adicionar")) {
                 return true;
             }
             return false;
         };
 
 
-        $scope.inibeBtnExcluir = function () {
-            if (($scope.Acao === "Atualizar") || ($scope.Acao === "Adicionar")) {
+        vm.inibeBtnExcluir = function () {
+            if ((vm.Acao === "Atualizar") || (vm.Acao === "Adicionar")) {
                 return true;
             }
             return false;
@@ -154,9 +154,9 @@
 
 
 
-        $scope.ordenarPor = function (campo) {
-            $scope.criterioDeOrdenacao = campo;
-            $scope.direcaoDaOrdenacao = !$scope.direcaoDaOrdenacao;
+        vm.ordenarPor = function (campo) {
+            vm.criterioDeOrdenacao = campo;
+            vm.direcaoDaOrdenacao = !vm.direcaoDaOrdenacao;
         };
 
 
@@ -164,6 +164,6 @@
         obterTodosOsConvenios();
 
 
-    }]);
+    }
 
 })();

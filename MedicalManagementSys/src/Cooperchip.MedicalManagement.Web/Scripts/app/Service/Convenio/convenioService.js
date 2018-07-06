@@ -28,7 +28,7 @@
 
 
         // Adicionar registros
-        this.AdicionarConvenio = function (convenio) {
+        this.AddConvenio = function (convenio) {
             var response = $http({
                 method: "post",
                 url: "/api/v1/evm/AdicionarConvenio",

@@ -82,41 +82,41 @@
 
     <div class="col-6">
         @* Início de Convênio *@
-        <div ng-controller="convenioCtrl" class="container col-md-6 col-lg-6 col-sm-12 col-xl-12 panel-collapse panel-evolumed">
+        <div ng-controller="convenioCtrl as conv" class="container col-md-6 col-lg-6 col-sm-12 col-xl-12 panel-collapse panel-evolumed">
             <div class="panel-heading">
-                <h4><i class="fa fa-adn"></i>&nbsp;&nbsp;&nbsp;{{titulo}}</h4>
+                <h4><i class="fa fa-adn"></i>&nbsp;&nbsp;&nbsp;{{conv.titulo}}</h4>
             </div>
-            <form class="panel-body" name="convenioForm">
+            <form class="panel-body" name="conv.convenioForm">
                 <div class="row">
                     <div class="divList">
-                        <input type="text" class="form-control" name="busca" ng-model="criterioDeBusca" value="" placeholder="O que você está buscando..." />
-                        <table ng-show="convenios.length > 0" class="table table-hover">
+                        <input type="text" class="form-control" name="busca" ng-model="conv.criterioDeBusca" value="" placeholder="O que você está buscando..." />
+                        <table ng-show="conv.convenios.length > 0" class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th><b><a href="#" ng-click="ordenarPor('ConvenioId')">ID</a></b></th>
-                                    <th><b><a href="#" ng-click="ordenarPor('Descricao')">Descrição</a></b></th>
+                                    <th><b><a href="#" ng-click="conv.ordenarPor('ConvenioId')">ID</a></b></th>
+                                    <th><b><a href="#" ng-click="conv.ordenarPor('Descricao')">Descrição</a></b></th>
                                     <th><b>AÇÃO</b></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr dir-paginate="convenio in convenios | filter:criterioDeBusca | orderBy:criterioDeOrdenacao:direcaoDaOrdenacao | itemsPerPage:4 track by $index" pagination-id="convenio">
-                                    <td ng-bind="convenio.ConvenioId"></td>
-                                    <td ng-bind="convenio.Descricao"></td>
+                                <tr dir-paginate="cnv in conv.convenios | filter:conv.criterioDeBusca | orderBy:conv.criterioDeOrdenacao:conv.direcaoDaOrdenacao | itemsPerPage:4 track by cnv.ConvenioId" pagination-id="cnvconvenio">
+                                    <td ng-bind="cnv.ConvenioId"></td>
+                                    <td ng-bind="cnv.Descricao"></td>
                                     <td>
-                                        <button class="btn btn-primary" ng-disabled="inibeBtnAtualizar()" ng-click="obterPorId(convenio)" data-id="edit" data-toggle="tooltip" data-placement="bottom" title="Editar Convenio" data-original-title="Editar Convenio"><i class="glyphicon glyphicon-edit"></i></button>
-                                        <button class="btn btn-danger" ng-disabled="inibeBtnExcluir()" ng-click="ExcluirConvenio(convenio)" data-id="delete" data-toggle="tooltip" data-placement="bottom" title="Excluir Convenio" data-original-title="Excluir Convenio"><i class="glyphicon glyphicon-trash"></i></button>
+                                        <button class="btn btn-primary" ng-disabled="conv.inibeBtnAtualizar()" ng-click="conv.obterPorId(cnv)" data-id="edit" data-toggle="tooltip" data-placement="bottom" title="Editar Convenio" data-original-title="Editar Convenio"><i class="glyphicon glyphicon-edit"></i></button>
+                                        <button class="btn btn-danger" ng-disabled="conv.inibeBtnExcluir()" ng-click="conv.ExcluirConvenio(cnv)" data-id="delete" data-toggle="tooltip" data-placement="bottom" title="Excluir Convenio" data-original-title="Excluir Convenio"><i class="glyphicon glyphicon-trash"></i></button>
                                     </td>
                                 </tr>
                             </tbody>
-                            <dir-pagination-controls max-size="5" pagination-id="convenio" direction-links="true" boundary-links="true"></dir-pagination-controls>
+                            <dir-pagination-controls max-size="5" pagination-id="cnvconvenio" direction-links="true" boundary-links="true"></dir-pagination-controls>
                         </table>
                     </div>
                 </div>
                 <div class="row">
-                    <span class="btn btn-success" ng-disabled="inibeBtnAdicionar()" ng-click="incluirConvenioDiv()">Adicionar Convenio</span>
+                    <span class="btn btn-success" ng-disabled="conv.inibeBtnAdicionar()" ng-click="conv.incluirConvenioDiv()">Adicionar Convenio</span>
                     <hr />
-                    <div ng-if="divconvenio" class="col-md-12 col-lg-12 col-sm-12">
-                        <h3>{{Acao}} Convênio</h3>
+                    <div ng-if="conv.divconvenio" class="col-md-12 col-lg-12 col-sm-12">
+                        <h3>{{conv.Acao}} Convênio</h3>
                         <div class="col-12">
                             <table class="table table-responsive table-bordered">
                                 <thead>
@@ -127,14 +127,14 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><input type="text" readonly="readonly" ng-model="convenio.ConvenioId" class="form-control" /></td>
-                                        <td><input type="text" name="descricao" ng-model="convenio.Descricao" class="form-control" placeholder="Convenio..." ng-required="true" ng-minlength="2" /></td>
+                                        <td><input type="text" readonly="readonly" ng-model="conv.convenio.ConvenioId" class="form-control" /></td>
+                                        <td><input type="text" name="descricao" ng-model="conv.convenio.Descricao" class="form-control" placeholder="Convenio..." ng-required="true" ng-minlength="2" /></td>
                                     </tr>
                                 </tbody>
-                            </table>
+                            </table>                            
                             <div>
-                                <span class="btn btn-primary" ng-disabled="convenioForm.$invalid" ng-click="AdicionarEditarConvenio()">Salvar</span>
-                                <span class="btn btn-danger" ng-click="cancelaEdicao()">Calcelar</span>
+                                <span class="btn btn-primary" ng-disabled="conv.convenioForm.$invalid" ng-click="conv.AdicionarEditarConvenio()">Salvar</span>
+                                <span class="btn btn-danger" ng-click="conv.cancelaEdicao()">Calcelar</span>
                             </div>
                         </div>
 
@@ -143,7 +143,7 @@
 
                 <br />
                 <div class="row">
-                    <div ng-if="convenioForm.descricao.$dirty" ng-messages="convenioForm.descricao.$error">
+                    <div ng-if="conv.convenioForm.descricao.$dirty" ng-messages="conv.convenioForm.descricao.$error">
                         <div ng-message="required" class="alert alert-danger">
                             Por favor, preencha o campo Descrição!
                         </div>
