@@ -86,10 +86,10 @@
 
 
         vm.AdicionarEditarConvenio = function () {
-            var _convenio = {
+            let _convenio = {
                 Descricao: vm.convenio.Descricao
             };
-            var valorAcao = vm.Acao;
+            let valorAcao = vm.Acao;
             if (valorAcao === "Atualizar") {
                 _convenio.ConvenioId = vm.convenio.ConvenioId;
                 let convenioData = convenioService.AtualizarConvenio(_convenio)

@@ -71,7 +71,7 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
         /// <remarks>Cadastra um objeto Convenio passando sua Descrição apenas</remarks>
         /// <param name="convenio"></param>
         /// <returns></returns>
-        [Authorize(Roles="xpto")]  // Não está deixando gravar, basta capturar a mensagem no Ctrl
+        //[Authorize(Roles="xpto")]  // Não está deixando gravar, basta capturar a mensagem no Ctrl
         [Route("AdicionarConvenio")]
         public HttpResponseMessage PostConvenio(Convenio convenio)
         {
