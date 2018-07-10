@@ -7,7 +7,7 @@
         ['$rootScope', '$scope', '$location', '$filter', '$http', 'prontuarioService', 'pacienteService',
             function ($rootScope, $scope, $location, $filter, $http, prontuarioService, pacienteService) {
 
-                var vm = this;
+                //var vm = this;
 
                 //$scope.parametro = $location.search();
 

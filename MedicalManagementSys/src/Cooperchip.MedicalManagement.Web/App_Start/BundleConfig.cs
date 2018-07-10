@@ -20,11 +20,8 @@ namespace Cooperchip.MedicalManagement.Web
                     "~/tpl/plugins/core/pace/pace.min.js",
                     "~/tpl/js/libs/jquery-2.1.1.min.js",
 
-                    //"~/Scripts/jquery-3.1.1.js",
 
-
-                    // Make-Admin
-                    "~/Scripts/make-admin/jquery-ui/jquery-ui-1.11.2.min.js",
+                    "~/Scripts/jquery-ui-1.11.2.min.js",
 
                     "~/tpl/js/bootstrap/bootstrap.min.js",
                     "~/tpl/js/jRespond.min.js",
@@ -69,10 +66,9 @@ namespace Cooperchip.MedicalManagement.Web
                 "~/tpl/plugins/charts/sparklines/jquery.sparkline.js",
 
               
-                // Make-Admin
-                "~/Scripts/make-admin/select2/select2.js",
-                "~/Scripts/make-admin/select2/select2_locale_pt-BR.js",
-                "~/Scripts/make-admin/bootstrap-tags-input/bootstrap-tagsinput.js",             
+                "~/Scripts/select2.js",
+                "~/Scripts/select2_locale_pt-BR.js",
+                "~/Scripts/bootstrap-tagsinput.js",             
                 "~/tpl/js/libs/typeahead.bundle.js",
                 "~/tpl/plugins/forms/bootstrap-markdown/bootstrap-markdown.js",
                 "~/tpl/plugins/forms/summernote/summernote.js",
@@ -134,7 +130,7 @@ namespace Cooperchip.MedicalManagement.Web
                "~/Scripts/angular-1.7.2/angular-messages.min.js",
                //"~/Scripts/angular-1.7.2/ui-bootstrap-tpls-2.0.1.js",
 
-               "~/Scripts/AngularJS/ui-bootstrap-tpls-2.0.1.js",  // v: 1.5.7
+               "~/Scripts/ui-bootstrap-tpls-2.0.1.js",  // v: 1.5.7
 
 
 

@@ -82,7 +82,7 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
         /// 
         /// </summary>
         /// <returns></returns>
-        public ActionResult Icons() 
+        public ActionResult Icons()
         {
             return View();
         }
@@ -158,22 +158,6 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
             return Json(pac, JsonRequestBehavior.AllowGet);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public JsonResult BuscaPacienteMenuRigthModal(Guid id)
-        {
-            List<Paciente> pac = (from p in db.Paciente
-                                         .Include("Setor")
-                                         .Include("Leito")
-                                  select p).Where(x => x.PacienteGuid == id).ToList();
-
-            return Json(pac, JsonRequestBehavior.AllowGet);
-        }
-
-
 
 
         /// <summary>
@@ -194,6 +178,40 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ActionResult MostraPacienteNoMenuRigthModal(Guid id)
+        {
+
+            var pac = (from p in db.Paciente
+                       .Include("Setor")
+                       .Include("Leito")
+                           select new
+                           {
+                               p.PacienteGuid,
+                               p.Nome,
+                               p.DataNascimento,
+                               p.DataInternacao,
+                               p.Cpf,
+                               p.Rg,
+                               p.RgDataEmissao,
+                               p.Alergia,
+                               p.Peso,
+                               p.Email,
+                               p.Setor.Descricao,
+                               p.Leito.EspecificacaoDoLeito
+                           }
+                       ).Where(x => x.PacienteGuid == id).ToList();
+
+            return Json(pac, JsonRequestBehavior.AllowGet);
+
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <returns></returns>
         public ActionResult Endereco()
         {
@@ -204,7 +222,7 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
         /// 
         /// </summary>
         /// <returns></returns>
-        [ClaimsAcesso("LerMedico","True")]
+        [ClaimsAcesso("LerMedico", "True")]
         public ActionResult Medico()
         {
             return View();
@@ -253,7 +271,7 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
             ChamadaMedico chamada = db.ChamadaMedico.Find(id);
             db.ChamadaMedico.Remove(chamada);
             db.SaveChanges();
-            return RedirectToAction("Dashboard","Home");
+            return RedirectToAction("Dashboard", "Home");
             //return View();
         }
 
@@ -404,7 +422,7 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
             return View();
         }
 
-        
+
 
 
         // ------------------------------------------------------ //

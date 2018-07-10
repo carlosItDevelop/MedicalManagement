@@ -1,12 +1,12 @@
 ﻿
 
 <!--/ listar os pacientes internados aqui -->
-<div class="tab-pane fade active in" id="users" ng-controller="LeitosPacientePainelCtrl">
+<div class="tab-pane fade active in" id="users" ng-controller="LeitosPacientePainelCtrl as ctrl">
     <div class="chat-user-list">
         <form class="form-vertical chat-search" role="form">
             <div class="form-group">
                 <div class="input-group">
-                    <input type="text" class="form-control input-sm" ng-model="criterioDeBusca" value="" placeholder="Busca...">
+                    <input type="text" class="form-control input-sm" ng-model="ctrl.criterioDeBusca" value="" placeholder="Busca...">
                     <span class="input-group-btn">
                         <button class="btn btn-default btn-sm" type="button"><i class="fa fa-search"></i></button>
                     </span>
@@ -15,27 +15,27 @@
             <!-- End .form-group -->
         </form>
         <div style="margin-top: 3px; margin-left: 7px; margin-right: 5px;">
-            <h4><span ng-bind="titulo"></span></h4>
+            <h4><span ng-bind="ctrl.titulo"></span></h4>
         </div>
 
         <ul class="user-list list-group">
 
             <li class="list-group-item clearfix"
-                dir-paginate="paciente in pacientes | filter:criterioDeBusca | itemsPerPage:8"
-                pagination-id="pacienteleitos">
-                <a href="#" ng-click="openPacienteLeito('lg', paciente.PacienteGuid)"
+                dir-paginate="pct in ctrl.pacientes | filter:ctrl.criterioDeBusca | itemsPerPage:8 track by $index"
+                pagination-id="vmpacienteleitos">
+                <a href="#" ng-click="ctrl.openPacienteLeito('lg', pct.PacienteGuid)"
                    data-toggle="tooltip" data-placement="bottom"
                    title="Editar Paciente" data-original-title="Editar Paciente">
                     <div class="avatar" style="background-image: url('../../../tpl/img/avatars/avatar_base.png');">
-                        <div style="color: white; margin-left: 7px; padding-top: 12px;" ng-bind="getNumLeitoFormatado(paciente.Leito.LeitoId)"></div>
+                        <div style="color: white; margin-left: 7px; padding-top: 12px;" ng-bind="ctrl.getNumLeitoFormatado(pct.Leito.LeitoId)"></div>
                     </div>
-                    <span class="name" ng-bind="paciente.Nome"></span>
-                    <span class="{{getCorEstado(paciente.EstadoDoPaciente.EstadoDoPacienteId)}}" ng-bind="paciente.EstadoDoPaciente.Descricao"></span>
-                    # <span ng-bind="paciente.Leito.EspecificacaoDoLeito"></span>
+                    <span class="name" ng-bind="pct.Nome"></span>
+                    <span class="{{ctrl.getCorEstado(pct.EstadoDoPaciente.EstadoDoPacienteId)}}" ng-bind="pct.EstadoDoPaciente.Descricao"></span>
+                    # <span ng-bind="pct.Leito.EspecificacaoDoLeito"></span>
                 </a>
             </li>
 
-            <dir-pagination-controls max-size="5" pagination-id="pacienteleitos"
+            <dir-pagination-controls max-size="5" pagination-id="vmpacienteleitos"
                                      direction-links="false"
                                      boundary-links="false"
                                      style="margin-left: 25px;"></dir-pagination-controls>
@@ -45,7 +45,7 @@
     <div class="row">
         <div class="col-md-12 center-block">
             <h4 style="margin-left: 30px; text-align: center;">
-                Nº Registros: <span ng-bind="totalReg"></span><br /><br />
+                Nº Registros: <span ng-bind="ctrl.totalReg"></span><br /><br />
                 @Html.ActionLink(" Editar", "Paciente", "Home")
             </h4>
         </div>
@@ -71,8 +71,9 @@
             <tbody>
                 <tr>
                     <td><h4><strong>{{pac[0].Nome}}</strong></h4></td>
-                    <td><h4><strong>{{pac[0].Leito.EspecificacaoDoLeito}}</strong></h4></td>
-                    <td><h4><strong>{{pac[0].Setor.Descricao}}</strong></h4></td>
+                  <!--/ Nas 2 linhas abaixo não precisei chamar Setor.Descricao e Leito.EspecificacaoDoLeito, pois já fiz isso no Controller Mvc -->
+                    <td><h4><strong>{{pac[0].EspecificacaoDoLeito}}</strong></h4></td>
+                    <td><h4><strong>{{pac[0].Descricao}}</strong></h4></td>
                 </tr>
             </tbody>
         </table>
@@ -87,9 +88,7 @@
                 <li><h4>RG-EMISSÃO: <strong>{{pac[0].RgDataEmissao | jsonDate: 'dd/MM/yyyy'}}</strong></h4></li>
                 <li><h4>ALERGIA: <strong>{{pac[0].Alergia}}</strong></h4></li>
                 <li><h4>PESO: <strong>{{pac[0].Peso}}</strong></h4></li>
-                <li><h4>ATENDIMENTO: <strong>{{pac[0].NumAtendimento}}</strong></h4></li>
                 <li><h4>E-MAIL: <strong>{{pac[0].Email}}</strong></h4></li>
-                <li><h4>QUADRO CLÍNICO: <strong>{{pac[0].EstadoDoPaciente.Descricao}}</strong></h4></li>
             </ul>
         </div>
     </div>

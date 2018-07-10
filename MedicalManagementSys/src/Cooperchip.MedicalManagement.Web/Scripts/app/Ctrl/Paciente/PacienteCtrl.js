@@ -32,38 +32,38 @@
                 var openNewprontuario = function (size, paciente) {
                     $scope.oProntuario = {};
 
-                    let newProntuarioData = prontuarioService.getMakeNewProntuario();
-                    newProntuarioData.then(function (newProntuario) {
+                    let newProntuarioData = prontuarioService.getMakeNewProntuario()
+                        .then(function (newProntuario) {
 
-                        //console.log(newProntuario);
-                        $scope.oProntuario = newProntuario.data;
+                            //console.log(newProntuario);
+                            $scope.oProntuario = newProntuario.data;
 
-                        $scope.oProntuario.Paciente = paciente;
-                        $scope.oProntuario.PacienteGuid = $scope.oProntuario.Paciente.PacienteGuid;
-                        //$scope.oProntuario.DataProntuario = new Date($scope.oProntuario.DataProntuario);
-                        var modalInstance = $uibModal.open({
-                            animation: $scope.animationsEnabled,
-                            templateUrl: 'novoprontuario.html',
-                            controller: 'ModalNovoProntuarioCtrl',
-                            size: size,
-                            resolve: {
-                                oProntuario: function () {
-                                    return $scope.oProntuario;
+                            $scope.oProntuario.Paciente = paciente;
+                            $scope.oProntuario.PacienteGuid = $scope.oProntuario.Paciente.PacienteGuid;
+                            //$scope.oProntuario.DataProntuario = new Date($scope.oProntuario.DataProntuario);
+                            var modalInstance = $uibModal.open({
+                                animation: $scope.animationsEnabled,
+                                templateUrl: 'novoprontuario.html',
+                                controller: 'ModalNovoProntuarioCtrl',
+                                size: size,
+                                resolve: {
+                                    oProntuario: function () {
+                                        return $scope.oProntuario;
+                                    }
                                 }
-                            }
+                            });
+                            modalInstance.result.then(function (resultado) {
+                                console.log("Retorno do Modal: " + resultado.data);
+
+                                // Chamo o AddNotifyAtendimento
+
+
+                            }, function (data) {
+                                console.log("Saída sem gravar. \nMensagem: " + data);
+                            });
+                        }, function (data, status) {
+                            toastr["error"]("Erro ao carregar form para novo Prontuário!", "MedicalManagement-Sys");
                         });
-                        modalInstance.result.then(function (resultado) {
-                            console.log("Retorno do Modal: " + resultado.data);
-
-                            // Chamo o AddNotifyAtendimento
-
-
-                        }, function (data) {
-                            console.log("Saída sem gravar. \nMensagem: " + data);
-                        });
-                    }), function (data, status) {
-                        toastr["error"]("Erro ao carregar form para novo Prontuário!", "MedicalManagement-Sys");
-                    }
                 }
 
                 // -----/ Modal Novo Prontuario -------------------- //

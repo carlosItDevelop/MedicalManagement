@@ -11,6 +11,7 @@ using FluentValidation.Results;
 using System;
 using Cooperchip.MedicalManagement.Domain.Validations;
 
+
 namespace Cooperchip.MedicalManagement.Web.Controllers
 {
 
@@ -740,6 +741,7 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
         }
 
 
+
         /// <summary>
         /// 
         /// </summary>
@@ -757,6 +759,7 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
                                          .FirstOrDefault();
 
             return Request.CreateResponse(HttpStatusCode.OK, paciente);
+
         }
 
 

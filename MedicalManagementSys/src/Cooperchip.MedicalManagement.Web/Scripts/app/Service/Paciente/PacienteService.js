@@ -32,6 +32,26 @@
             return $http.get("/api/v1/evm/ApiObterPacientePorId?id=" + id);
         };
 
+
+        //Obter dados dos pacientes para o Modal do MenuRght
+        this.getPacienteMenuRigthModal = function (idPac) {
+            var response = $http(
+                {
+                    method: "GET",
+                    url: "/Home/MostraPacienteNoMenuRigthModal",
+                    params:
+                        {
+                            id: idPac
+                        },
+                    dataType: "json"
+                }
+            );
+            return response;
+
+        }
+
+
+
         // Atualizar os registros
         this.AtualizarPaciente = function (paciente) {
             var response = $http({
