@@ -2,7 +2,7 @@
 (function () {
 
 
-    app.service("leitoService", ['$http', function ($http) {
+    angular.module('App').service("leitoService", ['$http', function ($http) {
 
         //Obter todos os regitros
         this.ObterLeitos = function () {

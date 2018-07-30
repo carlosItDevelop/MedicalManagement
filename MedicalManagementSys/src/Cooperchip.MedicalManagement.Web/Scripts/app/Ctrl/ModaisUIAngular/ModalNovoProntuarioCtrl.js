@@ -1,6 +1,6 @@
 ﻿(function () {
 
-    app.controller('ModalNovoProntuarioCtrl',
+    angular.module('App').controller('ModalNovoProntuarioCtrl',
         ['$scope', '$uibModalInstance', 'oProntuario', '$http',
             function ($scope, $uibModalInstance, oProntuario, $http) {
                 $scope.oProntuario = oProntuario;

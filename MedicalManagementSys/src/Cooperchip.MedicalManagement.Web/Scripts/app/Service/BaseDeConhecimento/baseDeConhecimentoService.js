@@ -3,7 +3,7 @@
 
     'use strict';
 
-    app.service("baseDeConhecimentoService", ['$http', function ($http) {
+    angular.module('App').service("baseDeConhecimentoService", ['$http', function ($http) {
 
         //Obter todos os regitros
         this.ObterTodas = function () {

@@ -7,7 +7,7 @@
     'use strict';
 
     // Service AtbJaUtilizado
-    app.service("atbJaUtilizadoService", ['$http', function ($http) {
+    angular.module('App').service("atbJaUtilizadoService", ['$http', function ($http) {
 
 
         //GetAtbJaUtilizadoPorPacienteEProntuario

@@ -1,5 +1,5 @@
 ﻿
-app.filter("jsonToDate", function () {
+angular.module('App').filter("jsonToDate", function () {
     return function ConverterDataJsonParaData(input) {
 
         var dataFormatada = new Date(parseInt(input.substr(6)));
@@ -14,7 +14,7 @@ app.filter("jsonToDate", function () {
 
 
 /*
-app.filter("jsonToDate", function () {
+angular.module('App').filter("jsonToDate", function () {
     return function ConverterDataJsonParaData(input) {
 
         var dataFormatada = new Date(parseInt(input.substr(6)));

@@ -1,6 +1,6 @@
 ﻿(function () {
     'use strict';
-    app.service("drenoService", ['$http', function ($http) {
+    angular.module('App').service("drenoService", ['$http', function ($http) {
 
         //Obter drenos por paciente
         this.GetTipoDeDrenos = function () {

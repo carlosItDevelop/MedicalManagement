@@ -1,6 +1,6 @@
 ﻿(function () {
     'use strict';
-    app.service("ufService", ['$http', function ($http) {
+    angular.module('App').service("ufService", ['$http', function ($http) {
 
         //Obter todos os regitros
         this.GetUf = function () {

@@ -1,6 +1,6 @@
 ﻿(function () {
     'use strict';
-    app.service("cidAdaptadaService", ['$http', function ($http) {
+    angular.module('App').service("cidAdaptadaService", ['$http', function ($http) {
 
         //Obter todos os regitros
         this.ObterCidAdaptadas = function () {

@@ -3,7 +3,7 @@
 
     'use strict';
 
-    app.controller('LeitosPacientePainelCtrl', LeitosPacientePainelCtrl);
+    angular.module('App').controller('LeitosPacientePainelCtrl', LeitosPacientePainelCtrl);
     LeitosPacientePainelCtrl.$inject = ['pacienteService', '$uibModal', '$log', '$filter'];
 
     function LeitosPacientePainelCtrl(pacienteService, $uibModal, $log, $filter) {

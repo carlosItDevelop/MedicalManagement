@@ -5,7 +5,7 @@
     // ---------------------------------------------------- //
 
 
-    app.controller("listaTelefonicaCtrl",
+    angular.module('App').controller("listaTelefonicaCtrl",
         ['$scope', 'uppercaseFilter', '$http',
             function ($scope, uppercaseFilter, $http) {
                 $scope.titulo = "Lista de Contatos";

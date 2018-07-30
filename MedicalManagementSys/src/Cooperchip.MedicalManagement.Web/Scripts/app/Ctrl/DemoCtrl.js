@@ -1,7 +1,7 @@
 ﻿
 /* ------/  ---------------------------------------------- */
 
-//app.controller('DemoCtrl', ['$scope', '$http', '$timeout', '$interval', function ($scope, $http, $timeout, $interval) {
+//angular.module('App').controller('DemoCtrl', ['$scope', '$http', '$timeout', '$interval', function ($scope, $http, $timeout, $interval) {
 //    var vm = this;
 
 //    vm.disabled = undefined;

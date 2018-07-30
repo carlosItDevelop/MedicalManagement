@@ -4,7 +4,7 @@
 
     // PrecaucaoGoticula
 
-    app.controller("precaucaoGoticulaCtrl",
+    angular.module('App').controller("precaucaoGoticulaCtrl",
         ['$scope', 'precaucaoGoticulaService',
             function ($scope, precaucaoGoticulaService) {
 

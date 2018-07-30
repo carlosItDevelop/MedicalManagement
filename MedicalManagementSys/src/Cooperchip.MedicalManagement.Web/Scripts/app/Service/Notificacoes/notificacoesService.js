@@ -2,7 +2,7 @@
 
 (function () {
     'use strict';
-    app.service("notificacoesService", function ($rootScope, $scope, $http) {
+    angular.module('App').service("notificacoesService", function ($rootScope, $scope, $http) {
 
 
 

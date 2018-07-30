@@ -1,6 +1,6 @@
 ﻿
 // ---/ uiModal Full Calendar---
-app.controller('ModalFullCalendarCtrl', [
+angular.module('App').controller('ModalFullCalendarCtrl', [
     '$scope', '$uibModalInstance', 'NewEvent', function ($scope, $uibModalInstance, NewEvent) {
         $scope.NewEvent = NewEvent;
         $scope.Message = "";

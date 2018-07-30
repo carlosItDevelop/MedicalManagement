@@ -1,9 +1,8 @@
 ﻿
 // Declaração principal do módulo global com o app 'Medical Management - Sys';
 
-var app;
 (function () {
-    app = angular.module('App',
+    angular.module('App',
         ['ngMessages',
          'angularUtils.directives.dirPagination',
          'ui.bootstrap',
@@ -19,7 +18,7 @@ var app;
 })();
 
 
-app.filter('jsonDate', ['$filter', function ($filter) {
+angular.module('App').filter('jsonDate', ['$filter', function ($filter) {
     return function (input, format) {
         return (input) ? $filter('date')(parseInt(input.substr(6)), format) : '';
     };

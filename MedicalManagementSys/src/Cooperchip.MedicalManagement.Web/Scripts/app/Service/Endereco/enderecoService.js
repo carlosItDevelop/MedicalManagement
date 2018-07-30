@@ -1,6 +1,6 @@
 ﻿(function () {
     'use strict';
-    app.service("enderecoService", ['$http', function ($http) {
+    angular.module('App').service("enderecoService", ['$http', function ($http) {
 
         //Obter todos os regitros
         this.GetDescricaoPaciente = function () {

@@ -5,7 +5,7 @@
 
     // ---/  Precaucao Contato
 
-    app.controller("precaucaoContatoCtrl",
+    angular.module('App').controller("precaucaoContatoCtrl",
         ['$scope', 'precaucaoContatoService',
             function ($scope, precaucaoContatoService) {
 

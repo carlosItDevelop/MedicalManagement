@@ -4,7 +4,7 @@
 
     // Estado do Paciente
 
-    app.controller("estadoDoPacienteCtrl",
+    angular.module('App').controller("estadoDoPacienteCtrl",
         ['$scope', 'estadoDoPacienteService',
             function ($scope, estadoDoPacienteService) {
 

@@ -4,7 +4,7 @@
 
     // ---/ ----- PrecaucaoPadrao -----
 
-    app.controller("precaucaoPadraoCtrl",
+    angular.module('App').controller("precaucaoPadraoCtrl",
         ['$scope', 'precaucaoPadraoService',
             function ($scope, precaucaoPadraoService) {
 

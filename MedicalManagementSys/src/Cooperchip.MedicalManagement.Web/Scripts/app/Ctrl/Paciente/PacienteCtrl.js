@@ -3,7 +3,7 @@
     'use strict';
 
     // $routeParams Usar quando apropriado;
-    app.controller("pacienteCtrl",
+    angular.module('App').controller("pacienteCtrl",
         ['$rootScope',
             '$uibModal',
             '$scope',
@@ -155,12 +155,12 @@
                 // Preenchi a DDList
                 $scope.hppregressas = [];
                 let funcHppregressa = function () {
-                    let hppData = historiaPatologicaPregressaService.getHppregressa();
-                    hppData.then(function (hpp) {
-                        $scope.hppregressas = hpp.data;
-                    }, function () {
-                        toastr["error"]("Erro ao carregar Hist. Patol. Pregressa!", "MedicalManagement-Sys");
-                    });
+                    let hppData = historiaPatologicaPregressaService.getHppregressa()
+                        .then(function (hpp) {
+                            $scope.hppregressas = hpp.data;
+                        }, function () {
+                            toastr["error"]("Erro ao carregar Hist. Patol. Pregressa!", "MedicalManagement-Sys");
+                        });
                 }
                 funcHppregressa();
 
@@ -169,12 +169,12 @@
                 /* ------------------------------------------------------------ */
                 $scope.complicacoes = [];
                 let funcComplicacoes = function () {
-                    let cplData = complicacaoService.getComplicacoes();
-                    cplData.then(function (cpl) {
-                        $scope.complicacoes = cpl.data;
-                    }, function () {
-                        toastr["error"]("Erro ao carregar Complicação!", "MedicalManagement-Sys");
-                    });
+                    let cplData = complicacaoService.getComplicacoes()
+                        .then(function (cpl) {
+                            $scope.complicacoes = cpl.data;
+                        }, function () {
+                            toastr["error"]("Erro ao carregar Complicação!", "MedicalManagement-Sys");
+                        });
                 }
                 funcComplicacoes();
 

@@ -4,7 +4,7 @@
 
     // Ufs
 
-    app.controller("ufCtrl",
+    angular.module('App').controller("ufCtrl",
         ['$scope', 'ufService',
             function ($scope, ufService) {
 

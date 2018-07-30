@@ -3,7 +3,7 @@
 
     'use strict';
 
-    app.controller("AtbEmUsoCtrl", ['$scope', '$filter', '$http', 'atbemusoService', function ($scope, $filter, $http, atbemusoService) {
+    angular.module('App').controller("AtbEmUsoCtrl", ['$scope', '$filter', '$http', 'atbemusoService', function ($scope, $filter, $http, atbemusoService) {
 
         $scope.titulo = "Antibióticos em Uso";
         $scope.atbemusos = [];

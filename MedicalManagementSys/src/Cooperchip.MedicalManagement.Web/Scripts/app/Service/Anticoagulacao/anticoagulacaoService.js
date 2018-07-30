@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    app.service("anticoagulacaoService", ['$http', function ($http) {
+    angular.module('App').service("anticoagulacaoService", ['$http', function ($http) {
 
         //Obter todos os regitros
         this.ObterTodas = function () {

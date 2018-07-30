@@ -4,7 +4,7 @@
 
     // ----/ Precaucao Aerozol -----
 
-    app.controller("precaucaoAerozolCtrl",
+    angular.module('App').controller("precaucaoAerozolCtrl",
         ['$scope', 'precaucaoAerozolService',
             function ($scope, precaucaoAerozolService) {
 

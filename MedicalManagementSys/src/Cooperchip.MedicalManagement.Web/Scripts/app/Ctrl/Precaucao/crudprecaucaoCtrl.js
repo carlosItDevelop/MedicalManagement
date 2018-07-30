@@ -4,7 +4,7 @@
 
     // Precaucaos
 
-    app.controller("crudprecaucaoCtrl",
+    angular.module('App').controller("crudprecaucaoCtrl",
         ['$scope', 'precaucaoService', 'tipodeprecaucaoService',
             function ($scope, precaucaoService, tipodeprecaucaoService) {
 

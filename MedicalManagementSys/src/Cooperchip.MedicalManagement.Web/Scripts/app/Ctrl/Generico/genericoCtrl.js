@@ -4,7 +4,7 @@
 
     // Genericos
 
-    app.controller("genericoCtrl",
+    angular.module('App').controller("genericoCtrl",
         ['$scope', 'genericoService',
             function ($scope, genericoService) {
 

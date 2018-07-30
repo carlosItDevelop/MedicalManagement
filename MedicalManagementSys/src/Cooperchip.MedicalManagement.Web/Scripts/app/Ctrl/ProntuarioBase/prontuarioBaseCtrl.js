@@ -2,7 +2,7 @@
 
 (function () {
     'use strict';
-    app.controller('prontuarioBaseCtrl', ['$rootScope', '$scope', '$location', '$filter', '$http', 'prontuarioService', 'pacienteService',
+    angular.module('App').controller('prontuarioBaseCtrl', ['$rootScope', '$scope', '$location', '$filter', '$http', 'prontuarioService', 'pacienteService',
         function ($rootScope, $scope, $location, $filter, $http, prontuarioService, pacienteService) {
             var vm = this;
             $scope.titulo = "Prontuário Eletrônico - MedicalManagement-Sys"

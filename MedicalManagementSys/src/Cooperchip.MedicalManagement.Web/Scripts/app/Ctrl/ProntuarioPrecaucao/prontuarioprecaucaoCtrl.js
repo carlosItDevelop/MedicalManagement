@@ -5,7 +5,7 @@
 
     'use strict';
 
-    app.controller("prontuarioprecaucaoCtrl",
+    angular.module('App').controller("prontuarioprecaucaoCtrl",
         ['$scope', 'prontuarioprecaucaoService', 'tipodeprecaucaoService', 'causaprecaucaoService',
             function ($scope, prontuarioprecaucaoService, tipodeprecaucaoService, causaprecaucaoService) {
 

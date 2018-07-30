@@ -1,7 +1,7 @@
 ﻿
 (function () {
     'use strict';
-    app.service("precaucaoPadraoService", ['$http', function ($http) {
+    angular.module('App').service("precaucaoPadraoService", ['$http', function ($http) {
 
         //Obter todos os regitros
         this.ObterPrecaucaoPadraos = function () {

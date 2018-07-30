@@ -4,7 +4,7 @@
 
     // Convenios
 
-    app.controller('convenioCtrl', convenioCtrl);
+    angular.module('App').controller('convenioCtrl', convenioCtrl);
     convenioCtrl.$inject = ['convenioService'];
 
     function convenioCtrl(convenioService) {

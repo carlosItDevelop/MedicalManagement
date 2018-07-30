@@ -1,6 +1,6 @@
 ﻿(function () {
     'use strict';
-    app.service('SimplePaginate', function () {
+    angular.module('App').service('SimplePaginate', function () {
         //variáveis de configuração 
         var data = {};         //os dados a paginar 
         var current = 0;     //página atual 

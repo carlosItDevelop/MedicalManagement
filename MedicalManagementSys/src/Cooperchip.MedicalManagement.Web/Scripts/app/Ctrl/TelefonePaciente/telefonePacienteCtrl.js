@@ -8,7 +8,7 @@
     // ---------------------------------------------------- //
 
 
-    app.controller("TelefonePacienteCtrl",
+    angular.module('App').controller("TelefonePacienteCtrl",
         ['$scope', '$filter', '$http',
             function ($scope, $filter, $http) {
 

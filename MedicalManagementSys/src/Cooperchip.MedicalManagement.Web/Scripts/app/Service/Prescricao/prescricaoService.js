@@ -1,6 +1,6 @@
 ﻿(function () {
     'use strict';
-    app.service("prescricaoService", ['$http', function ($http) {
+    angular.module('App').service("prescricaoService", ['$http', function ($http) {
 
 
         this.GetPrescricaoPorId = function (idprescricao) {

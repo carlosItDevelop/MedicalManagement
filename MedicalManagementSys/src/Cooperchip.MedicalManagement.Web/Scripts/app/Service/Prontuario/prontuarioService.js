@@ -1,6 +1,6 @@
 ﻿(function () {
     'use strict';
-    app.service("prontuarioService", ['$http', function ($http) {
+    angular.module('App').service("prontuarioService", ['$http', function ($http) {
 
 
         //CriarNovoProntuario de um paciente => este id é do paciente

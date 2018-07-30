@@ -5,7 +5,7 @@
     // ---/  drenoCtrl
 
 
-    app.controller('drenoCtrl',
+    angular.module('App').controller('drenoCtrl',
         ['$scope', '$filter', 'drenoService',
             function ($scope, $filter, drenoService) {
 

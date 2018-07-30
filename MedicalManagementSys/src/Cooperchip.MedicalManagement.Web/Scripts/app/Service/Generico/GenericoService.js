@@ -1,6 +1,6 @@
 ﻿(function () {
     'use strict';
-    app.service("genericoService", ['$http', function ($http) {
+    angular.module('App').service("genericoService", ['$http', function ($http) {
 
         //Obter todos os regitros
         this.ObterGenericos = function () {

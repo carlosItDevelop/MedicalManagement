@@ -1,6 +1,6 @@
 ﻿(function () {
     'use strict';
-    app.service("fisioterapiaService", ['$http', function ($http) {
+    angular.module('App').service("fisioterapiaService", ['$http', function ($http) {
 
         //Obter todos os regitros
         this.ObterTodas = function () {

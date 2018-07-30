@@ -4,7 +4,7 @@
     // cidAdaptadaCtrl
 
 
-    app.controller("cidAdaptadaCtrl",
+    angular.module('App').controller("cidAdaptadaCtrl",
         ['$scope', 'cidAdaptadaService',
             function ($scope, cidAdaptadaService) {
 

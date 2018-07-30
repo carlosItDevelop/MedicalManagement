@@ -4,7 +4,7 @@
 
     // ---/  ExameDescricao
 
-    app.controller("exameDescricaoCtrl",
+    angular.module('App').controller("exameDescricaoCtrl",
         ['$scope', 'exameDescricaoService',
             function ($scope, exameDescricaoService) {
 

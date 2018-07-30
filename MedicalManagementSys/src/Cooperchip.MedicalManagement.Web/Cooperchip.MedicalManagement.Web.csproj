@@ -2279,6 +2279,7 @@
     <Content Include="Scripts\app\Service\Classe\classeService.js" />
     <Content Include="Scripts\app\Service\Complicacao\complicacaoService.js" />
     <Content Include="Scripts\app\Service\Convenio\convenioService.js" />
+    <Content Include="Scripts\app\Service\Dashboard\dashboardService.js" />
     <Content Include="Scripts\app\Service\Dieta\dietaService.js" />
     <Content Include="Scripts\app\Service\Dreno\drenoService.js" />
     <Content Include="Scripts\app\Service\Endereco\enderecoService.js" />

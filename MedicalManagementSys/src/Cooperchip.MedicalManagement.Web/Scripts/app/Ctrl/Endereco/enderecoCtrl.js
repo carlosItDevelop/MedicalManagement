@@ -4,7 +4,7 @@
 
     // --/ Endereco ---
 
-    app.controller("enderecoCtrl",
+    angular.module('App').controller("enderecoCtrl",
         ['$scope', 'enderecoService', 'ufService',
             function ($scope, enderecoService, ufService) {
 

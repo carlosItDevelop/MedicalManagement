@@ -1,6 +1,6 @@
 ﻿(function () {
     'use strict';
-    app.service("precaucaoContatoService", ['$http', function ($http) {
+    angular.module('App').service("precaucaoContatoService", ['$http', function ($http) {
 
         //Obter todos os regitros
         this.ObterPrecaucaoContatos = function () {

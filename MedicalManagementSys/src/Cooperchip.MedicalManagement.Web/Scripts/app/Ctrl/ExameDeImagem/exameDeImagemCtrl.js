@@ -3,7 +3,7 @@
 
     'use strict';
 
-    app.controller("exameDeImagemCtrl",
+    angular.module('App').controller("exameDeImagemCtrl",
         ['$scope', '$filter', '$http', 'exameDescricaoService', 'pacienteService',
             function ($scope, $filter, $http, exameDescricaoService, pacienteService) {
 

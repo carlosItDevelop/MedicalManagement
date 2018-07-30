@@ -5,7 +5,7 @@
     // ----/ Cidade
 
 
-    app.controller("cidadeCtrl",
+    angular.module('App').controller("cidadeCtrl",
         ['$scope', 'cidadeService', 'ufService',
             function ($scope, cidadeService, ufService) {
 

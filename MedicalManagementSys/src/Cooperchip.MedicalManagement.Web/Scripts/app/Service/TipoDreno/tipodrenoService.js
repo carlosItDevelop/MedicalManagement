@@ -1,6 +1,6 @@
 ﻿(function () {
     'use strict';
-    app.service("tipodrenoService", ['$http', function ($http) {
+    angular.module('App').service("tipodrenoService", ['$http', function ($http) {
 
         //Obter todos os regitros
         this.srvcObterTipoDrenos = function () {

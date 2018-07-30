@@ -3,7 +3,7 @@
 
     'use strict';
 
-    app.controller("prontuarioCtrl",
+    angular.module('App').controller("prontuarioCtrl",
         ['$rootScope', '$scope', '$location', '$filter', '$http', 'prontuarioService', 'pacienteService',
             function ($rootScope, $scope, $location, $filter, $http, prontuarioService, pacienteService) {
 

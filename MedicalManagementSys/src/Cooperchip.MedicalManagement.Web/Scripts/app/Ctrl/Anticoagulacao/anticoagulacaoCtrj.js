@@ -5,7 +5,7 @@
 
     // Anticoagulacaos
 
-    app.controller("anticoagulacaoCtrl", ['$scope', 'anticoagulacaoService', function ($scope, anticoagulacaoService) {
+    angular.module('App').controller("anticoagulacaoCtrl", ['$scope', 'anticoagulacaoService', function ($scope, anticoagulacaoService) {
 
         $scope.divanticoagulacao = false;
         $scope.titulo = "Tabela de Anticoagulação";

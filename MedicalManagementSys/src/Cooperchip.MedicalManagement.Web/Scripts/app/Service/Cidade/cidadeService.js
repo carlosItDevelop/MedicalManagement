@@ -1,6 +1,6 @@
 ﻿(function () {
     'use strict';
-    app.service("cidadeService", ['$http', function ($http) {
+    angular.module('App').service("cidadeService", ['$http', function ($http) {
 
 
         // --/ -------------------------------------------------

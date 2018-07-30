@@ -3,7 +3,7 @@
     'use strict';
     // Especialidades
 
-    app.controller("especialidadeCtrl",
+    angular.module('App').controller("especialidadeCtrl",
         ['$scope', 'especialidadeService',
             function ($scope, especialidadeService) {
 

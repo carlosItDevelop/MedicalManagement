@@ -3,7 +3,7 @@
 
     'use strict';
 
-    app.controller("PrescricaoCtrl",
+    angular.module('App').controller("PrescricaoCtrl",
         ['$rootScope', '$scope', '$filter', '$http', '$uibModal', '$log', 'prescricaoService', 'fisioterapiaService', 'pacienteService',
             function ($rootScope, $scope, $filter, $http, $uibModal, $log, prescricaoService, fisioterapiaService, pacienteService) {
 

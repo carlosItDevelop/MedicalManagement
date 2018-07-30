@@ -1,6 +1,6 @@
 ﻿(function () {
     'use strict';
-    app.service("sexoService", ['$http', function ($http) {
+    angular.module('App').service("sexoService", ['$http', function ($http) {
 
         //Obter todos os regitros
         this.ObterTodas = function () {

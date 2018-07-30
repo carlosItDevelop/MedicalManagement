@@ -2,7 +2,7 @@
 
 (function () {
     'use strict';
-    app.controller("notificacoesCtrl",
+    angular.module('App').controller("notificacoesCtrl",
         ['$rootScope', '$scope', 'notificacoesService',
             function ($rootScope, $scope, notificacoesService) {
 

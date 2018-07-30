@@ -1,5 +1,5 @@
 ﻿
-app.service("utilService", function () {
+angular.module('App').service("utilService", function () {
 
     // ===================================================================
     // Author: Matt Kruse <matt@mattkruse.com>

@@ -1,6 +1,6 @@
 ﻿(function () {
     'use strict';
-    app.service("precaucaoAerozolService", ['$http', function ($http) {
+    angular.module('App').service("precaucaoAerozolService", ['$http', function ($http) {
 
         //Obter todos os regitros
         this.ObterPrecaucaoAerozols = function () {

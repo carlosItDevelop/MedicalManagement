@@ -4,7 +4,7 @@
 
     //--/ Setor Ctrl
 
-    app.controller("setorCtrl",
+    angular.module('App').controller("setorCtrl",
         ['$scope', 'setorService',
             function ($scope, setorService) {
 

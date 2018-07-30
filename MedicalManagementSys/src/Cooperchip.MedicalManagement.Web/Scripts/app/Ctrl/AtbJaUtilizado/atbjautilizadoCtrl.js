@@ -7,7 +7,7 @@
 
     'use strict';
 
-    app.controller("AtbJaUtilizadoCtrl",
+    angular.module('App').controller("AtbJaUtilizadoCtrl",
         ['$scope', '$filter', '$http', 'atbJaUtilizadoService',
             function ($scope, $filter, $http, atbJaUtilizadoService) {
 

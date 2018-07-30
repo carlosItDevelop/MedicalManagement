@@ -4,7 +4,7 @@
 
 
     // Service Paciente
-    app.service("pacienteService", ['$http', function ($http) {
+    angular.module('App').service("pacienteService", ['$http', function ($http) {
 
 
         // Criar um novo Paciente;

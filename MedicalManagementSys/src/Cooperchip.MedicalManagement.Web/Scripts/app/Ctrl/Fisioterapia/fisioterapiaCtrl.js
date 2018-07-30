@@ -4,7 +4,7 @@
 
     // Fisioterapias
 
-    app.controller("fisioterapiaCtrl",
+    angular.module('App').controller("fisioterapiaCtrl",
         ['$scope', 'fisioterapiaService',
             function ($scope, fisioterapiaService) {
 

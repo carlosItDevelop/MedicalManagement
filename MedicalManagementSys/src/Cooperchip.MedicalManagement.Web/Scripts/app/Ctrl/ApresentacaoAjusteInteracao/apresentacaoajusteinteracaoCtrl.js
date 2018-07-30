@@ -2,7 +2,7 @@
 (function () {
     'use strict';
 
-    app.controller("apresentacaoajusteinteracaoCtrl", ['$scope', '$filter', '$http', '$uibModal', 'pacienteService', 'genericoService', function ($scope, $filter, $http, $uibModal, pacienteService, genericoService) {
+    angular.module('App').controller("apresentacaoajusteinteracaoCtrl", ['$scope', '$filter', '$http', '$uibModal', 'pacienteService', 'genericoService', function ($scope, $filter, $http, $uibModal, pacienteService, genericoService) {
 
         $scope.apresentacaoajusteinteracaos = [];
         $scope.apresentacaoajusteinteracao = {};

@@ -4,7 +4,7 @@
 
     // TipoDreno
 
-    app.controller("tipodrenoCtrl",
+    angular.module('App').controller("tipodrenoCtrl",
         ['$scope', 'tipodrenoService',
             function ($scope, tipodrenoService) {
 

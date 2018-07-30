@@ -5,7 +5,7 @@
 
     // Base De Conhecimento
 
-    app.controller("baseDeConhecimentoCtrl",
+    angular.module('App').controller("baseDeConhecimentoCtrl",
         ['$scope', 'baseDeConhecimentoService',
             function ($scope, baseDeConhecimentoService) {
 

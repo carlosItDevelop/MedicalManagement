@@ -5,7 +5,7 @@
 
     'use strict';
 
-    app.service("setorService", ['$http', function ($http) {
+    angular.module('App').service("setorService", ['$http', function ($http) {
 
         //Obter todos os regitros
         this.ObterSetores = function () {

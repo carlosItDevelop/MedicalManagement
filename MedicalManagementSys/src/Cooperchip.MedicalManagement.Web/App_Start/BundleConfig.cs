@@ -146,6 +146,10 @@ namespace Cooperchip.MedicalManagement.Web
             bundles.Add(new ScriptBundle("~/bundles/angularservices").Include(
                "~/Scripts/App/Service/Alergia/alergiaService.js",
                //"~/Scripts/App/Service/getDiscriptionsService.js",
+
+               "~/Scripts/App/Service/Dashboard/dashboardService.js",
+               
+
                "~/Scripts/App/Service/Medicamento/medicamentoService.js",
                "~/Scripts/App/Service/Medico/MedicoService.js",
                "~/Scripts/App/Service/Dreno/drenoService.js",

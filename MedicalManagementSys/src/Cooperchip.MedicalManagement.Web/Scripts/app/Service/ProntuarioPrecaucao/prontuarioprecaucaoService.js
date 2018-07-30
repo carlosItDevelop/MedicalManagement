@@ -1,7 +1,7 @@
 ﻿
 (function () {
     'use strict';
-    app.service("prontuarioprecaucaoService", ['$http', function ($http) {
+    angular.module('App').service("prontuarioprecaucaoService", ['$http', function ($http) {
 
         //Obter os registros por id
         this.ObterPrecaucaoPorId = function (id) {

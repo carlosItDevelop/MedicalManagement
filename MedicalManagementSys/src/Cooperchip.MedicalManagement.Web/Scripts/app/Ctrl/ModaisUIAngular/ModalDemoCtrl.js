@@ -2,7 +2,7 @@
 (function () {
     'use strict';
 
-    app.controller('ModalDemoCtrl',
+    angular.module('App').controller('ModalDemoCtrl',
         ['$scope', '$uibModal', '$log',
             function ($scope, $uibModal, $log) {
 
@@ -45,7 +45,7 @@
 (function () {
     'use strict';
 
-    app.controller('ModalInstanceCtrl',
+    angular.module('App').controller('ModalInstanceCtrl',
         ['$scope', '$uibModalInstance', 'items',
             function ($scope, $uibModalInstance, items) {
 

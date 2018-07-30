@@ -4,7 +4,7 @@
 
     // ---/ Medico ---
 
-    app.controller("medicoCtrl",
+    angular.module('App').controller("medicoCtrl",
         ['$scope', 'medicoService', 'especialidadeService', '$filter',
             function ($scope, medicoService, especialidadeService, $filter) {
 

@@ -4,7 +4,9 @@
     'use strict';
     // ---/ Dieta
 
-    app.controller('dietaCtrl', dietaCtrl);
+    
+
+    angular.module('App').controller('dietaCtrl', dietaCtrl);
 
     dietaCtrl.$inject = ['dietaService'];
 

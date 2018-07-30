@@ -3,7 +3,7 @@
 
 (function () {
     'use strict';
-    app.service("historiaPatologicaPregressaService", ['$http', function ($http) {
+    angular.module('App').service("historiaPatologicaPregressaService", ['$http', function ($http) {
 
 
         //getHppregressa

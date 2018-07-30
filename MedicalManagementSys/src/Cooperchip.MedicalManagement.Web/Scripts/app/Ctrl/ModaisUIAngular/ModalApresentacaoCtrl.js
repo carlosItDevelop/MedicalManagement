@@ -3,7 +3,7 @@
 
 (function () {
 
-    app.controller('modalApresentacaoCtrl',
+    angular.module('App').controller('modalApresentacaoCtrl',
         ['$scope', '$uibModalInstance', 'vMdct',
             function ($scope, $uibModalInstance, vMdct) {
 

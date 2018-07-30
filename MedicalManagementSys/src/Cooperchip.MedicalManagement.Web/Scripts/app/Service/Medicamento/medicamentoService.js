@@ -1,6 +1,6 @@
 ﻿(function () {
     'use strict';
-    app.service('medicamentoService', function () {
+    angular.module('App').service('medicamentoService', function () {
 
     });
 })();

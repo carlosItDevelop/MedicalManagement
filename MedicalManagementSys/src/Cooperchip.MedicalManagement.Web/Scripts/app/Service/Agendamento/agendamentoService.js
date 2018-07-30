@@ -5,7 +5,7 @@
 // ----/  Agendamento ---
 
 
-app.service("agendamentoService", ['$http', function ($http) {
+angular.module('App').service("agendamentoService", ['$http', function ($http) {
 
     //Obter todos os regitros
     this.ObterAgendamentos = function () {

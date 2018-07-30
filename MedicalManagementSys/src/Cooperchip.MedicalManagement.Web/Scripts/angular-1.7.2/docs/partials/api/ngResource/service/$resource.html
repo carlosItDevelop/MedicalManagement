@@ -422,7 +422,7 @@ app.factory(&#39;Notes&#39;, [&#39;$resource&#39;, function($resource) {
 }]);
 
 // In our controller we get the ID from the URL using `$location`
-app.controller(&#39;NotesCtrl&#39;, [&#39;$location&#39;, &#39;Notes&#39;, function($location, Notes) {
+angular.module('App').controller(&#39;NotesCtrl&#39;, [&#39;$location&#39;, &#39;Notes&#39;, function($location, Notes) {
   // First, retrieve the corresponding `Note` object from the server
   // (Assuming a URL of the form `.../notes?id=XYZ`)
   var noteId = $location.search().id;

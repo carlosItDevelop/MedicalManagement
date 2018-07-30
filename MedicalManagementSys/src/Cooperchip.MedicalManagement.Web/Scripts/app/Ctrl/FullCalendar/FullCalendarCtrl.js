@@ -3,7 +3,7 @@
 
     // ---/ uiCalendar ---
 
-    app.controller("agendaFullCalendar", ['$scope',
+    angular.module('App').controller("agendaFullCalendar", ['$scope',
         '$http',
         'uiCalendarConfig',
         '$uibModal',

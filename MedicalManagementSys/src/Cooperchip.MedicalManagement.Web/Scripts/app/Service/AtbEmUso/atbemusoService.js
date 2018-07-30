@@ -5,7 +5,7 @@
     'use strict';
 
     // Service AtbEmUso
-    app.service("atbemusoService", ['$http', function ($http) {
+    angular.module('App').service("atbemusoService", ['$http', function ($http) {
 
         //GetAtbEmUsoPorPacienteEProntuario
         this.GetAtbEmUsoPorPacienteEProntuario = function (pc, pt) {

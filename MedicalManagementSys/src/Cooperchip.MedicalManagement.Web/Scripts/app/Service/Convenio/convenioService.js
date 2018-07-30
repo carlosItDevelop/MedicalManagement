@@ -3,7 +3,7 @@
 
     'use strict';
 
-    app.service("convenioService", ['$http', function ($http) {
+    angular.module('App').service("convenioService", ['$http', function ($http) {
 
         //Obter todos os regitros
         this.ObterTodas = function () {

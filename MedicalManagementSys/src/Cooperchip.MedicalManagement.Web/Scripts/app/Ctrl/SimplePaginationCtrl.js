@@ -3,7 +3,7 @@
 (function () {
     'use strict';
 
-    app.controller('SimplePaginationCtrl', ['$scope', '$http', 'SimplePaginate', function ($scope, $http, SimplePaginate) {
+    angular.module('App').controller('SimplePaginationCtrl', ['$scope', '$http', 'SimplePaginate', function ($scope, $http, SimplePaginate) {
         var success = function (response) {
             SimplePaginate.configure(
                 {

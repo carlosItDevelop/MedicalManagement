@@ -5,7 +5,7 @@
     // ---------------------------------------------------- //
 
 
-    app.controller("MedicamentoApresentacaoCtrl",
+    angular.module('App').controller("MedicamentoApresentacaoCtrl",
         ['$scope', '$http',
             function ($scope, $http) {
 

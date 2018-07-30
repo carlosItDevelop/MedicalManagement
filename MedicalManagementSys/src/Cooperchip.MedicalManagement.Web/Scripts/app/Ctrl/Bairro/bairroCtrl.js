@@ -5,7 +5,7 @@
     // ----/ Bairro
 
 
-    app.controller("bairroCtrl",
+    angular.module('App').controller("bairroCtrl",
         ['$scope', 'bairroService', 'cidadeService',
             function ($scope, bairroService, cidadeService) {
 

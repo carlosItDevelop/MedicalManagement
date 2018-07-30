@@ -5,7 +5,7 @@
 
     // Classes
 
-    app.controller("classeCtrl",
+    angular.module('App').controller("classeCtrl",
         ['$scope', 'classeService',
             function ($scope, classeService) {
 

@@ -4,7 +4,7 @@
 
     //--/ Leito Ctrl
 
-    app.controller("leitoCtrl",
+    angular.module('App').controller("leitoCtrl",
         ['$scope', 'leitoService',
             function ($scope, leitoService) {
 

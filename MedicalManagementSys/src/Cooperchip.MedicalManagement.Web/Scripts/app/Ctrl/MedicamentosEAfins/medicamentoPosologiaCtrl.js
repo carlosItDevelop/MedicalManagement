@@ -4,7 +4,7 @@
 
     // ---------------------------------------------------- //
 
-    app.controller("MedicamentoPosologiaCtrl",
+    angular.module('App').controller("MedicamentoPosologiaCtrl",
         ['$scope', '$http',
             function ($scope, $http) {
 

@@ -5,7 +5,7 @@
     // ----------/ balancoHidricoCtrl ---------------------------- //
 
 
-    app.controller("balancoHidricoCtrl",
+    angular.module('App').controller("balancoHidricoCtrl",
         ['$scope', '$filter', '$http',
             function ($scope, $filter, $http) {
 

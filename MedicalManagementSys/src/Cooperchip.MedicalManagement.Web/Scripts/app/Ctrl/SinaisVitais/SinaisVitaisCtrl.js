@@ -2,7 +2,7 @@
 (function () {
     'use strict';
 
-    app.controller("SinaisVitaisCtrl",
+    angular.module('App').controller("SinaisVitaisCtrl",
         ['$scope', '$filter', '$http', 'pacienteService',
             function ($scope, $filter, $http, pacienteService) {
 

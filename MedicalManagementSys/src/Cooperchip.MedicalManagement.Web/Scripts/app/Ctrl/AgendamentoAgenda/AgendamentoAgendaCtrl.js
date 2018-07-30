@@ -4,7 +4,7 @@
 
 // ---/ AgendamentoAgenda ---
 
-app.controller("agendamentoCtrl", ['$scope', 'agendamentoService', 'medicoService', 'pacienteService', '$filter', function ($scope, agendamentoService, medicoService, pacienteService, $filter) {
+angular.module('App').controller("agendamentoCtrl", ['$scope', 'agendamentoService', 'medicoService', 'pacienteService', '$filter', function ($scope, agendamentoService, medicoService, pacienteService, $filter) {
 
     $scope.divagendamento = false;
     $scope.titulo = "Lista de Agendamentos";

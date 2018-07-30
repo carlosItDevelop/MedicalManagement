@@ -222,19 +222,19 @@ $(document).ready(function() {
 	tuesday.set("weather-tuesday", "partly-cloudy-day");
 	tuesday.play();
 
-	//------------- Montly sales goal chart -------------//
-	var salesProgress = new ProgressBar.Circle('#sales-goal', {
-	    color: '#47a877',
-	    strokeWidth: 4,
-	    fill: '#f1fcf7',
-	    duration: 4000,
-	    easing: 'bounce'
-	});
-	salesProgress.animate(0.5);
+	////------------- Montly sales goal chart -------------//
+	//var salesProgress = new ProgressBar.Circle('#sales-goal', {
+	//    color: '#47a877',
+	//    strokeWidth: 4,
+	//    fill: '#f1fcf7',
+	//    duration: 4000,
+	//    easing: 'bounce'
+	//});
+	//salesProgress.animate(0.5);
 
 
 
-    ////------------- Montly sales goal chart -------------//
+ //   //------------- Montly sales goal chart -------------//
 	//var salesProgress = new ProgressBar.Circle('#sales-goal2', {
 	//    color: '#47a877',
 	//    strokeWidth: 4,

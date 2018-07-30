@@ -183,9 +183,15 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
         public ActionResult MostraPacienteNoMenuRigthModal(Guid id)
         {
 
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
             var pac = (from p in db.Paciente
-                       .Include("Setor")
-                       .Include("Leito")
+                           .Include("Setor")
+                           .Include("Leito")
                            select new
                            {
                                p.PacienteGuid,
@@ -203,6 +209,10 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
                            }
                        ).Where(x => x.PacienteGuid == id).ToList();
 
+            if (pac == null)
+            {
+                return HttpNotFound();
+            }
             return Json(pac, JsonRequestBehavior.AllowGet);
 
         }

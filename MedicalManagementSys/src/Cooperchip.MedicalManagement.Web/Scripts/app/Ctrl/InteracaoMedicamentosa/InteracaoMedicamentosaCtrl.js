@@ -4,7 +4,7 @@
 
     // -----/ InteracaoMedicamentosa --
 
-    app.controller("interacaoMedicamentosaCtrl",
+    angular.module('App').controller("interacaoMedicamentosaCtrl",
         ['$scope', 'interacaoMedicamentosaService',
             function ($scope, interacaoMedicamentosaService) {
 
