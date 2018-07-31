@@ -15,6 +15,12 @@
             return $http.get("/api/v1/evm/ObterBairrosParaEndereco");
         };
 
+
+        this.getEnderecoPaciente = function (id) {
+            return $http.get("/api/v1/evm/ObterEnderecoPorIdPaciente?id=" + id);
+        };
+
+
         // --/ -------------------------------------------------
 
         //Obter todos os regitros
@@ -26,6 +32,9 @@
         this.GetEnderecoPorId = function (id) {
             return $http.get("/api/v1/evm/ObterEnderecoPorId?id=" + id);
         };
+
+
+        
 
         // Atualizar os registros
         this.AtualizarEndereco = function (endereco) {

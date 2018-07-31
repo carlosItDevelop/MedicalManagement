@@ -161,21 +161,6 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
 
 
         /// <summary>
-        /// Busca Endereço para Partial _EndereçoPaciente,
-        /// que é utilizada em Prontuario, Prescricao, BHidrico e EImagem!
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public ActionResult getEndereco(Guid id)
-        {
-            var end = (from p in db.Endereco
-                       select p).Where(x => x.PacienteGuid == id).FirstOrDefault();
-            return Json(end, JsonRequestBehavior.AllowGet);
-        }
-
-
-
-        /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>

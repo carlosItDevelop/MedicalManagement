@@ -4,8 +4,8 @@
     'use strict';
 
     angular.module('App').controller("prontuarioCtrl",
-        ['$rootScope', '$scope', '$location', '$filter', '$http', 'prontuarioService', 'pacienteService',
-            function ($rootScope, $scope, $location, $filter, $http, prontuarioService, pacienteService) {
+        ['$rootScope', '$scope', '$location', '$filter', '$http', 'prontuarioService', 'pacienteService', 'enderecoService',
+            function ($rootScope, $scope, $location, $filter, $http, prontuarioService, pacienteService, enderecoService) {
 
                 //var vm = this;
 
@@ -52,56 +52,68 @@
 
                 /* ----------------------------------------------------------------- */
                 var carregaProntuarios = function () {
-                    var prontuariosData = prontuarioService.srvcObterProntuarios();
-                    prontuariosData.then(function (results, status) {
-                        var dados = results.data;
-                        $scope.prontuarios = dados;
-                    }, function (results, status) {
-                        toastr["error"](results.data, "MedicalManagement-Sys");
-                    });
+                    var prontuariosData = prontuarioService.srvcObterProntuarios()
+                        .then(function (results, status) {
+                            var dados = results.data;
+                            $scope.prontuarios = dados;
+                        }, function (results, status) {
+                            toastr["error"](results.data, "MedicalManagement-Sys");
+                        });
                 };
 
 
                 var carregaProntuarios = function (id) {
-                    var prontuariosData = prontuarioService.srvcObterProntuarios(id);
-                    prontuariosData.then(function (results, status) {
-                        var dados = results.data;
-                        $scope.prontuarios = dados;
-                    }, function (results, status) {
-                        toastr["error"](results.data, "MedicalManagement-Sys");
-                    });
+                    var prontuariosData = prontuarioService.srvcObterProntuarios(id)
+                        .then(function (results, status) {
+                            var dados = results.data;
+                            $scope.prontuarios = dados;
+                        }, function (results, status) {
+                            toastr["error"](results.data, "MedicalManagement-Sys");
+                        });
                 };
                 /* ----------------------------------------------------------------- */
 
 
 
-                /* ----------------------------------------------------------------- */
-                // Carrega dados de endereço do paciente para o prontuario;
-                var buscaEnderecoPaciente = function (dados) {
-                    $http.get('/Home/getEndereco/' + dados.PacienteGuid).success(function (result) {
-                        $scope.endereco = result;
-                    }).error(function (result, status) {
-                        toastr["error"](result.data, "MedicalManagement-Sys");
-                    });
-                };
+
+                ///* ----------------------------------------------------------------- */
+                //// Carrega dados de endereço do paciente para o prontuario;
+                //var buscaEnderecoPaciente = function (dados) {
+                //    $http.get('/Home/getEndereco/' + dados.PacienteGuid).success(function (result) {
+                //        $scope.endereco = result;
+                //    }).error(function (result, status) {
+                //        toastr["error"](result.data, "MedicalManagement-Sys");
+                //    });
+                //};
+
+
+                let buscaEnderecoPaciente = function (idpaciente)
+                {
+                    let pacEndereco = enderecoService.getEnderecoPaciente(idpaciente)
+                        .then(function (resultado) {
+                            $scope.endereco = resultado.data;
+                        }, function () {
+                            toastr["error"](resultado.data, "MedicalManagement-Sys");
+                        });
+                }
 
 
                 // Carrega dados pessoais do paciente para o prontuario;
                 var ObterPacientePorId = function (idpaciente) {
-                    var pacienteData = pacienteService.srvcGetPacientePorId(idpaciente);
-                    pacienteData.then(function (result) {
+                    var pacienteData = pacienteService.srvcGetPacientePorId(idpaciente)
+                        .then(function (result) {
 
-                        $scope.prontuario.Paciente = result.data;
+                            $scope.prontuario.Paciente = result.data;
 
-                        // Idade
-                        var nascimento = new Date(result.data.DataNascimento).getFullYear();
-                        var dataatual = new Date().getFullYear();
-                        var diff = dataatual - nascimento;
-                        $scope.Idade = diff;
+                            // Idade
+                            var nascimento = new Date(result.data.DataNascimento).getFullYear();
+                            var dataatual = new Date().getFullYear();
+                            var diff = dataatual - nascimento;
+                            $scope.Idade = diff;
 
-                    }, function () {
-                        toastr["error"]("Erro ao obter paciente por id!", "MedicalManagement-Sys");
-                    });
+                        }, function () {
+                            toastr["error"]("Erro ao obter paciente por id!", "MedicalManagement-Sys");
+                        });
                 };
                 /* ----------------------------------------------------------------- */
 

@@ -966,6 +966,31 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, endereco);
         }
 
+
+        /// <summary>
+        /// Busca Endereço para Partial _EndereçoPaciente,
+        /// que é utilizada em Prontuario, Prescricao, BHidrico e EImagem!
+        /// </summary>
+        /// <param name="idPaciente"></param>
+        /// <returns></returns>
+
+        [System.Web.Http.HttpGet]
+        [System.Web.Http.Route("ObterEnderecoPorIdPaciente")]
+        public HttpResponseMessage GetEnderecoPorPaciente(Guid idPaciente)
+        {
+            if (idPaciente == null)
+                return Request.CreateResponse(HttpStatusCode.BadRequest);
+
+            var end = (from p in _db.Endereco
+                       .Include(p => p.Paciente)
+                       select p).Where(x => x.PacienteGuid == idPaciente).FirstOrDefault();
+
+            return Request.CreateResponse(HttpStatusCode.OK, end);
+        }
+
+
+
+
         /// <summary>
         /// Alterar um Endereço
         /// </summary>
