@@ -260,13 +260,13 @@
 
 
                 function obterTodosOsConvenios() {
-                    var conveniosData = convenioService.ObterTodas();
-                    conveniosData.then(function (convenio) {
-                        $scope.convenios = convenio.data;
-                    }, function () {
-                        toastr["error"]("Erro ao obter convenios", "MedicalManagement-Sys");
-                    }
-                    );
+                    var conveniosData = convenioService.ObterTodas()
+                        .then(function (convenio) {
+                            $scope.convenios = convenio.data;
+                        }, function () {
+                            toastr["error"]("Erro ao obter convenios", "MedicalManagement-Sys");
+                        }
+                        );
                 };
                 obterTodosOsConvenios();
 

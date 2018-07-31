@@ -211,6 +211,7 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
             if (id == null)
                 return Request.CreateResponse(HttpStatusCode.BadRequest);
             Prontuario prontuario = (from p in _db.Prontuario
+                                     .Include(p => p.Paciente)
                                      select p).Where(x => x.ProntuarioId == id).FirstOrDefault();
             return Request.CreateResponse(HttpStatusCode.OK, prontuario, "application/json");
         }
@@ -228,12 +229,13 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
             IEnumerable<Prontuario> pronts;
             if (id != null)
             {
-                pronts = (from p in _db.Prontuario select p).Where(x => x.PacienteGuid == id)
+                pronts = (from p in _db.Prontuario
+                          .Include(p => p.Paciente) select p).Where(x => x.PacienteGuid == id)
                     .OrderByDescending(x => x.DataProntuario).ToList();
             }
             else
             {
-                pronts = (from p in _db.Prontuario select p).OrderByDescending(x => x.DataProntuario).ToList();
+                pronts = (from p in _db.Prontuario.Include(p => p.Paciente) select p).OrderByDescending(x => x.DataProntuario).ToList();
             }
             return Request.CreateResponse(HttpStatusCode.OK, pronts, "application/json");
         }
@@ -714,7 +716,11 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
         [Route("ApiObeterTodosOsPacientes")]
         public HttpResponseMessage GetAllApiPaciente()
         {
-            var paciente = (from p in _db.Paciente select p).ToList();
+            var paciente = (from p in _db.Paciente
+                            .Include(l => l.Leito)
+                            .Include(s => s.Setor)
+                            .Include(e => e.EstadoDoPaciente)
+                            select p).ToList();
             return Request.CreateResponse(HttpStatusCode.OK, paciente);
         }
 

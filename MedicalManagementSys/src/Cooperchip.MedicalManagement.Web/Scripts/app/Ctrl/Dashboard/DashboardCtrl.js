@@ -5,8 +5,8 @@
     'use strict';
 
     angular.module('App').controller("dashboardCtrl",
-        ['$scope', '$filter', '$http','dashboardService', 
-            function ($scope, $filter, $http, dashboardService) {
+        ['$scope', '$filter', 'dashboardService', 
+            function ($scope, $filter, dashboardService) {
 
                 $scope.estadopacientes = [];
 
