@@ -182,6 +182,12 @@ namespace Cooperchip.MedicalManagement.Web
                "~/Scripts/App/Service/PrecaucaoPadrao/precaucaoPadraoService.js",
                "~/Scripts/App/Service/BaseDeConhecimento/baseDeConhecimentoService.js",
 
+               "~/Scripts/App/Service/Telefone/telefoneService.js",
+
+               "~/Scripts/App/Service/ExameDeImagem/exameDeImagemService.js",
+
+               "~/Scripts/App/Service/SinaisVitais/sinaisVitaisService.js",
+
                "~/Scripts/App/Service/Notificacoes/notificacoesService.js",
 
                "~/Scripts/App/Service/Convenio/convenioService.js",

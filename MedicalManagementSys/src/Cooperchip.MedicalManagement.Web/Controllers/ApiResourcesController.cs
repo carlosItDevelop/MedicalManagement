@@ -226,11 +226,12 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
         [System.Web.Http.Route("ObterTodosOsProntuarios")]
         public HttpResponseMessage ObterProntuarios(Guid? id)
         {
-            IEnumerable<Prontuario> pronts;
+            List<Prontuario> pronts;
             if (id != null)
             {
                 pronts = (from p in _db.Prontuario
-                          .Include(p => p.Paciente) select p).Where(x => x.PacienteGuid == id)
+                          .Include(p => p.Paciente)
+                          select p).Where(x => x.PacienteGuid == id)
                     .OrderByDescending(x => x.DataProntuario).ToList();
             }
             else
@@ -971,19 +972,25 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
         /// Busca Endereço para Partial _EndereçoPaciente,
         /// que é utilizada em Prontuario, Prescricao, BHidrico e EImagem!
         /// </summary>
-        /// <param name="idPaciente"></param>
+        /// <param name="id"></param>
         /// <returns></returns>
 
         [System.Web.Http.HttpGet]
         [System.Web.Http.Route("ObterEnderecoPorIdPaciente")]
-        public HttpResponseMessage GetEnderecoPorPaciente(Guid idPaciente)
+        public HttpResponseMessage GetEnderecoPorPaciente(Guid id)
         {
-            if (idPaciente == null)
+            if (id == null)
+            {
                 return Request.CreateResponse(HttpStatusCode.BadRequest);
+            }
 
-            var end = (from p in _db.Endereco
-                       .Include(p => p.Paciente)
-                       select p).Where(x => x.PacienteGuid == idPaciente).FirstOrDefault();
+            var end = (from p in _db.Endereco.Include(p => p.Paciente)
+                       select p).Where(x => x.PacienteGuid == id).ToList();
+
+            if (end == null)
+            {
+                return Request.CreateResponse(HttpStatusCode.NotFound);
+            }
 
             return Request.CreateResponse(HttpStatusCode.OK, end);
         }

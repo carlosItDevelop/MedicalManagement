@@ -3,8 +3,8 @@
     'use strict';
 
     angular.module('App').controller("SinaisVitaisCtrl",
-        ['$scope', '$filter', '$http', 'pacienteService',
-            function ($scope, $filter, $http, pacienteService) {
+        ['$scope', '$filter', 'pacienteService', 'sinaisVitaisService',
+            function ($scope, $filter, pacienteService, sinaisVitaisService) {
 
                 $scope.titulo = "Sinais Vitais nas Últimas 24 horas";
 
@@ -27,25 +27,21 @@
                     idpaciente = $("#idPaciente").val();
                     idprontuario = $("#ProntuarioId").val();
                     if (idpaciente && idprontuario) {
-                        carregaSinalVitalPorId();
+                        carregaSinalVitalPorId(idpaciente, idprontuario);
                     };
                 });
 
-                var carregaSinalVitalPorId = function () {
-                    //debugger;
-                    $http({
-                        url: '/Prontuario/GetSinaisVitaisPorId/',
-                        method: 'GET',
-                        params: {
-                            idpc: idpaciente,
-                            idpt: idprontuario
-                        }
-                    }).success(function (data) {
-                        $scope.sinaisvitais = data;
-                    }).error(function (data, status) {
-                        toastr['error']('Erro carregando Sinais Vitais...', 'MedicalManagement-Sys');
-                    });
+
+                let carregaSinalVitalPorId = function (idpaciente, idprontuario) {
+                    let sinaisVitaisData = sinaisVitaisService.getSinalVitalPorId(idpaciente, idprontuario)
+                        .then(function (resultado) {
+                            $scope.sinaisvitais = resultado.data;
+                        }, function (data, status) {
+                            toastr['error']('Erro carregando Sinais Vitais...', 'MedicalManagement-Sys');
+                        });
                 };
+
+
 
                 $scope.adicionarSinaisVitais = function (sinalvital) {
                     //debugger;
@@ -54,28 +50,14 @@
                     $http.post("/Prontuario/AddSinaisVitais", sinalvital).success(function (data) {
                         delete $scope.sinalvital;
                         $scope.sinaisVitaisForm.$setPristine();
-                        carregaSinalVitalPorId();
+                        carregaSinalVitalPorId(idpaciente, idprontuario);
                         toastr["success"]("Sinais Vitais Adicionada com sucesso!", "Medical Management - Sys");
                     }).error(function (data, status) {
                         toastr["error"]("Erro ao Adicionar Sinais Vitais!", "Medical Management - Sys");
                     });
                 };
 
-                var carregaAtbEmUsoPorId = function () {
-                    $http({
-                        url: '/AtbEmUso/GetAtbEmUsoPorId/',
-                        method: 'GET',
-                        params: {
-                            idpc: idpaciente,
-                            idpt: idprontuario
-                        }
-                    }).success(function (data) {
-                        $scope.atbemusos = data;
-                        //console.log(data);
-                    }).error(function (data, status) {
-                        toastr['error']('Erro carregando Antibióticos em Uso.', 'MedicalManagement-Sys');
-                    });
-                };
+
 
                 $scope.alterarSinaisVitais = function (sinalvital) {
                     $http.post("/Prontuario/UdtSinaisVitais/", sinalvital.SinaisVitaisId).success(function (data) {

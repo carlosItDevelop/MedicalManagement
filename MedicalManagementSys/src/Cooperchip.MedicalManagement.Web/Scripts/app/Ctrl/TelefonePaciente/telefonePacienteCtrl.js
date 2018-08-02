@@ -9,8 +9,8 @@
 
 
     angular.module('App').controller("TelefonePacienteCtrl",
-        ['$scope', '$filter', '$http',
-            function ($scope, $filter, $http) {
+        ['$scope', '$filter', 'telefoneService',
+            function ($scope, $filter, telefoneService) {
 
                 $scope.titulo = "Telefones / Pacientes";
                 $scope.telefonepacientes = [];
@@ -24,21 +24,53 @@
                     idpaciente = $("#idPaciente").val();
                     $scope.telefonepaciente.PacienteGuid = idpaciente;
                     if (idpaciente) {
-                        carregaTelefonePacientePorId();
+                        carregaTelefonePacientePorId(idpaciente);
                     } else {
                         idpaciente = 0;
-                        carregaTelefonePacientePorId();
+                        carregaTelefonePacientePorId(idpaciente);
                     };
                 });
 
-                // Puxa apenas os dados do paciente em questão
-                var carregaTelefonePacientePorId = function () {
-                    $http.get("/TelefonePaciente/GetTelefonePacientePorId/" + idpaciente).success(function (data) {
-                        $scope.telefonepacientes = data;
-                    }).error(function (data, status) {
-                        toastr['error']('Erro carregando Telefone de Paciente...', 'MedicalManagement-Sys');
-                    });
-                };
+
+
+                // Puxa apenas os dados/telefones do paciente em questão
+                var carregaTelefonePacientePorId = function (idpaciente) {
+                    let telPorIdData = telefoneService.getTelefonePorIdPaciente(idpaciente)
+                        .then(function (resultado) {
+                            $scope.telefonepacientes = resultado.data;
+                        }, function () {
+                            toastr['error']('Erro carregando Telefone de Paciente...', 'MedicalManagement-Sys');
+                        });
+                }
+
+
+                $scope.adicionarTelefonePaciente = function (telefonepaciente) {
+                    $scope.telefonepaciente.PacienteGuid = idpaciente;
+                    let telPorIdData = telefoneService.addTelefoneParaPaciente(telefonepaciente)
+                        .then(function (resultado) {
+                            delete $scope.telefonepaciente;
+                            //$scope.telefonepacienteForm.$setPristine();
+                            toastr["success"]("Telefone adicionado com sucesso!", "Medical Management - Sys");
+                            carregaTelefonePacientePorId(idpaciente);
+                        }, function () {
+                            toastr['error']('Erro carregando Telefone de Paciente...', 'MedicalManagement-Sys');
+                        });
+                }
+
+
+
+                //$scope.adicionarTelefonePaciente = function (telefonepaciente) {
+                //    $scope.telefonepaciente.PacienteGuid = idpaciente;
+                //    $http.post("/TelefonePaciente/AddTelefonePaciente", telefonepaciente).success(function (data) {
+                //        delete $scope.telefonepaciente;
+                //        //$scope.telefonepacienteForm.$setPristine();
+                //        toastr["success"]("Telefone adicionado com sucesso!", "Medical Management - Sys");
+                //        carregaTelefonePacientePorId(idpaciente);
+                //    }).error(function (data, status) {
+                //        toastr["error"]("Erro ao Adicionar Telefone!", "Medical Management - Sys");
+                //    });
+                //};
+
 
 
                 $scope.tipotelefones = [
@@ -49,20 +81,6 @@
                     { TipoTelefoneId: 5, "Descricao": "Contato" },
                     { TipoTelefoneId: 6, "Descricao": "Outros" }
                 ];
-
-
-                $scope.adicionarTelefonePaciente = function (telefonepaciente) {
-                    //debugger;
-                    $scope.telefonepaciente.PacienteGuid = idpaciente;
-                    $http.post("/TelefonePaciente/AddTelefonePaciente", telefonepaciente).success(function (data) {
-                        delete $scope.telefonepaciente;
-                        //$scope.telefonepacienteForm.$setPristine();
-                        toastr["success"]("Telefone adicionado com sucesso!", "Medical Management - Sys");
-                        carregaTelefonePacientePorId();
-                    }).error(function (data, status) {
-                        toastr["error"]("Erro ao Adicionar Telefone!", "Medical Management - Sys");
-                    });
-                };
 
 
                 $scope.apagarTelefonePacientes = function (telefonepacientes) {

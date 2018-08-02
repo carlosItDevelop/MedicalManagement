@@ -4,8 +4,8 @@
     'use strict';
 
     angular.module('App').controller("exameDeImagemCtrl",
-        ['$scope', '$filter', '$http', 'exameDescricaoService', 'pacienteService',
-            function ($scope, $filter, $http, exameDescricaoService, pacienteService) {
+        ['$http', '$scope', '$filter', 'exameDescricaoService', 'pacienteService', 'exameDeImagemService',
+            function ($http, $scope, $filter, exameDescricaoService, pacienteService, exameDeImagemService) {
 
                 $scope.titulo = "Exame de Imagem";
                 $scope.examesdescricoes = [];
@@ -22,28 +22,28 @@
                     if (idpaciente && idprontuario) {
                         $scope.examedeimagem.PacienteGuid = idpaciente;
                         $scope.examedeimagem.ProntuarioGuid = idprontuario;
-                        carregaExameDeImagemPorId();
+                        carregaExameDeImagemPorId(idpaciente, idprontuario);
                     };
                 });
 
 
-                var carregaExameDeImagemPorId = function () {
-                    $http({
-                        url: '/ExameDeImagem/GetExameDeImagemPorId/',
-                        method: 'GET',
-                        params: {
-                            idpc: idpaciente,
-                            idpt: idprontuario
-                        }
-                    }).success(function (data) {
-                        //console.log("Dados: " + data);
-                        //console.log("Id Paciente: "+idpaciente);
-                        //console.log("Id Prontuario: " + idprontuario);
-                        $scope.examedeimagens = data;
-                    }).error(function (data, status) {
-                        toastr["error"]("Erro ao carregar Exame de Imagem!", "MedicalManagement-Sys");
-                    });
+
+                let carregaExameDeImagemPorId = function (idpaciente, idprontuario) {
+                    console.log("Id Paciente: " + idpaciente);
+                    console.log("Id Prontuario: " + idprontuario);
+
+                    let eximgData = exameDeImagemService.getImgImagem(idpaciente, idprontuario)
+                        .then(function (resultado) {
+
+                            console.log("Exame de Imagens - Dados: " + resultado.data);
+                            $scope.examedeimagens = resultado.data;
+                            console.log("Exame de Imagens - Scope: " + $scope.examedeimagens);
+
+                        }, function () {
+                            toastr["error"]("Erro ao carregar Exame de Imagem!", "MedicalManagement-Sys");
+                        });
                 };
+
 
                 $scope.adicionarExameDeImagem = function (examedeimagem) {
                     examedeimagem.PacienteGuid = idpaciente;
@@ -51,7 +51,7 @@
                     $http.post("/ExameDeImagem/AddExameDeImagem", examedeimagem).success(function (data) {
                         delete $scope.examedeimagem;
                         $scope.exameDeImagemForm.$setPristine();
-                        carregaExameDeImagemPorId();
+                        carregaExameDeImagemPorId(idpaciente, idprontuario);
                         toastr["success"]("Exame de Imagem Adicionada com sucesso!", "Medical Management - Sys");
                     }).error(function (data, status) {
                         $scope.message = "Aconteceu um erro: " + data;

@@ -21,7 +21,9 @@
             return response;
         };
 
-        // ObterAtbEmUsoPorId
+
+
+
         //Obter os registros por id
         this.GetAtbEmUsoPorId = function (id) {
             return $http.get("/api/v1/evm/ObterAtbEmUsoPorId?id=" + id);

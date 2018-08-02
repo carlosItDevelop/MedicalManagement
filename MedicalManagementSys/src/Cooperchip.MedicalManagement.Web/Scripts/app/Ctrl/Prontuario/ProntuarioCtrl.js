@@ -4,8 +4,8 @@
     'use strict';
 
     angular.module('App').controller("prontuarioCtrl",
-        ['$rootScope', '$scope', '$location', '$filter', '$http', 'prontuarioService', 'pacienteService', 'enderecoService',
-            function ($rootScope, $scope, $location, $filter, $http, prontuarioService, pacienteService, enderecoService) {
+        ['$rootScope', '$scope', '$location', '$filter', 'prontuarioService', 'pacienteService', 'enderecoService',
+            function ($rootScope, $scope, $location, $filter, prontuarioService, pacienteService, enderecoService) {
 
                 //var vm = this;
 
@@ -74,23 +74,11 @@
                 /* ----------------------------------------------------------------- */
 
 
-
-
-                ///* ----------------------------------------------------------------- */
-                //// Carrega dados de endereço do paciente para o prontuario;
-                //var buscaEnderecoPaciente = function (dados) {
-                //    $http.get('/Home/getEndereco/' + dados.PacienteGuid).success(function (result) {
-                //        $scope.endereco = result;
-                //    }).error(function (result, status) {
-                //        toastr["error"](result.data, "MedicalManagement-Sys");
-                //    });
-                //};
-
-
-                let buscaEnderecoPaciente = function (idpaciente)
+                var buscaEnderecoPaciente = function (dadosProntuario)
                 {
-                    let pacEndereco = enderecoService.getEnderecoPaciente(idpaciente)
+                    let pacEndereco = enderecoService.getEnderecoPaciente(dadosProntuario.PacienteGuid)
                         .then(function (resultado) {
+                            console.log(resultado.data);
                             $scope.endereco = resultado.data;
                         }, function () {
                             toastr["error"](resultado.data, "MedicalManagement-Sys");

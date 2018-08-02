@@ -16,8 +16,8 @@ namespace Cooperchip.Common.Identity.Context
         public ApplicationDbContext()
             : base("MManagementDatabase", throwIfV1Schema: false)
         {
-            Configuration.LazyLoadingEnabled = false;
-            Configuration.ProxyCreationEnabled = false;
+            //Configuration.LazyLoadingEnabled = false;
+            //Configuration.ProxyCreationEnabled = false;
         }
 
 

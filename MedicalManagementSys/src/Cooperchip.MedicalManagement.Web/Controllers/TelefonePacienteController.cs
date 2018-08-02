@@ -47,7 +47,7 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
         /// <param name="telefonepaciente"></param>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult AddTelefonePaciente( TelefonePaciente telefonepaciente )
+        public ActionResult AddTelefonePaciente(TelefonePaciente telefonepaciente )
         {
             if ( ModelState.IsValid )
             {
