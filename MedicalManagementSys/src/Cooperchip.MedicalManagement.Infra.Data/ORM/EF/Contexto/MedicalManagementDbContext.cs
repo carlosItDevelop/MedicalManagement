@@ -81,9 +81,9 @@ namespace Cooperchip.MedicalManagement.Infra.Data.ORM.EF.Contexto
         public DbSet<Anticoagulacao> Anticoagulacao { get; set; }
         public DbSet<Paciente> Paciente { get; set; }
         public DbSet<Alergia> Alergia { get; set; }
-        public DbSet<Fisioterapia>  Fisioterapia { get; set; }
+        public DbSet<Fisioterapia> Fisioterapia { get; set; }
         public DbSet<HistoriaPatologicaPregressa> HistoriaPatologicaPregressa { get; set; }
-        public DbSet<Complicacao>  Complicacao { get; set; }
+        public DbSet<Complicacao> Complicacao { get; set; }
         public DbSet<Prontuario> Prontuario { get; set; }
         public DbSet<TabelasBase> TabelasBase { get; set; }
         public DbSet<Mural> Mural { get; set; }

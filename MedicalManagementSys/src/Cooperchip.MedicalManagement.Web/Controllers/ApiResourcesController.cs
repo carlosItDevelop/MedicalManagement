@@ -18,7 +18,7 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
     /// <summary>
     /// Repositório de Resources das APIs do sistema
     /// </summary>
-    [System.Web.Http.RoutePrefix("api/v1/evm")]
+    [RoutePrefix("api/v1/evm")]
     public class ApiResourcesController : ApiController
     {
 

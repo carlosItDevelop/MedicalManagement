@@ -59,6 +59,7 @@
 
 
 
+
                 $scope.alterarSinaisVitais = function (sinalvital) {
                     $http.post("/Prontuario/UdtSinaisVitais/", sinalvital.SinaisVitaisId).success(function (data) {
                         //    delete $scope.sinalvital;
@@ -68,6 +69,7 @@
                         toastr["error"]("Erro ao Atualizar Sinais Vitais!", "Medical Management - Sys");
                     });
                 };
+
 
                 $scope.apagarSinaisVitais = function (sinaisvitais) {
                     $scope.sinaisvitais = sinaisvitais.filter(function (sinalvital) {

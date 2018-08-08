@@ -254,17 +254,7 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
         // --------------------------------------------------------------------------------------------- //
         // -----/   Sinais Vitais  --------------------------------------------------------------------- //
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="idpc"></param>
-        /// <param name="idpt"></param>
-        /// <returns></returns>
-        public JsonResult GetSinaisVitaisPorId(Guid idpc, Guid idpt)
-        {
-            var sinalvital = (from s in db.SinaisVitais select s).Where(x => x.PacienteGuid == idpc && x.ProntuarioGuid == idpt).ToList();
-            return Json(sinalvital, JsonRequestBehavior.AllowGet);
-        }
+
 
 
         /// <summary>

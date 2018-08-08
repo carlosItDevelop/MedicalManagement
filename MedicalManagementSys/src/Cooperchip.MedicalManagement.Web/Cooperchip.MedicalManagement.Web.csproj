@@ -247,6 +247,7 @@
     <Compile Include="Controllers\ApiProntuarioPrecaucaoController.cs" />
     <Compile Include="Controllers\ApiResourcesController.cs" />
     <Compile Include="Controllers\ApiSelect2SearchController.cs" />
+    <Compile Include="Controllers\ApiSinaisVitaisController.cs" />
     <Compile Include="Controllers\AuxUniGeogController.cs" />
     <Compile Include="Controllers\BairroController.cs" />
     <Compile Include="Controllers\CidadeController.cs" />
@@ -3982,6 +3983,7 @@
     <Folder Include="Scripts\cooperchip\boxinit\img\" />
     <Folder Include="Scripts\cooperchip\componentes\ashobiz\ui\" />
     <Folder Include="Views\ApiAtbEmUso\" />
+    <Folder Include="Views\ApiSinaisVitais\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
