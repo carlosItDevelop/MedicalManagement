@@ -50,7 +50,7 @@ namespace Cooperchip.MedicalManagement.Web
                         {
                             ct.Name("Cooperchip Informática");
                             ct.Email("portalcooperchip@gmail.com");
-                            ct.Url("http://portalcooperchip.com.br");
+                            ct.Url("http://portalcooperchip.com.br");                            
                         })
                         .Description("APIs do Projeto Medical Management -Sys")
                         .TermsOfService("Consulte nossos Termos e Serviços");
