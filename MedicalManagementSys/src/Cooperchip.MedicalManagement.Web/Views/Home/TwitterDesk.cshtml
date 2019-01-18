@@ -1,0 +1,51 @@
+﻿<div class="row">
+
+    <div class="col-lg-12">
+        <div class="animated fadeInRightBig">
+            <div class="panel panel-primary">
+
+                <div class="panel-heading">
+                    <h4 class="panel-title"><i class="fa fa-magic"></i> Configurações do TwitterDesk</h4>
+                </div>
+                <div class="panel-body">
+
+                    <div class="tabs inside-panel">
+
+
+                        <div class="row">
+
+                            <div ng-controller="twitterDeskCtrl as vm" class="container col-md-12 col-lg-12 col-sm-12 col-xl-12 panel-collapse panel-evolumed">
+                                <div class="panel-heading">
+                                    <h4><i class="fa fa-adn"></i>&nbsp;&nbsp;&nbsp;{{vm.titulo}}</h4>
+                                </div>
+                                <form class="panel-body" name="vm.tweetsForm">
+
+
+                                    <div class="row">
+
+                                        <input type="text" name="token" class="form-control col-12" ng-model="vm.apiKey" />
+                                        <input type="text" name="token" class="form-control col-12" ng-model="vm.apiSecret" />
+
+                                        <button class="btn btn-primary" ng-click="vm.obterAToken()" data-id="edit" data-toggle="tooltip" data-placement="bottom" title="Obter Acces_Token" data-original-title="Obter Acces_Token"><i class="glyphicon glyphicon-edit"></i></button>
+
+
+                                    </div>
+
+                                    <br />
+
+                                    <div class="jumbotron">
+                                        <div ng-bind="vm.tweets"></div>
+                                    </div>
+
+
+                                </form>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

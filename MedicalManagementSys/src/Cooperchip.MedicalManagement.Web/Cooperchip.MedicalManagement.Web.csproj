@@ -237,6 +237,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AcessoController.cs" />
     <Compile Include="Controllers\AgendaCalendarController.cs" />
@@ -2265,6 +2267,7 @@
     <Content Include="Scripts\app\Ctrl\SimplePaginationCtrl.js" />
     <Content Include="Scripts\app\Ctrl\TelefonePaciente\telefonePacienteCtrl.js" />
     <Content Include="Scripts\app\Ctrl\Tipodreno\tipodrenoCtrl.js" />
+    <Content Include="Scripts\app\Ctrl\TwitterDesk\twitterDeskCtrl.js" />
     <Content Include="Scripts\app\Ctrl\Uf\UfCtrl.js" />
     <Content Include="Scripts\app\Service\Agendamento\agendamentoService.js" />
     <Content Include="Scripts\app\Service\Anticoagulacao\anticoagulacaoService.js" />
@@ -2311,6 +2314,7 @@
     <Content Include="Scripts\app\Service\Telefone\telefoneService.js" />
     <Content Include="Scripts\app\Service\TipoDePrecaucao\tipodeprecaucaoService.js" />
     <Content Include="Scripts\app\Service\TipoDreno\tipodrenoService.js" />
+    <Content Include="Scripts\app\Service\TwitterDesk\twitterDeskService.js" />
     <Content Include="Scripts\app\Service\Uf\ufService.js" />
     <Content Include="Scripts\app\Service\Util\utilService.js" />
     <Content Include="Scripts\bootstrap-tagsinput.js" />
@@ -3031,6 +3035,7 @@
     <Content Include="Scripts\angular-1.7.2\docs\js\search-worker.min.js.map" />
     <Content Include="Scripts\angular-1.7.2\errors.json" />
     <Content Include="Scripts\angular-1.7.2\version.json" />
+    <Content Include="Areas\Admin\Views\web.config" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\cooperchip\ziehharmonika.js" />
     <Content Include="Scripts\i18n\en.js" />
@@ -3181,6 +3186,7 @@
     <Content Include="Views\MensagemClearance\Details.cshtml" />
     <Content Include="Views\MensagemClearance\Edit.cshtml" />
     <Content Include="Views\MensagemClearance\Index.cshtml" />
+    <Content Include="Views\Home\TwitterDesk.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\dataTables.tableTools.css" />
@@ -3979,6 +3985,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\Home\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Scripts\angular-1.7.2\i18n\ngLocale\" />
     <Folder Include="Scripts\cooperchip\boxinit\img\" />
     <Folder Include="Scripts\cooperchip\componentes\ashobiz\ui\" />

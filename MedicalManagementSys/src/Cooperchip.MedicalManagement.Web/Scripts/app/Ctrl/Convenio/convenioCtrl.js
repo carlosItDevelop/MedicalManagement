@@ -21,9 +21,8 @@
                     vm.Acao = "";
                 }, function () {
                     toastr["error"]("Erro ao obter convenios", "MedicalManagement-Sys");
-                }
-                );
-        };
+                });
+        }
 
 
         // obter por id
@@ -66,7 +65,7 @@
                     apagarRegistro(convenio)
                     swal("EXCLUÍDO!", "O registro foi deletado com sucesso.", "success");
                 });
-        }
+        };
 
 
         var apagarRegistro = function (convenio) {

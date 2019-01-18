@@ -33,6 +33,9 @@
                 method: "post",
                 url: "/api/v1/evm/AdicionarConvenio",
                 data: JSON.stringify(convenio),
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
                 dataType: "json"
             });
             return response;

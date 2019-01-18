@@ -203,7 +203,12 @@ namespace Cooperchip.MedicalManagement.Web
                "~/Scripts/App/Service/ExameDescricao/exameDescricaoService.js",
                "~/Scripts/App/Service/Anticoagulacao/anticoagulacaoService.js",
                "~/Scripts/App/Service/Fisioterapia/fisioterapiaService.js",
-               "~/Scripts/App/Service/SimplePaginationService.js"
+               "~/Scripts/App/Service/SimplePaginationService.js",
+
+               "~/Scripts/App/Service/TwitterDesk/twitterDeskService.js"
+
+
+
 
            ));
 
@@ -273,7 +278,10 @@ namespace Cooperchip.MedicalManagement.Web
                 "~/Scripts/App/Ctrl/Notificacoes/notificacoesCtrj.js",
 
 
-                "~/Scripts/App/Ctrl/SimplePaginationCtrl.js"
+                "~/Scripts/App/Ctrl/SimplePaginationCtrl.js",
+
+
+                "~/Scripts/App/Ctrl/TwitterDesk/twitterDeskCtrl.js"
 
 
                 ));

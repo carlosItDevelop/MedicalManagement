@@ -35,6 +35,17 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
         /// 
         /// </summary>
         /// <returns></returns>
+        public ActionResult TwitterDesk()
+        {
+            return View();
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public ActionResult PaginationAngularJS()
         {
             return View();

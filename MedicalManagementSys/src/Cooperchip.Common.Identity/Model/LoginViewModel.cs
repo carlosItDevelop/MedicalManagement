@@ -15,13 +15,6 @@ namespace Cooperchip.Common.Identity.Model
         [MaxLength(16, ErrorMessage = "Máximo de Caracter Permitido: 16")]
         public string Usuario { get; set; }
 
-        ///// <summary>
-        ///// 
-        ///// </summary>
-        //[Required]
-        //[Display(Name = "Email")]
-        //[EmailAddress]
-        //public string Email { get; set; }
 
         /// <summary>
         /// 

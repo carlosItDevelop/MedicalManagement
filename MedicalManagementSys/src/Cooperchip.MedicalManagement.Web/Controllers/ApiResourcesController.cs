@@ -27,6 +27,22 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
         private MedicalManagementDbContext _db = new MedicalManagementDbContext();
 
 
+        #region: TwitterDesk
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public HttpResponseMessage GetAccessToken()
+        {
+            string token = "RWpVWXdoTURhdTlxMWJYUTYzSHV4VkFDUDpBQVpjUlQyaTVXMTNBM2xuRlVPQmRBV2t0WVNpcG41VmY1Nnl4Z0hxNWNYeTVhNmRLUQ==";
+            return Request.CreateResponse(HttpStatusCode.OK, token);
+        }
+
+        #endregion
+
+
+
         #region: Precaução
 
 
@@ -63,8 +79,8 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
         {
             var causaprecaucao = (from cp in _db.Precaucao
                                   select cp)
-                                                .Where(x => x.IdTipoPrecaucao == id)
-                                                .ToList();
+                                    .Where(x => x.IdTipoPrecaucao == id)
+                                    .ToList();
 
             return Request.CreateResponse(HttpStatusCode.OK, causaprecaucao);
         }

@@ -7,6 +7,7 @@ using System;
 using Cooperchip.Common.Identity.Model;
 using Cooperchip.Common.Identity.Configuration;
 using Cooperchip.Common.Identity.Context;
+using Microsoft.Owin.Security.Twitter;
 
 namespace Cooperchip.MedicalManagement.Web
 {
@@ -62,16 +63,17 @@ namespace Cooperchip.MedicalManagement.Web
             //    clientSecret: "");
 
             //app.UseTwitterAuthentication(
-            //   consumerKey: "",
-            //   consumerSecret: "");
+            //   consumerKey: "EjUYwhMDau9q1bXQ63HuxVACP",
+            //   consumerSecret: "AAZcRT2i5W13A3lnFUOBdAWktYSipn5Vf56yxgHq5cXy5a6dKQ");
 
-            app.UseFacebookAuthentication(
-               appId: "939895702798748",
-               appSecret: "b3c05d8f5127df395524414ebac0de27");
+            //app.UseFacebookAuthentication(
+            //   appId: "939895702798748",
+            //   appSecret: "b3c05d8f5127df395524414ebac0de27");
 
-            app.UseGoogleAuthentication(
-                clientId: "247941966345-6o1umh4npm5ueflcf3bqtakc94l1casj.apps.googleusercontent.com",
-                clientSecret: "s-HTLcXN5Tva_7EHCo48IgH0");
+            //app.UseGoogleAuthentication(
+            //    clientId: "247941966345-6o1umh4npm5ueflcf3bqtakc94l1casj.apps.googleusercontent.com",
+            //    clientSecret: "s-HTLcXN5Tva_7EHCo48IgH0");
+
         }
     }
 

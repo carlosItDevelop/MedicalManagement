@@ -28,7 +28,7 @@ namespace Cooperchip.MedicalManagement.ApiResource.Controllers
         /// </summary>
         /// <remarks>OBTEM OS GENÉRICOS CADASTRADOS NA BASE DE DADOS SEM A NECESSIDADE DE PARÂMETROS</remarks>
         /// <returns></returns>
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [Route("ObterGenericos")]
         public IQueryable<Generico> GetGenerico()
         {
