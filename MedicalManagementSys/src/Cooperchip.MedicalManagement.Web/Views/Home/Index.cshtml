@@ -50,14 +50,13 @@
                             <div class="row col-lg-12 col-md-12 col-sm-12">
 
                                 <div id="page-header" class="clearfix">
-
                                     <div class="page-header">
+                                        @Html.Partial("_LoginPartial")
                                         <div>
-                                            @Html.Partial("_LoginPartial")
+                                            <a href="#" title="Evolumed-Sys - Home"><img src="~/images/logo-pages.png" /></a>
                                         </div>
-
-                                        <a href="#" title="Evolumed-Sys - Home"><img src="~/images/logo-pages.png" /></a>
                                     </div>
+
 
 
                                     <div class="wrapper">
@@ -71,21 +70,21 @@
                                                     <div class="card-img-overlay">
 
                                                         @if (HttpContext.Current.User.IsInRole("Admin"))
-                                                {
-                                                    <div style="text-align: center">
-                                                        <a href="/Home/Dashboard" style="text-decoration: none; color: #ed5353; font-size: 16px;">
-                                                            <h4 class="card-title">.:: Entrar ::.</h4>
-                                                        </a>
-                                                    </div>
-                                        }
-                                        else
-                                        {
-                                            <div style="text-align: center">
-                                                <a href="/Home/BoxInit" style="text-decoration: none; color: #ed5353; font-size: 16px;">
-                                                    <h4 class="card-title">.:: Entrar ::.</h4>
-                                                </a>
-                                            </div>
-                                }
+                                                        {
+                                                            <div style="text-align: center">
+                                                                <a href="/Home/Dashboard" style="text-decoration: none; color: #ed5353; font-size: 16px;">
+                                                                    <h4 class="card-title">.:: Entrar ::.</h4>
+                                                                </a>
+                                                            </div>
+                                                        }
+                                                        else
+                                                        {
+                                                            <div style="text-align: center">
+                                                                <a href="/Home/BoxInit" style="text-decoration: none; color: #ed5353; font-size: 16px;">
+                                                                    <h4 class="card-title">.:: Entrar ::.</h4>
+                                                                </a>
+                                                            </div>
+                                                        }
 
                                                     </div>
                                                 </div>

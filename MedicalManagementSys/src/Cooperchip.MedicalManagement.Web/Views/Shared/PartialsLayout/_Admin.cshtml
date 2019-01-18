@@ -1,0 +1,41 @@
+﻿
+
+
+
+@using Microsoft.AspNet.Identity
+
+<li class="dropdown">
+    <a href="#" data-toggle="dropdown" class="tipB">
+        <i class="glyphicon glyphicon-user"></i>
+        <span class="sr-only">User / Admin</span>
+    </a>
+    <ul class="dropdown-menu right dropdown-notification" role="menu">
+
+        @*<li>
+            <a href="#" class="dropdown-menu-header">User / Admin</a>
+        </li>*@
+
+
+        <li>@Html.ActionLink("Acessar Admin", "Index", "Home", new { area = "Admin" }, new { @class="dropdown-menu-header" })</li>
+
+
+        @if (Request.IsAuthenticated)
+        {
+            <li><a href="/Manage/Index" title="Gerenciamento de Perfil"><i class="l-basic-life-buoy"></i> @User.Identity.GetUserName()</a></li>
+            <li><a href="/Account/LogOff" title="LogOff do Sistema"><i class="l-basic-lock"></i> LogOff</a></li>
+        }
+        else
+        {
+            @*<li>@Html.ActionLink("Registrar", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>*@
+            <li>@Html.ActionLink("Login", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        }
+
+        <li>
+            <a href="#" class="view-all"></a>
+        </li>
+
+    </ul>
+</li>
+
+
+

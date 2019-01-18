@@ -320,6 +320,7 @@
     <Content Include="Content\images\profile\Carlos A Santos.png" />
     <Content Include="Content\morris.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="Content\Site.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="images\404.png" />
     <Content Include="images\boxiesinit\dashboard.png" />
@@ -3036,6 +3037,9 @@
     <Content Include="Scripts\angular-1.7.2\errors.json" />
     <Content Include="Scripts\angular-1.7.2\version.json" />
     <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\cooperchip\ziehharmonika.js" />
     <Content Include="Scripts\i18n\en.js" />
@@ -3187,6 +3191,7 @@
     <Content Include="Views\MensagemClearance\Edit.cshtml" />
     <Content Include="Views\MensagemClearance\Index.cshtml" />
     <Content Include="Views\Home\TwitterDesk.cshtml" />
+    <Content Include="Views\Shared\PartialsLayout\_Admin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\dataTables.tableTools.css" />
@@ -3986,8 +3991,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Admin\Views\Home\" />
-    <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Scripts\angular-1.7.2\i18n\ngLocale\" />
     <Folder Include="Scripts\cooperchip\boxinit\img\" />
     <Folder Include="Scripts\cooperchip\componentes\ashobiz\ui\" />

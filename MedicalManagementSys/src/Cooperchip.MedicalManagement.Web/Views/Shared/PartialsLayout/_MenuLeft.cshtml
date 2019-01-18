@@ -4,6 +4,7 @@
         <li>
             <a href="/Home/Index"><i class="l-basic-home"></i><span class="txt">Home</span></a>
         </li>
+
         <li>
             <a href="/Home/Dashboard"><i class="l-basic-display"></i><span class="txt">Dashboard</span></a>
         </li>
@@ -88,7 +89,7 @@
                 <a href="#"><i class="l-basic-elaboration-folder-note"></i><span class="txt">Developers</span></a>
                 <ul class="sub">
                     @*@if (Request.IsAuthenticated && User.IsInRole("Admin"))
-        {*@
+                        {*@
                     <li><a href="/Home/Slides"><span class="txt">Dev Slides</span></a></li>
                     @*}*@
                     <li><a href="/Home/Contatos"><span class="txt">Lista de Contatos</span></a></li>
@@ -100,7 +101,7 @@
                     <li><a href="/Pessoa/Index"><span class="txt">Pessoa</span></a></li>
                     <li><a href="/Home/TwitterDesk"><span class="txt">Twitter Desk App</span></a></li>
                     @*<li><a href="/PessoaFisica/Index"><span class="txt">Pessoa Física</span></a></li>
-        <li><a href="/PessoaJuridica/Index"><span class="txt">Pessoa Jurídica</span></a></li>*@
+                        <li><a href="/PessoaJuridica/Index"><span class="txt">Pessoa Jurídica</span></a></li>*@
                     <li><a href="/Acesso/Index"><span class="txt">Central de Acesso</span></a></li>
                     <li><a href="/Home/Manuais"><span>Manuais/Procedimentos</span></a></li>
 

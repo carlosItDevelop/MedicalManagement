@@ -7,6 +7,7 @@ namespace Cooperchip.MedicalManagement.Web.Areas.Admin.Controllers
     /// <summary>
     /// 
     /// </summary>
+    [Authorize]
     public class HomeController : Controller
     {
         // GET: Admin/Home

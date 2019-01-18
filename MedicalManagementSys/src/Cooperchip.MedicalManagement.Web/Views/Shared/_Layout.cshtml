@@ -120,7 +120,8 @@
 
             </ul>
 
-            @Html.Partial("_LoginPartial")
+
+            @*@Html.Partial("_LoginPartial")*@
 
             <!-- top right nav -->
             <ul class="nav navbar-nav navbar-right">
@@ -155,13 +156,15 @@
 
                 @Html.Partial("PartialsLayout/_ChamadasLeitosMedicos")
 
-
                 <li>
                     <a id="toggle-right-sidebar" href="#" class="tipB" title="Exibir/Inibir Sidebar Direita">
                         <i class="l-software-layout-sidebar-right"></i>
                         <span class="sr-only">Exibir/Inibir Sidebar Direita</span>
                     </a>
                 </li>
+
+                @Html.Partial("PartialsLayout/_Admin")
+
             </ul>
             <!-- / top right nav -->
 

@@ -537,15 +537,11 @@ namespace Cooperchip.MedicalManagement.Web.Controllers
             ViewBag.ReturnUrl = returnUrl;
             return View(model);
         }
-
-        //
-        // POST: /Account/LogOff
+        
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut();
