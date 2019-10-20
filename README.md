@@ -5,7 +5,6 @@
 ##Diário de Bordo e Tasklist do Sistema HospitalManagement-Sys;
 ### Lista de tarefas pendentes e releases do aplicativo:
 
-```html
 - [x] Criação do 1º Service no Angular, que passará a ser nosso Frontend (Modulo: Genérico) - mai/2016;
 - [x] RederScript na _Layout.cshtml - @Scripts.Render("~/bundles/core") e @Scripts.Render("~/bundles/datatableswithtools"); 
 na MasterPage resolveu o problema de travamento do menu na Lista Anticoagulante e deve recolver nas outras também sem a TableTools. (Modulo: _Laout.cshtml
@@ -401,9 +400,11 @@ que agora são parte de prontuario;
 - [ ] Usar uibModal para Telefone, Endereço e Outros dados em Pacientes;
 
 
+- [ ] Implementar a parte de baixo da function;
+
+```javascript
 
 /*
-- [ ] Implementar a parte de baixo da function;
 swal({
   title: "Are you sure?",
   text: "You will not be able to recover this imaginary file!",
