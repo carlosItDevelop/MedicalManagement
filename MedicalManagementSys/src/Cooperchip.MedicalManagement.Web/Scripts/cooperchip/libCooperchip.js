@@ -36,7 +36,7 @@
                         Diagnostico: item.Diagnostico,
                         Codigo: item.Codigo,
                         CidAdaptadaId: item.CidAdaptadaId
-                    }
+                    };
                 });
                 //params.page = params.page || 1;
                 return {
@@ -92,7 +92,7 @@
                         id: item.PacienteGuid,
                         nome: item.Nome,
                         email: item.Email
-                    }
+                    };
                 });
                 return {
                     results: results
@@ -140,7 +140,7 @@
                 var results = $.map(data.items, function (item) {
                     return {
                         id: item.Descricao
-                    }
+                    };
                 });
                 return {
                     results: results
@@ -238,7 +238,7 @@
                     return {
                         id: item.GenericoId,
                         descricao: item.Descricao
-                    }
+                    };
                 });
                 return {
                     results: results
@@ -263,7 +263,7 @@
 
 
 
-    // ----/ GetMedicamentosAjusteInteracao --------------------------------------------------------- //
+    // ----/ GetMedicamentosAjusteInteracao ---------------------------------------------- //
     $(".busca-ajax-apresentacao-interacao").select2({
         ajax: {
             id: function (e) { return e.MedicamentoId; },
@@ -287,7 +287,7 @@
                         descricao: item.Descricao,
                         generico: item.Generico,
                         idgenerico: item.idGenerico
-                    }
+                    };
                 });
                 return {
                     results: results

@@ -4,21 +4,29 @@
 
     // ---------------------------------------------------- //
 
+
     angular.module('App').controller("MedicamentoPosologiaCtrl",
-        ['$scope', '$http',
-            function ($scope, $http) {
+        ['$scope', '$http', 'medicamentoPosologiaService',
+            function ($scope, $http, medicamentoPosologiaService) {
 
                 $scope.titulo = "Medicamento Posologia";
                 $scope.medicamentosposologia = [];
                 $scope.medicamentos = [];
 
-
+                //var carregaMedicamentosPosologia = function () {
+                //    $http.get("/MedicamentoPosologia/GetMedicamentosPosologia").success(function (data) {
+                //        $scope.medicamentosposologia = data;
+                //    }).error(function (data, status) {
+                //        toastr['error']('Erro carregando posologias...', 'MedicalManagement-Sys');
+                //    });
+                //};
 
                 var carregaMedicamentosPosologia = function () {
-                    $http.get("/MedicamentoPosologia/GetMedicamentosPosologia").success(function (data) {
-                        $scope.medicamentosposologia = data;
-                    }).error(function (data, status) {
-                        toastr['error']('Erro carregando posologias...', 'MedicalManagement-Sys');
+                    var posologiaData = medicamentoPosologiaService.GetMedicamentoPosologiaService();
+                    posologiaData.then(function (resultado) {
+                        $scope.medicamentosposologia = resultado.data;
+                    }, function () {
+                        toastr["error"]("Erro ao obter Medicamento Posologia!", "MedicalManagement-Sys");
                     });
                 };
 
