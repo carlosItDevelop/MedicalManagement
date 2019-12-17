@@ -44,7 +44,7 @@ namespace Cooperchip.MedicalManagement.Domain.Entidade
         [Display(Name = "Data")]
         [DataType(DataType.Date, ErrorMessage = "Data Inválida.")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public Nullable<DateTime> HemodialiseData { get; set; }
+        public DateTime? HemodialiseData { get; set; }
 
 
         [Display(Name = "Via Aérea")]
@@ -53,7 +53,7 @@ namespace Cooperchip.MedicalManagement.Domain.Entidade
 
         [DataType(DataType.Date, ErrorMessage = "Data Inválida.")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public Nullable<DateTime> ViaAereaData { get; set; }
+        public DateTime? ViaAereaData { get; set; }
 
 
         [Display(Name = "Via Digestiva")]
@@ -63,7 +63,7 @@ namespace Cooperchip.MedicalManagement.Domain.Entidade
         [Display(Name = "Data")]
         [DataType(DataType.Date, ErrorMessage = "Data Inválida.")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public Nullable<DateTime> ViaDigestivaData { get; set; }
+        public DateTime? ViaDigestivaData { get; set; }
 
 
         [Display(Name = "Acesso Venoso")]
@@ -74,7 +74,7 @@ namespace Cooperchip.MedicalManagement.Domain.Entidade
         [Display(Name = "Data")]
         [DataType(DataType.Date, ErrorMessage = "Data Inválida.")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public Nullable<DateTime> AcessoVenosoData { get; set; }
+        public DateTime? AcessoVenosoData { get; set; }
 
 
         [Display(Name = "Marcapasso")]
@@ -85,7 +85,7 @@ namespace Cooperchip.MedicalManagement.Domain.Entidade
         [Display(Name = "Data")]
         [DataType(DataType.Date, ErrorMessage = "Data Inválida.")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public Nullable<DateTime> MarcapassoData { get; set; }
+        public DateTime? MarcapassoData { get; set; }
 
 
         [Display(Name = "Via Urinária")]
@@ -96,7 +96,7 @@ namespace Cooperchip.MedicalManagement.Domain.Entidade
         [Display(Name = "Data")]
         [DataType(DataType.Date, ErrorMessage = "Data Inválida.")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public Nullable<DateTime> ViaUrinariaData { get; set; }
+        public DateTime? ViaUrinariaData { get; set; }
 
 
         [Display(Name = "PIC")]
@@ -112,12 +112,12 @@ namespace Cooperchip.MedicalManagement.Domain.Entidade
         [Display(Name = "Data")]
         [DataType(DataType.Date, ErrorMessage = "Data Inválida")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public Nullable<DateTime> PicData { get; set; }
+        public DateTime? PicData { get; set; }
 
         [Display(Name = "Data")]
         [DataType(DataType.Date, ErrorMessage = "Data Inválida")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public Nullable<DateTime> PiaData { get; set; }
+        public DateTime? PiaData { get; set; }
 
 
 

@@ -42,7 +42,7 @@ namespace Cooperchip.MedicalManagement.Domain.Entidade
         [Display(Name = "Data")]
         [DataType(DataType.Date, ErrorMessage = "Data Inválida.")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public Nullable<DateTime> HemodialiseData { get; set; }
+        public DateTime? HemodialiseData { get; set; }
 
         [Display(Name = "Via Aérea")]
         [MaxLength(50, ErrorMessage = "Máximo de Caracter Permitidos: 50")]
@@ -50,7 +50,7 @@ namespace Cooperchip.MedicalManagement.Domain.Entidade
 
         [DataType(DataType.Date, ErrorMessage = "Data Inválida.")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public Nullable<DateTime> ViaAereaData { get; set; }
+        public DateTime? ViaAereaData { get; set; }
 
         [Display(Name = "Via Digestiva")]
         [MaxLength(50, ErrorMessage = "Máximo de Caracter Permitidos: 50")]
@@ -59,7 +59,7 @@ namespace Cooperchip.MedicalManagement.Domain.Entidade
         [Display(Name = "Data")]
         [DataType(DataType.Date, ErrorMessage = "Data Inválida.")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public Nullable<DateTime> ViaDigestivaData { get; set; }
+        public DateTime? ViaDigestivaData { get; set; }
 
         [Display(Name = "Acesso Venoso")]
         [MaxLength(50, ErrorMessage = "Máximo de Caracter Permitidos: 50")]
@@ -68,7 +68,7 @@ namespace Cooperchip.MedicalManagement.Domain.Entidade
         [Display(Name = "Data")]
         [DataType(DataType.Date, ErrorMessage = "Data Inválida.")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public Nullable<DateTime> AcessoVenosoData { get; set; }
+        public DateTime? AcessoVenosoData { get; set; }
 
         [Display(Name = "Marcapasso")]
         [MaxLength(50, ErrorMessage = "Máximo de Caracter Permitidos: 50")]
@@ -77,7 +77,7 @@ namespace Cooperchip.MedicalManagement.Domain.Entidade
         [Display(Name = "Data")]
         [DataType(DataType.Date, ErrorMessage = "Data Inválida.")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public Nullable<DateTime> MarcapassoData { get; set; }
+        public DateTime? MarcapassoData { get; set; }
 
         [Display(Name = "Via Urinária")]
         [MaxLength(50, ErrorMessage = "Máximo de Caractere Permitidos: 50")]
@@ -86,7 +86,7 @@ namespace Cooperchip.MedicalManagement.Domain.Entidade
         [Display(Name = "Data")]
         [DataType(DataType.Date, ErrorMessage = "Data Inválida.")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public Nullable<DateTime> ViaUrinariaData { get; set; }
+        public DateTime? ViaUrinariaData { get; set; }
 
         [Display(Name = "PIC")]
         [MaxLength(50, ErrorMessage = "Máximo de Caracter Permitidos: 50")]
@@ -99,12 +99,12 @@ namespace Cooperchip.MedicalManagement.Domain.Entidade
         [Display(Name = "Data")]
         [DataType(DataType.Date, ErrorMessage = "Data Inválida")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public Nullable<DateTime> PicData { get; set; }
+        public DateTime? PicData { get; set; }
 
         [Display(Name = "Data")]
         [DataType(DataType.Date, ErrorMessage = "Data Inválida")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public Nullable<DateTime> PiaData { get; set; }
+        public DateTime? PiaData { get; set; }
 
         [Display(Name = "Anti-Coagulação")]
         [MaxLength(25, ErrorMessage = "Máximo de Caracter permitido: 25")]
